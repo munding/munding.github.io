@@ -42,4 +42,6 @@ jobs:
           BUCKET: ${{ secrets.QINIU_BUCKET }}
           USERNAME: ${{ secrets.QINIU_USERNAME }}
         run: |
-            ls
+          chmod +x qshell,
+          ./qshell account "$ACCESS_KEY" "$SECRET_KEY" "$USERNAME",
+          ./qshell qupload2 --check-hash --src-dir=./public --bucket="$BUCKET"
