@@ -48,6 +48,6 @@ jobs:
         run:
           chmod +x ./qshell;
           ./qshell account "$ACCESS_KEY" "$SECRET_KEY" "$USERNAME";
-          ./qshell qupload2 --check-hash --src-dir=./public --bucket="$BUCKET";
+          ./qshell qupload2 --src-dir=./public --bucket="$BUCKET";
           ./qshell cdnrefresh --dirs -i cdnrefresh.txt
 
