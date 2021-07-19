@@ -45,3 +45,4 @@ jobs:
           chmod +x ./bin/qshell,
           ./bin/qshell account "$ACCESS_KEY" "$SECRET_KEY" "$USERNAME",
           ./bin/qshell qupload2 --check-hash --src-dir=./public --bucket="$BUCKET"
+
