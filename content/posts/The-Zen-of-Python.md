@@ -1,6 +1,6 @@
 ---
 title: "The Zen of Python"
-date: 2021-07-19T10:58:43+08:00
+date: 2021-01-16
 tags: [""]
 categories: ["Python",""]
 description: ""
