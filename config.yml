@@ -2,13 +2,19 @@ baseURL: "https://www.aladdinding.com/"
 title: 阿拉丁的博客
 paginate: 5
 theme: PaperMod
+defaultContentLanguage: zh
+
+hasCJKLanguage: true
+summaryLength: 140
+disablePathToLower: true
 
 enableRobotsTXT: true
-buildDrafts: false
+buildDrafts: true
 buildFuture: false
 buildExpired: false
 
-googleAnalytics: UA-123-45
+permalinks:
+  posts: /:year/:month/:filename/
 
 minify:
     disableXML: true
@@ -22,10 +28,9 @@ outputs:
 
 params:
     env: production # to enable google analytics, opengraph, twitter-cards and schema.
-    title: ExampleSite
+    title: Aladdin
     description: "ExampleSite description"
     keywords: [Blog, Portfolio, PaperMod]
-    author: Aladdin
     # author: ["Me", "You"] # multiple authors
     images: ["<link or path of image for opengraph, twitter-cards>"]
     DateFormat: "2006.01.01"
@@ -33,73 +38,56 @@ params:
     disableThemeToggle: false
 
     ShowReadingTime: true
-    ShowShareButtons: true
+    ShowShareButtons: false
     ShowPostNavLinks: true
     ShowBreadCrumbs: true
-    ShowCodeCopyButtons: false
+    ShowCodeCopyButtons: true
     disableSpecial1stPost: false
     disableScrollToTop: false
-    comments: false
+    comments: true
     hidemeta: false
     hideSummary: false
-    showtoc: false
+    showtoc: true
     tocopen: false
 
     assets:
-        # disableHLJS: true # to disable highlight.js
-        # disableFingerprinting: true
-        favicon: "<link / abs url>"
+        disableHLJS: true # to disable highlight.js
+        disableFingerprinting: true
+        favicon: "images/bitbug_favicon.ico"
         favicon16x16: "<link / abs url>"
         favicon32x32: "<link / abs url>"
         apple_touch_icon: "<link / abs url>"
         safari_pinned_tab: "<link / abs url>"
 
-    # label:
-    #     text: "阿拉丁的博客"
-    #     icon: /apple-touch-icon.png
-    #     iconHeight: 35
-
-    # profile-mode
-    profileMode:
-        enabled: false # needs to be explicitly set
-        title: ExampleSite
-        subtitle: "This is subtitle"
-        imageUrl: "#"
-        imageWidth: 120
-        imageHeight: 120
-        imageTitle: my image
-        buttons:
-            - name: Posts
-              url: posts
-            - name: Tags
-              url: tags
 
     # home-info mode
     homeInfoParams:
-        Title: "Hi there \U0001F44B"
-        Content: Welcome to my blog
+        Title: "Welcome to Aladdin's blog Ⓓ"
+        Content: >
+
+            - **Be well-grounded and speak up moderately !**
+
+
+            - **博学而约取，厚积而薄发**。
+
+
 
     socialIcons:
         - name: github
           url: "https://github.com/aladdinding"
+        - name: telegram
+          url: "https://telegram.me/aladdinding"
+        - name: email
+          url: "mailto:aladdinding@qq.com"
+
+
+
 
     analytics:
         google:
             SiteVerificationTag: "XYZabc"
-        bing:
-            SiteVerificationTag: "XYZabc"
-        yandex:
-            SiteVerificationTag: "XYZabc"
 
-    cover:
-        hidden: true # hide everywhere but not in structured data
-        hiddenInList: true # hide on list pages and home
-        hiddenInSingle: true # hide on single page
 
-    editPost:
-        URL: "https://github.com/<path_to_repo>/content"
-        Text: "Suggest Changes" # edit text
-        appendFilePath: true # to append file path to Edit link
 
     # for search
     # https://fusejs.io/api/options.html
@@ -111,6 +99,13 @@ params:
         threshold: 0.4
         minMatchCharLength: 0
         keys: ["title", "permalink", "summary", "content"]
+
+    # comment
+    utteranc:
+        enable: true
+        repo: aladdinding/utteranc-comments
+        issueTerm: title
+        theme: github-light
 
 
 menu:
@@ -131,12 +126,25 @@ menu:
           name: 搜索
           url: /search/
           weight: 40
+        - identifier: about
+          name: 关于
+          url: /about/
+          weight: 50
+
+
+
 # Read: https://github.com/adityatelange/hugo-PaperMod/wiki/FAQs#using-hugos-syntax-highlighter-chroma
 # pygmentsUseClasses: true
-# markup:
-#     highlight:
-#         # anchorLineNos: true
-#         codeFences: true
-#         guessSyntax: true
-#         lineNos: true
-#         style: monokai
+markup:
+  highlight:
+    anchorLineNos: false
+    codeFences: true
+    guessSyntax: false
+    hl_Lines: ""
+    lineAnchors: ""
+    lineNoStart: 1
+    lineNos: false
+    lineNumbersInTable: true
+    noClasses: true
+    style: dracula
+    tabWidth: 4
