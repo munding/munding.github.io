@@ -1,1 +1,1 @@
-# HugoBlog
+# Blog

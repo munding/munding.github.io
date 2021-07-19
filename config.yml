@@ -33,7 +33,7 @@ params:
     keywords: [Blog, Portfolio, PaperMod]
     # author: ["Me", "You"] # multiple authors
     images: ["<link or path of image for opengraph, twitter-cards>"]
-    DateFormat: "2006.01.01"
+    DateFormat: "2006-01-01"
     defaultTheme: auto # dark, light
     disableThemeToggle: false
 
@@ -53,7 +53,7 @@ params:
     assets:
         disableHLJS: true # to disable highlight.js
         disableFingerprinting: true
-        favicon: "images/bitbug_favicon.ico"
+        favicon: http://img.aladdinding.cn/favicon.ico
         favicon16x16: "<link / abs url>"
         favicon32x32: "<link / abs url>"
         apple_touch_icon: "<link / abs url>"
