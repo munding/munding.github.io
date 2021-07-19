@@ -42,7 +42,4 @@ jobs:
           BUCKET: ${{ secrets.QINIU_BUCKET }}
           USERNAME: ${{ secrets.QINIU_USERNAME }}
         run: |
-            pwd,
-            ls,
-            cd ../;
             ls
