@@ -8,7 +8,6 @@ summary: "The Zen of Python是Python语言的指导原则，遵循这些基本�
 draft: true
 ---
 
-
 # 原文
 
 > Beautiful is better than ugly.
