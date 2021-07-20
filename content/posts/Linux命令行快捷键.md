@@ -5,7 +5,7 @@ tags: ["",""]
 categories: ["Linux",""]
 description: ""
 summary: ""
-draft: true
+draft: false
 ---
 
 ### 终端快捷键

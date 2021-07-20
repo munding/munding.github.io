@@ -5,7 +5,7 @@ tags: ["",""]
 categories: ["Hackintosh",""]
 description: ""
 summary: ""
-draft: true
+draft: false
 ---
 
 
