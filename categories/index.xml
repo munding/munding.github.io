@@ -5,7 +5,16 @@
     <link>https://aladdinding.cn/categories/</link>
     <description>Recent content in Categories on 阿拉丁的博客</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 21 Aug 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://aladdinding.cn/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 20 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://aladdinding.cn/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>macOS</title>
+      <link>https://aladdinding.cn/categories/macOS/</link>
+      <pubDate>Sat, 20 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://aladdinding.cn/categories/macOS/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Linux</title>
       <link>https://aladdinding.cn/categories/Linux/</link>
@@ -21,15 +30,6 @@
       <pubDate>Sat, 11 Jul 2020 00:00:00 +0000</pubDate>
       
       <guid>https://aladdinding.cn/categories/Hackintosh/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>macOS</title>
-      <link>https://aladdinding.cn/categories/macOS/</link>
-      <pubDate>Mon, 06 Apr 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://aladdinding.cn/categories/macOS/</guid>
       <description></description>
     </item>
     
