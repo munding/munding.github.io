@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>HTTP on 阿拉丁的博客</title>
+    <link>https://www.aladdinding.cn/tags/HTTP/</link>
+    <description>Recent content in HTTP on 阿拉丁的博客</description>
+    <image>
+      <url>https://www.aladdinding.cn/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://www.aladdinding.cn/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Tue, 26 May 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://www.aladdinding.cn/tags/HTTP/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ApacheBench HTTP服务器基准测试工具使用总结</title>
+      <link>https://www.aladdinding.cn/2020/05/ApacheBench-HTTP%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%9F%BA%E5%87%86%E6%B5%8B%E8%AF%95%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8%E6%80%BB%E7%BB%93/</link>
+      <pubDate>Tue, 26 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.aladdinding.cn/2020/05/ApacheBench-HTTP%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%9F%BA%E5%87%86%E6%B5%8B%E8%AF%95%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8%E6%80%BB%E7%BB%93/</guid>
+      <description>ApacheBench（ab）是用于对Apache超文本传输协议（HTTP）服务器进行基准测试的工具。ab命令会创建很多的并发访问线程，模拟多个访问者同时对某一URL地址进行访问。它的测试目标是基于URL的，因此，既可以用来测试Apache的负载压力，也可以测试nginx、lig</description>
+    </item>
+    
+  </channel>
+</rss>

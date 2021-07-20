@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Python on 阿拉丁的博客</title>
+    <link>https://www.aladdinding.cn/categories/Python/</link>
+    <description>Recent content in Python on 阿拉丁的博客</description>
+    <image>
+      <url>https://www.aladdinding.cn/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://www.aladdinding.cn/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sat, 16 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://www.aladdinding.cn/categories/Python/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>The Zen of Python</title>
+      <link>https://www.aladdinding.cn/2021/01/The-Zen-of-Python/</link>
+      <pubDate>Sat, 16 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.aladdinding.cn/2021/01/The-Zen-of-Python/</guid>
+      <description>The Zen of Python是Python语言的指导原则，遵循这些基本原则，你就可以像个Pythonista一样编程。</description>
+    </item>
+    
+  </channel>
+</rss>
