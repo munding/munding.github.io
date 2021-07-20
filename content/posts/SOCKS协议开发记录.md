@@ -1,7 +1,7 @@
 ---
 title: "SOCKS协议开发记录"
 date: 2020-07-19
-tags: ["Socks",""]
+tags: ["socks",""]
 categories: ["",""]
 description: ""
 summary: ""

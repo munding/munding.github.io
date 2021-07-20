@@ -1,7 +1,7 @@
 ---
 title: "ApacheBench HTTP服务器基准测试工具使用总结"
 date: 2020-05-26
-tags: ["HTTP"]
+tags: ["http"]
 description: ""
 summary: ""
 draft: false
