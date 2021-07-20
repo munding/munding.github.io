@@ -53,7 +53,7 @@ params:
     assets:
         disableHLJS: true # to disable highlight.js
         disableFingerprinting: true
-        favicon: http://img.aladdinding.cn/favicon.ico
+        favicon: https://img.aladdinding.cn/favicon.ico
         favicon16x16: "<link / abs url>"
         favicon32x32: "<link / abs url>"
         apple_touch_icon: "<link / abs url>"
