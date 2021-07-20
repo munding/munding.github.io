@@ -2,40 +2,46 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://www.aladdinding.cn/posts/</loc>
+    <loc>https://aladdinding.cn/posts/</loc>
     <lastmod>2020-07-19T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.aladdinding.cn/tags/Socks/</loc>
+    <loc>https://aladdinding.cn/tags/Socks/</loc>
     <lastmod>2020-07-19T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.aladdinding.cn/2020/07/SOCKS%E5%8D%8F%E8%AE%AE%E5%BC%80%E5%8F%91%E8%AE%B0%E5%BD%95/</loc>
+    <loc>https://aladdinding.cn/2020/07/SOCKS%E5%8D%8F%E8%AE%AE%E5%BC%80%E5%8F%91%E8%AE%B0%E5%BD%95/</loc>
     <lastmod>2020-07-19T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.aladdinding.cn/tags/</loc>
+    <loc>https://aladdinding.cn/tags/</loc>
     <lastmod>2020-07-19T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.aladdinding.cn/</loc>
+    <loc>https://aladdinding.cn/</loc>
     <lastmod>2020-07-19T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.aladdinding.cn/2020/05/ApacheBench-HTTP%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%9F%BA%E5%87%86%E6%B5%8B%E8%AF%95%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8%E6%80%BB%E7%BB%93/</loc>
+    <loc>https://aladdinding.cn/2020/05/ApacheBench-HTTP%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%9F%BA%E5%87%86%E6%B5%8B%E8%AF%95%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8%E6%80%BB%E7%BB%93/</loc>
     <lastmod>2020-05-26T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.aladdinding.cn/tags/HTTP/</loc>
+    <loc>https://aladdinding.cn/tags/HTTP/</loc>
     <lastmod>2020-05-26T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.aladdinding.cn/categories/</loc>
+    <loc>https://aladdinding.cn/2020/04/%E8%AF%BB%E5%A6%82%E4%BD%95%E6%88%90%E4%B8%BA%E4%B8%80%E5%90%8D%E9%BB%91%E5%AE%A2%E6%9C%89%E6%84%9F/</loc>
+    <lastmod>2020-04-06T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://aladdinding.cn/tags/%E9%9A%8F%E7%AC%94/</loc>
+    <lastmod>2020-04-06T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://aladdinding.cn/categories/</loc>
     <lastmod>2020-01-16T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.aladdinding.cn/categories/Python/</loc>
+    <loc>https://aladdinding.cn/categories/Python/</loc>
     <lastmod>2020-01-16T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.aladdinding.cn/2020/01/The-Zen-of-Python/</loc>
+    <loc>https://aladdinding.cn/2020/01/The-Zen-of-Python/</loc>
     <lastmod>2020-01-16T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.aladdinding.cn/about/</loc>
+    <loc>https://aladdinding.cn/about/</loc>
   </url><url>
-    <loc>https://www.aladdinding.cn/archives/</loc>
+    <loc>https://aladdinding.cn/archives/</loc>
   </url><url>
-    <loc>https://www.aladdinding.cn/search/</loc>
+    <loc>https://aladdinding.cn/search/</loc>
   </url>
 </urlset>
