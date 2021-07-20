@@ -4,7 +4,7 @@ date: 2020-05-26
 tags: ["HTTP"]
 description: ""
 summary: ""
-draft: true
+draft: false
 ---
 
 > [ApacheBench](https://httpd.apache.org/docs/2.4/programs/ab.html)（ab）是用于对Apache超文本传输协议（HTTP）服务器进行基准测试的工具。ab命令会创建很多的并发访问线程，模拟多个访问者同时对某一URL地址进行访问。它的测试目标是基于URL的，因此，既可以用来测试Apache的负载压力，也可以测试nginx、lighthttp、tomcat、IIS等其它Web服务器的压力。ab命令对发出负载的计算机要求很低，既不会占用很高CPU，也不会占用很多内存，但却会给目标服务器造成巨大的负载，其原理类似CC攻击。自己测试使用也须注意，否则一次上太多的负载，可能造成目标服务器因资源耗完，严重时甚至导致死机。
