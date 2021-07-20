@@ -29,10 +29,10 @@ outputs:
 params:
     env: production # to enable google analytics, opengraph, twitter-cards and schema.
     title: Aladdin
-    description: "ExampleSite description"
-    keywords: [Blog, Portfolio, PaperMod]
+    description: "Aladdin的个人博客，学习总结，分享心得。"
+    keywords: [Blog, PaperMod, Python, Hugo]
     # author: ["Me", "You"] # multiple authors
-    images: ["<link or path of image for opengraph, twitter-cards>"]
+    # images: ["<link or path of image for opengraph, twitter-cards>"]
     DateFormat: "2006-01-01"
     defaultTheme: auto # dark, light
     disableThemeToggle: false
@@ -52,7 +52,7 @@ params:
 
     assets:
         disableHLJS: true # to disable highlight.js
-        disableFingerprinting: true
+        # disableFingerprinting: true
         favicon: https://img.aladdinding.cn/favicon.ico
         favicon16x16: "<link / abs url>"
         favicon32x32: "<link / abs url>"
@@ -85,7 +85,7 @@ params:
 
     analytics:
         google:
-            SiteVerificationTag: "XYZabc"
+            SiteVerificationTag: "G-QY1H3LE9QK"
 
 
 
