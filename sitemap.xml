@@ -2,8 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://aladdinding.cn/categories/</loc>
+    <lastmod>2020-08-21T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://aladdinding.cn/categories/Linux/</loc>
+    <lastmod>2020-08-21T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://aladdinding.cn/2020/08/Linux%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%BF%AB%E6%8D%B7%E9%94%AE/</loc>
+    <lastmod>2020-08-21T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://aladdinding.cn/posts/</loc>
-    <lastmod>2020-07-19T00:00:00+00:00</lastmod>
+    <lastmod>2020-08-21T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://aladdinding.cn/</loc>
+    <lastmod>2020-08-21T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://aladdinding.cn/tags/Socks/</loc>
     <lastmod>2020-07-19T00:00:00+00:00</lastmod>
@@ -14,8 +26,11 @@
     <loc>https://aladdinding.cn/tags/</loc>
     <lastmod>2020-07-19T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://aladdinding.cn/</loc>
-    <lastmod>2020-07-19T00:00:00+00:00</lastmod>
+    <loc>https://aladdinding.cn/categories/Hackintosh/</loc>
+    <lastmod>2020-07-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://aladdinding.cn/2020/07/%E9%BB%91%E8%8B%B9%E6%9E%9C%E4%B8%80%E9%94%AE%E5%BC%80%E5%90%AFHiDPI/</loc>
+    <lastmod>2020-07-11T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://aladdinding.cn/2020/05/ApacheBench-HTTP%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%9F%BA%E5%87%86%E6%B5%8B%E8%AF%95%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8%E6%80%BB%E7%BB%93/</loc>
     <lastmod>2020-05-26T00:00:00+00:00</lastmod>
@@ -29,14 +44,17 @@
     <loc>https://aladdinding.cn/tags/%E9%9A%8F%E7%AC%94/</loc>
     <lastmod>2020-04-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://aladdinding.cn/categories/</loc>
-    <lastmod>2020-01-16T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://aladdinding.cn/categories/Python/</loc>
     <lastmod>2020-01-16T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://aladdinding.cn/2020/01/The-Zen-of-Python/</loc>
     <lastmod>2020-01-16T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://aladdinding.cn/tags/%E6%97%A5%E8%AF%AD/</loc>
+    <lastmod>2020-01-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://aladdinding.cn/2020/01/%E6%97%A5%E8%AF%AD%E4%BA%94%E5%8D%81%E9%9F%B3%E7%AC%A8%E6%8B%99%E8%AE%B0%E5%BF%86/</loc>
+    <lastmod>2020-01-05T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://aladdinding.cn/about/</loc>
   </url><url>

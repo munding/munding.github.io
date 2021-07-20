@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Linux on 阿拉丁的博客</title>
+    <link>https://aladdinding.cn/categories/Linux/</link>
+    <description>Recent content in Linux on 阿拉丁的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Fri, 21 Aug 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://aladdinding.cn/categories/Linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Linux命令行快捷键</title>
+      <link>https://aladdinding.cn/2020/08/Linux%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%BF%AB%E6%8D%B7%E9%94%AE/</link>
+      <pubDate>Fri, 21 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://aladdinding.cn/2020/08/Linux%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%BF%AB%E6%8D%B7%E9%94%AE/</guid>
+      <description>终端快捷键 快捷键应该是每一个需要和终端天天打交道的程序员必备的技能了，如果你还停留在每次前后左右一个字符一个字符移动光标的话，那你需要好好学习下面的终端快捷键，这可以大大提高你的效率 最常用 tab 命令或路径的补全键 移动光标 Ctrl + a/Home 切换到命令行开始 Ctrl + e/End 切换到命令行末尾 Ctrl + f 光标向右移动一</description>
+    </item>
+    
+  </channel>
+</rss>
