@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Socks on 阿拉丁的博客</title>
-    <link>https://aladdinding.cn/tags/Socks/</link>
-    <description>Recent content in Socks on 阿拉丁的博客</description>
+    <title>socks on 阿拉丁的博客</title>
+    <link>https://aladdinding.cn/tags/socks/</link>
+    <description>Recent content in socks on 阿拉丁的博客</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 19 Jul 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://aladdinding.cn/tags/Socks/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 19 Jul 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://aladdinding.cn/tags/socks/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>SOCKS协议开发记录</title>
       <link>https://aladdinding.cn/2020/07/SOCKS%E5%8D%8F%E8%AE%AE%E5%BC%80%E5%8F%91%E8%AE%B0%E5%BD%95/</link>

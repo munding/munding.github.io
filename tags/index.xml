@@ -5,22 +5,31 @@
     <link>https://aladdinding.cn/tags/</link>
     <description>Recent content in Tags on 阿拉丁的博客</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 19 Jul 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://aladdinding.cn/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 09 Aug 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://aladdinding.cn/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Socks</title>
-      <link>https://aladdinding.cn/tags/Socks/</link>
-      <pubDate>Sun, 19 Jul 2020 00:00:00 +0000</pubDate>
+      <title>转载</title>
+      <link>https://aladdinding.cn/tags/%E8%BD%AC%E8%BD%BD/</link>
+      <pubDate>Sun, 09 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://aladdinding.cn/tags/Socks/</guid>
+      <guid>https://aladdinding.cn/tags/%E8%BD%AC%E8%BD%BD/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>HTTP</title>
-      <link>https://aladdinding.cn/tags/HTTP/</link>
+      <title>socks</title>
+      <link>https://aladdinding.cn/tags/socks/</link>
+      <pubDate>Sun, 19 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://aladdinding.cn/tags/socks/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>http</title>
+      <link>https://aladdinding.cn/tags/http/</link>
       <pubDate>Tue, 26 May 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://aladdinding.cn/tags/HTTP/</guid>
+      <guid>https://aladdinding.cn/tags/http/</guid>
       <description></description>
     </item>
     
@@ -39,6 +48,24 @@
       <pubDate>Sun, 05 Jan 2020 00:00:00 +0000</pubDate>
       
       <guid>https://aladdinding.cn/tags/%E6%97%A5%E8%AF%AD/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>tmux</title>
+      <link>https://aladdinding.cn/tags/tmux/</link>
+      <pubDate>Fri, 09 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://aladdinding.cn/tags/tmux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>vim</title>
+      <link>https://aladdinding.cn/tags/vim/</link>
+      <pubDate>Fri, 09 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://aladdinding.cn/tags/vim/</guid>
       <description></description>
     </item>
     

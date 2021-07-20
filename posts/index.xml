@@ -16,6 +16,15 @@
     </item>
     
     <item>
+      <title>作为技术人员为什么要写博客</title>
+      <link>https://aladdinding.cn/2020/08/%E4%BD%9C%E4%B8%BA%E6%8A%80%E6%9C%AF%E4%BA%BA%E5%91%98%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E5%86%99%E5%8D%9A%E5%AE%A2/</link>
+      <pubDate>Sun, 09 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://aladdinding.cn/2020/08/%E4%BD%9C%E4%B8%BA%E6%8A%80%E6%9C%AF%E4%BA%BA%E5%91%98%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E5%86%99%E5%8D%9A%E5%AE%A2/</guid>
+      <description>本文只代表个人见解，不代表任立场，如果您认为我的想法是错的那很正常，因为这是我的想法，如果您觉得您的想法和我一样，那我们就是传说中的 &amp;ldquo;激友&amp;rdquo;（对生活冲满激情的朋友）。进入正题。 一、我心中的博客 我所以指的写博客，不单只是写一篇文章出来这一结果。而应该是写的这</description>
+    </item>
+    
+    <item>
       <title>SOCKS协议开发记录</title>
       <link>https://aladdinding.cn/2020/07/SOCKS%E5%8D%8F%E8%AE%AE%E5%BC%80%E5%8F%91%E8%AE%B0%E5%BD%95/</link>
       <pubDate>Sun, 19 Jul 2020 00:00:00 +0000</pubDate>
@@ -43,12 +52,21 @@
     </item>
     
     <item>
+      <title>MacOS屏蔽系统更新通知</title>
+      <link>https://aladdinding.cn/2020/04/macOS%E5%B1%8F%E8%94%BD%E7%B3%BB%E7%BB%9F%E6%9B%B4%E6%96%B0%E9%80%9A%E7%9F%A5/</link>
+      <pubDate>Mon, 06 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://aladdinding.cn/2020/04/macOS%E5%B1%8F%E8%94%BD%E7%B3%BB%E7%BB%9F%E6%9B%B4%E6%96%B0%E9%80%9A%E7%9F%A5/</guid>
+      <description>北京时间 2019年10 月 8 日凌晨，苹果推送了 macOS Catalina 正式版更新。新版 macOS 将 iTunes 拆分为三个独立应用、推出了支持 iPad 作为第二屏幕的 「随航」，macOS 版「屏幕使用时间」等多项新功能。 说在前面 作为一个Hackintosh用户，Hackintosh的稳定性依然是最重要的。macOS Mojave 10.14.6</description>
+    </item>
+    
+    <item>
       <title>读《如何成为一名黑客》有感</title>
       <link>https://aladdinding.cn/2020/04/%E8%AF%BB%E5%A6%82%E4%BD%95%E6%88%90%E4%B8%BA%E4%B8%80%E5%90%8D%E9%BB%91%E5%AE%A2%E6%9C%89%E6%84%9F/</link>
       <pubDate>Mon, 06 Apr 2020 00:00:00 +0000</pubDate>
       
       <guid>https://aladdinding.cn/2020/04/%E8%AF%BB%E5%A6%82%E4%BD%95%E6%88%90%E4%B8%BA%E4%B8%80%E5%90%8D%E9%BB%91%E5%AE%A2%E6%9C%89%E6%84%9F/</guid>
-      <description>从我毕业进入公司起，王哥（技术leader）就一直在提及一点：编程不仅仅是知识和技能，更重要的是去领会编程领域的文化。刚进入公司的我似乎并没有马上接受这一点，认为这可能只是所谓的“玄学”罢了，所以也就是当作任务记下了个一点，并没有很好的理会。直到我工作了一年后，疫情期间读完王哥发</description>
+      <description>从我毕业进入公司起，前辈就一直在提及一点：编程不仅仅是知识和技能，更重要的是去领会编程领域的文化。刚进入公司的我似乎并没有马上接受这一点，认为这可能只是所谓的“玄学”罢了，所以也就是当作任务记下了个一点，并没有很好的理会。直到我工作了一年后，疫情期间读完王哥发来的一篇《如何成为一</description>
     </item>
     
     <item>
@@ -61,12 +79,48 @@
     </item>
     
     <item>
+      <title>MacOS软件包的管理器Homebrew</title>
+      <link>https://aladdinding.cn/2020/01/macOS%E8%BD%AF%E4%BB%B6%E5%8C%85%E7%9A%84%E7%AE%A1%E7%90%86%E5%99%A8Homebrew/</link>
+      <pubDate>Sun, 05 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://aladdinding.cn/2020/01/macOS%E8%BD%AF%E4%BB%B6%E5%8C%85%E7%9A%84%E7%AE%A1%E7%90%86%E5%99%A8Homebrew/</guid>
+      <description>Homebrew简介 Homebrew是一款MacOS平台下的软件包管理工具，拥有安装、卸载、更新、查看、搜索等很多实用的功能。简单的一条指令，就可以实现包管理，而不用你关心各种依赖和文件路径的情况，十分方便快捷。 Homebrew 的几个核心概念 在正式介绍 Homebrew 的使用之前，我先为你介绍一下 Homebrew 中的一些核</description>
+    </item>
+    
+    <item>
       <title>日语五十音笨拙记忆</title>
       <link>https://aladdinding.cn/2020/01/%E6%97%A5%E8%AF%AD%E4%BA%94%E5%8D%81%E9%9F%B3%E7%AC%A8%E6%8B%99%E8%AE%B0%E5%BF%86/</link>
       <pubDate>Sun, 05 Jan 2020 00:00:00 +0000</pubDate>
       
       <guid>https://aladdinding.cn/2020/01/%E6%97%A5%E8%AF%AD%E4%BA%94%E5%8D%81%E9%9F%B3%E7%AC%A8%E6%8B%99%E8%AE%B0%E5%BF%86/</guid>
       <description>这几天整理了大学期间的书籍，发现了当时选修日语课时自己总结打印出来的的日语五十音巧记，现在看到还有点好笑，不过当时确实帮助自己应付过了期末考试。直到现在两年过去了，自己还是可以背出日语五十音前面几十个，这里就记录一下吧，万一以后有用呢。。。 あ行 清音 あア &amp;ldquo;女&amp;quot;</description>
+    </item>
+    
+    <item>
+      <title>SSH相关的快速配置</title>
+      <link>https://aladdinding.cn/2019/10/SSH%E7%9B%B8%E5%85%B3%E7%9A%84%E5%BF%AB%E9%80%9F%E9%85%8D%E7%BD%AE/</link>
+      <pubDate>Wed, 09 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://aladdinding.cn/2019/10/SSH%E7%9B%B8%E5%85%B3%E7%9A%84%E5%BF%AB%E9%80%9F%E9%85%8D%E7%BD%AE/</guid>
+      <description>SSH简介 SSH 为 Secure Shell 的缩写，由 IETF 的网络小组（Network Working Group）所制定；SSH 为建立在应用层基础上的安全协议。SSH 是目前较可靠，专为远程登录会话和其他网络服务提供安全性的协议。利用 SSH 协议可以有效防止远程管理过程中的信息泄露问题。SSH最初是UNIX系统上的一个程序，后来又</description>
+    </item>
+    
+    <item>
+      <title>Tmux的QuickStart</title>
+      <link>https://aladdinding.cn/2019/08/Tmux%E7%9A%84QuickStart/</link>
+      <pubDate>Fri, 09 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://aladdinding.cn/2019/08/Tmux%E7%9A%84QuickStart/</guid>
+      <description>Tmux简介 Tmux 的全称是 Terminal MUtipleXer，及终端复用软件。顾名思义，它的主要功能就是用于在一个终端窗口中运行多个终端会话并且在你关闭终端窗口之后保持进程的运行。 Tmux安装 # Ubuntu 或 Debian $ sudo apt-get install tmux # CentOS 或 Fedora $ sudo yum install tmux # Mac $ brew install tmux Tmux概念 Tmux 中有几个重要概念： 会话（session）:</description>
+    </item>
+    
+    <item>
+      <title>Vim操作速查</title>
+      <link>https://aladdinding.cn/2019/08/Vim%E6%93%8D%E4%BD%9C%E9%80%9F%E6%9F%A5/</link>
+      <pubDate>Fri, 09 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://aladdinding.cn/2019/08/Vim%E6%93%8D%E4%BD%9C%E9%80%9F%E6%9F%A5/</guid>
+      <description>进入Vim 命令 描述 vim filename 打开或新建文件，并将光标置于第一行首 vim +n filename 打开文件，并将光标置于第n行首 vim + flename 打开文件,并将光标置于最后一-行首 vim +/pattern filename 打开文件,并将光标置于第一一个 与pattern匹配的串处 vim -r filename 在上次正用vim编辑时发生系统崩溃，恢复 flename vim filename&amp;hellip; filename 打开多个文件,依次编辑 Vim配</description>
     </item>
     
   </channel>

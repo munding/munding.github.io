@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>tmux on 阿拉丁的博客</title>
+    <link>https://aladdinding.cn/tags/tmux/</link>
+    <description>Recent content in tmux on 阿拉丁的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Fri, 09 Aug 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://aladdinding.cn/tags/tmux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Tmux的QuickStart</title>
+      <link>https://aladdinding.cn/2019/08/Tmux%E7%9A%84QuickStart/</link>
+      <pubDate>Fri, 09 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://aladdinding.cn/2019/08/Tmux%E7%9A%84QuickStart/</guid>
+      <description>Tmux简介 Tmux 的全称是 Terminal MUtipleXer，及终端复用软件。顾名思义，它的主要功能就是用于在一个终端窗口中运行多个终端会话并且在你关闭终端窗口之后保持进程的运行。 Tmux安装 # Ubuntu 或 Debian $ sudo apt-get install tmux # CentOS 或 Fedora $ sudo yum install tmux # Mac $ brew install tmux Tmux概念 Tmux 中有几个重要概念： 会话（session）:</description>
+    </item>
+    
+  </channel>
+</rss>
