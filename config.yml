@@ -103,7 +103,7 @@ params:
     # comment
     utteranc:
         enable: true
-        repo: aladdinding/utteranc-comments
+        repo: aladdinding/aladdinding.github.io
         issueTerm: title
         theme: github-light
 
