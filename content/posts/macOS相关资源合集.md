@@ -34,6 +34,8 @@ MacWk：*https://macwk.com/*
 
 appstorrent：*https://www.appstorrent.ru/*
 
+Xclient：*https://xclient.info/*
+
 Github：*https://github.com/search?q=macos*
 
 
