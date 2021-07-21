@@ -36,6 +36,8 @@ appstorrent：*https://www.appstorrent.ru/*
 
 Xclient：*https://xclient.info/*
 
+麦氪搜：*https://www.imacso.com/*
+
 Github：*https://github.com/search?q=macos*
 
 
