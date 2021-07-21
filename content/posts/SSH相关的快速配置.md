@@ -1,7 +1,7 @@
 ---
 title: "SSH相关的快速配置"
 date: 2019-10-09
-tags: ["",""]
+tags: ["ssh",""]
 categories: ["",""]
 description: ""
 summary: ""
