@@ -79,6 +79,8 @@ params:
           url: "https://telegram.me/aladdinding"
         - name: email
           url: "mailto:aladdinding@qq.com"
+        - name: twitter
+          url: "https://twitter.com/aladdinding"
 
 
 
