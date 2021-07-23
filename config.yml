@@ -81,6 +81,8 @@ params:
           url: "mailto:aladdinding@qq.com"
         - name: twitter
           url: "https://twitter.com/aladdinding"
+        - name: rss
+          url: "index.xml"
 
 
 
