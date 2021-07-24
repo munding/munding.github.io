@@ -1,6 +1,6 @@
 ---
 title: "MacOS终端配置记录"
-date: 2021-07-24
+date: 2021-06-04
 tags: ["",""]
 categories: ["",""]
 description: ""
@@ -109,9 +109,6 @@ Github：*https://github.com/junegunn/fzf*
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-
-# the fuck config, must brew install thefuck
-eval $(thefuck --alias)
 
 # autojump config, brew install autojump
 [[ -s `brew --prefix`/etc/autojump.sh  ]] && . `brew --prefix`/etc/autojump.sh
