@@ -43,6 +43,7 @@ Tmux 中有几个重要概念：
 - tmux kill-session -t s1　　关闭会话s1
 - tmux kill-session -a -t s1　　关闭除s1外的所有会话
 - tmux kill-server　　关闭所有会话
+
 **Tmux 默认的快捷键前缀是 ctrl+b，当然你也可以修改它（后文会提到）
 以下所有的操作都是激活控制台之后，即键入Ctrl+b前提下才可以使用的命令**
 
@@ -93,6 +94,8 @@ Tmux 中有几个重要概念：
 #新建Tmux配置文件
 vi $HOME/.tmux.conf
 ```
+**修改Tmux 快捷键前缀为 ctrl+s，便于操作**
+
 ```bash
 #设置前缀
 set -g prefix ^s
@@ -123,31 +126,24 @@ bind l select-pane -R
 bind q killp
  
 setw -g mode-keys vi
-#setw -g mode-mouse on
 ```
 
 #### 设置alias快捷键
-```bash
-vi $HOME/.bashrc
-#或者是（依据你自己使用的shell）
-vi $HOME/.bash_alias
-```
 ```bash
 alias ta='tmux a -t '
 alias tf='tail -f'
 alias tls='tmux ls'
 alias tnew='tmux new -s '
 ```
-```bash
-#alias配置生效
-source $HOME/.bashrc
-```
+### Oh my tmux
 
-------
-
-以上就是我个人常用的Tmux配置。当然还有更秀更强的Tmux配置，Github地址：
+🇫🇷 Oh my tmux! My self-contained, pretty & versatile tmux configuration made with ❤️
 
 https://github.com/gpakosz/.tmux
+
+更好看、强悍的tmux配置，有时间可以研究
+
+### 使用Tips
 
 #### 跳转Tmux窗口号为两位数的窗口
 
