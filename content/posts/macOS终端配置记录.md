@@ -165,3 +165,18 @@ zplug load
 # NOTE: put this line in the end of your zshrc, or it may not work, https://github.com/junegunn/fzf/issues/1304
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 ```
+
+### 关于字体
+
+在配置[powerlevel10k](https://github.com/romkatv/powerlevel10k)主题时若缺少字体会提示下载，当然你也可以自行安装
+
+> Best option if on **macOS** and want to use **Homebrew**.
+
+All fonts are available via [Homebrew Cask Fonts](https://github.com/Homebrew/homebrew-cask-fonts) on macOS (OS X)
+
+```bash
+brew tap homebrew/cask-fonts
+brew install --cask font-hack-nerd-font
+```
+
+iTerm2 -> Preferences -> Profiles -> Text -> Non-Ascii-Font -> nerd-font -> restart iTerm2
