@@ -22,7 +22,7 @@ draft: false
 
 [Confluence Data Center and Server documentation](https://confluence.atlassian.com/doc/confluence-data-center-and-server-documentation-135922.html)
 
-[Database Configuration](https://confluence.atlassian.com/doc/database-setup-for-mysql-128747.html)
+[Database Configuration](https://confluence.atlassian.com/doc/database-configuration-159764.html)
 
 ### 数据库设置
 
