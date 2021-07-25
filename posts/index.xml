@@ -5,7 +5,16 @@
     <link>https://aladdinding.cn/posts/</link>
     <description>Recent content in Posts on 阿拉丁的博客</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 24 Jul 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://aladdinding.cn/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 25 Jul 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://aladdinding.cn/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Docker部署并破解Jira、Confluence及插件</title>
+      <link>https://aladdinding.cn/2021/07/Docker%E9%83%A8%E7%BD%B2%E5%B9%B6%E7%A0%B4%E8%A7%A3JiraConfluence%E5%8F%8A%E6%8F%92%E4%BB%B6/</link>
+      <pubDate>Sun, 25 Jul 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://aladdinding.cn/2021/07/Docker%E9%83%A8%E7%BD%B2%E5%B9%B6%E7%A0%B4%E8%A7%A3JiraConfluence%E5%8F%8A%E6%8F%92%E4%BB%B6/</guid>
+      <description>JIRA是Atlassian公司出品的项目与事务跟踪工具，被广泛应用于缺陷跟踪、客户服务、需求收集、流程审批、任务跟踪、项目跟踪和敏捷管理等工作领域。 Confluence是一个专业的企业知识管理与协同软件，也可以用于构建企业wiki。使用简单，但它强大的编辑和站点管理特征能够帮助</description>
+    </item>
+    
     <item>
       <title>数据结构与算法之时间、空间复杂度</title>
       <link>https://aladdinding.cn/2021/07/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E4%B9%8B%E6%97%B6%E9%97%B4%E7%A9%BA%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6/</link>
