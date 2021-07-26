@@ -5,7 +5,16 @@
     <link>https://aladdinding.cn/tags/</link>
     <description>Recent content in Tags on 阿拉丁的博客</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 24 Jul 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://aladdinding.cn/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 25 Jul 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://aladdinding.cn/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>docker</title>
+      <link>https://aladdinding.cn/tags/docker/</link>
+      <pubDate>Sun, 25 Jul 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://aladdinding.cn/tags/docker/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>数据结构</title>
       <link>https://aladdinding.cn/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</link>

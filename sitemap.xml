@@ -2,17 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://aladdinding.cn/tags/docker/</loc>
+    <lastmod>2021-07-25T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://aladdinding.cn/2021/07/Docker%E9%83%A8%E7%BD%B2%E5%B9%B6%E7%A0%B4%E8%A7%A3ConfluenceJIRA%E5%8F%8A%E6%8F%92%E4%BB%B6/</loc>
     <lastmod>2021-07-25T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://aladdinding.cn/posts/</loc>
     <lastmod>2021-07-25T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://aladdinding.cn/</loc>
+    <loc>https://aladdinding.cn/tags/</loc>
     <lastmod>2021-07-25T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://aladdinding.cn/tags/</loc>
-    <lastmod>2021-07-24T00:00:00+00:00</lastmod>
+    <loc>https://aladdinding.cn/</loc>
+    <lastmod>2021-07-25T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://aladdinding.cn/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</loc>
     <lastmod>2021-07-24T00:00:00+00:00</lastmod>
