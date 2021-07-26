@@ -174,6 +174,8 @@ Jira搭建流程和Confluence类似，这里不再赘述，附上相关内容
 
 [Connecting Jira applications to a database](https://confluence.atlassian.com/adminjiraserver/connecting-jira-applications-to-a-database-938846850.html)
 
+镜像：[atlassian/jira-software](https://hub.docker.com/r/atlassian/jira-software)
+
 ### 破解命令
 
 ```
