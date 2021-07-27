@@ -47,4 +47,3 @@ jobs:
         with:
           github_token: ${{ secrets.ACCESS_TOKEN }}
           publish_dir: ./public
-          cname: ${{ secrets.DOMAIN }}
