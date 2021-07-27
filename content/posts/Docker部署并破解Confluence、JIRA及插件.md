@@ -1,7 +1,7 @@
 ---
 title: "Docker部署并破解Confluence、JIRA及插件"
 date: 2021-07-25
-tags: ["",""]
+tags: ["docker",""]
 categories: ["",""]
 description: ""
 summary: ""
@@ -174,10 +174,12 @@ Jira搭建流程和Confluence类似，这里不再赘述，附上相关内容
 
 [Connecting Jira applications to a database](https://confluence.atlassian.com/adminjiraserver/connecting-jira-applications-to-a-database-938846850.html)
 
+镜像：[atlassian/jira-software](https://hub.docker.com/r/atlassian/jira-software)
+
 ### 破解命令
 
 ```
-java -jar atlassian-agent.jar -d -m test@test.com -n BAT -p 'jira' -o http://localhost:8090 -s BT5W-KP7Q-31DT-PTNG
+java -jar atlassian-agent.jar -d -m test@test.com -n BAT -p 'jira' -o http://localhost:8080 -s BT5W-KP7Q-31DT-PTNG
 ```
 
 ### 配置Confluence与Jira用户数据对接
