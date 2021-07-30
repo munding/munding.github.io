@@ -1,16 +1,12 @@
 ---
-title: "MacOS使用Tips总结
-date: 2020-04-06
+title: "MacOS使用小方法总结"
+date: 2021-07-30
 tags: ["",""]
 categories: ["macOS",""]
 description: ""
-summary: ""
+summary: "使用macOS过程中实用Tips"
 draft: false
 ---
-
-> 北京时间 2019年10 月 8 日凌晨，苹果推送了 [macOS Catalina 正式版][introduce]更新。新版 macOS 将 iTunes 拆分为三个独立应用、推出了支持 iPad 作为第二屏幕的 「随航」，macOS 版「屏幕使用时间」等多项新功能。
-
-[introduce]: https://zhuanlan.zhihu.com/p/85456461
 
 ### 忽略macOS Catalina 10.15更新通知
 
@@ -55,4 +51,3 @@ killall Dock
 个人感觉这个设计很烂，而且也没有开关能永久固定Dock栏，希望Appple设计师能改改！！！
 
 ![image-20210730112937596](https://img.aladdinding.cn/image-20210730112937596.png)
-
