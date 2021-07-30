@@ -5,7 +5,16 @@
     <link>https://aladdinding.cn/posts/</link>
     <description>Recent content in Posts on 阿拉丁的博客</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 25 Jul 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://aladdinding.cn/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 30 Jul 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://aladdinding.cn/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>MacOS使用小方法总结</title>
+      <link>https://aladdinding.cn/2021/07/macOS%E4%BD%BF%E7%94%A8%E5%B0%8F%E6%96%B9%E6%B3%95%E6%80%BB%E7%BB%93/</link>
+      <pubDate>Fri, 30 Jul 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://aladdinding.cn/2021/07/macOS%E4%BD%BF%E7%94%A8%E5%B0%8F%E6%96%B9%E6%B3%95%E6%80%BB%E7%BB%93/</guid>
+      <description>使用macOS过程中实用Tips</description>
+    </item>
+    
     <item>
       <title>Docker部署并破解Confluence、JIRA及插件</title>
       <link>https://aladdinding.cn/2021/07/Docker%E9%83%A8%E7%BD%B2%E5%B9%B6%E7%A0%B4%E8%A7%A3ConfluenceJIRA%E5%8F%8A%E6%8F%92%E4%BB%B6/</link>
@@ -112,15 +121,6 @@
       
       <guid>https://aladdinding.cn/2020/05/ApacheBench-HTTP%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%9F%BA%E5%87%86%E6%B5%8B%E8%AF%95%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8%E6%80%BB%E7%BB%93/</guid>
       <description>ApacheBench（ab）是用于对Apache超文本传输协议（HTTP）服务器进行基准测试的工具。ab命令会创建很多的并发访问线程，模拟多个访问者同时对某一URL地址进行访问。它的测试目标是基于URL的，因此，既可以用来测试Apache的负载压力，也可以测试nginx、lig</description>
-    </item>
-    
-    <item>
-      <title>MacOS屏蔽系统更新通知</title>
-      <link>https://aladdinding.cn/2020/04/macOS%E5%B1%8F%E8%94%BD%E7%B3%BB%E7%BB%9F%E6%9B%B4%E6%96%B0%E9%80%9A%E7%9F%A5/</link>
-      <pubDate>Mon, 06 Apr 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://aladdinding.cn/2020/04/macOS%E5%B1%8F%E8%94%BD%E7%B3%BB%E7%BB%9F%E6%9B%B4%E6%96%B0%E9%80%9A%E7%9F%A5/</guid>
-      <description>北京时间 2019年10 月 8 日凌晨，苹果推送了 macOS Catalina 正式版更新。新版 macOS 将 iTunes 拆分为三个独立应用、推出了支持 iPad 作为第二屏幕的 「随航」，macOS 版「屏幕使用时间」等多项新功能。 说在前面 作为一个Hackintosh用户，Hackintosh的稳定性依然是最重要的。macOS Mojave 10.14.6</description>
     </item>
     
     <item>
