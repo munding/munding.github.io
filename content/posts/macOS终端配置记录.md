@@ -25,15 +25,6 @@ Example:
 - [Dracula](https://draculatheme.com/)
 - [iterm2-material-design](https://www.martinseeler.com/iterm2-material-design)
 
-### 安装/升级zsh
-
-```bash
-# https://github.com/robbyrussell/oh-my-zsh
-brew install zsh
-# The installation script should set zsh to your default shell, but if it doesn't you can do it manually:
-chsh -s $(which zsh)
-```
-
 ### 安装 oh-my-zsh
 
 Oh My Zsh is a delightful, open source, community-driven framework for managing your Zsh configuration.
@@ -71,50 +62,11 @@ brew install autojump
 
 Github：*https://github.com/junegunn/fzf*
 
-#### autojump
+### 新增zpug插件配置
 
-记录常用目录，不需要输入目录详细路径，`j`加目录名关键字即可
-
-```bash
-❯ j github.
-.
-~/aladdinding.github.io main*
-```
-
-### 修改.zshrc
+添加到`~/.zshrc`文件
 
 ```bash
-# User configuration
-
-# export MANPATH="/usr/local/man:$MANPATH"
-
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
-
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-
-# autojump config, brew install autojump
-[[ -s `brew --prefix`/etc/autojump.sh  ]] && . `brew --prefix`/etc/autojump.sh
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-
 # install zplug, plugin manager for zsh, https://github.com/zplug/zplug
 # curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
 # zplug configruation
@@ -148,19 +100,6 @@ if ! zplug check; then
 fi
 
 zplug load
-
-# NOTE: use cc to clear screen. I use tmux ctrl+hjkl switch panel, but ctrl+l conflict with clear-screen
-#bindkey "cc" clear-screen
-
-# customize alias
-[ -f ~/.alias ] && source ~/.alias
-
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
-# fzf config, must brew install fzf
-# NOTE: put this line in the end of your zshrc, or it may not work, https://github.com/junegunn/fzf/issues/1304
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 ```
 
 ### 关于字体
