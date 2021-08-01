@@ -2,9 +2,9 @@
 title: "MacOS终端配置记录"
 date: 2021-06-04
 tags: ["",""]
-categories: ["",""]
+categories: ["macOS",""]
 description: ""
-summary: "macOS终端环境快速配置"
+summary: "macOS下iTerm2+oh-my-zsh+powerlevel10k环境快速配置"
 draft: false
 ---
 
@@ -48,19 +48,17 @@ $ curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/inst
 
 ### 安装命令行工具
 
-```bash
-brew install fzf
-# To install useful key bindings and fuzzy completion:
-$(brew --prefix)/opt/fzf/install
-
-brew install autojump
-```
-
 #### fzf
 
 命令行模糊搜索
 
 Github：*https://github.com/junegunn/fzf*
+
+```bash
+brew install fzf
+# To install useful key bindings and fuzzy completion:
+$(brew --prefix)/opt/fzf/install
+```
 
 ### 新增zpug插件配置
 
