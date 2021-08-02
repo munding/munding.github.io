@@ -82,7 +82,7 @@ Command 键是 macOS 上最基础的文件选择辅助按键之一。按住 Comm
 
 ![image-20210802115401303](https://img.aladdinding.cn/20210802115401.png)
 
-### 使用 Command 键选择不相邻的文件
+### Command的其他组合键
 
 - Command + W：关闭最前面的窗口
 - Command + M：将最前面的窗口最小化至“程序坞”
