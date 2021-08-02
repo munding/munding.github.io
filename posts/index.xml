@@ -169,6 +169,15 @@
     </item>
     
     <item>
+      <title>搞清楚字符集和字符编码</title>
+      <link>https://aladdinding.cn/2019/10/%E6%90%9E%E6%B8%85%E6%A5%9A%E5%AD%97%E7%AC%A6%E9%9B%86%E5%92%8C%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81/</link>
+      <pubDate>Wed, 02 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://aladdinding.cn/2019/10/%E6%90%9E%E6%B8%85%E6%A5%9A%E5%AD%97%E7%AC%A6%E9%9B%86%E5%92%8C%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81/</guid>
+      <description>前言 我们目前主流的计算机的确都是以二进制形式存储数据的。如00100101（其中的0是一个bit，1也是一个bit，这8个bit就是一个byte）。通常为了更方便表示二进制数据，也可以转换成16进制表示出来，0010 0101就可以用16进制的0x25来表示（1byte=2个16进</description>
+    </item>
+    
+    <item>
       <title>Tmux的QuickStart</title>
       <link>https://aladdinding.cn/2019/08/Tmux%E7%9A%84QuickStart/</link>
       <pubDate>Fri, 09 Aug 2019 00:00:00 +0000</pubDate>
