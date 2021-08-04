@@ -73,7 +73,7 @@ GRANT ALL PRIVILEGES ON <database-name>.* TO '<confluenceuser>'@'localhost' WITH
 
 镜像：[atlassian/confluence-server](https://hub.docker.com/r/atlassian/confluence-server)
 
-~~破解插件：[atlassian-agent](https://gitee.com/pengzhile/atlassian-agent)~~ 项目已被私有，无法访问
+破解插件：~~[atlassian-agent](https://gitee.com/pengzhile/atlassian-agent)~~ 项目已被私有，无法访问
 
 ### 准备工具
 
