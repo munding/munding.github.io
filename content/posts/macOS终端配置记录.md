@@ -4,7 +4,7 @@ date: 2021-06-04
 tags: ["",""]
 categories: ["macOS",""]
 description: ""
-summary: "macOS下iTerm2+oh-my-zsh+powerlevel10k环境快速配置"
+summary: "macOS下 iTerm2 + oh-my-zsh + powerlevel10k 环境快速配置"
 draft: false
 ---
 
@@ -59,6 +59,14 @@ brew install fzf
 # To install useful key bindings and fuzzy completion:
 $(brew --prefix)/opt/fzf/install
 ```
+
+**NOTE：put this line in the end of your zshrc, or it may not work, https://github.com/junegunn/fzf/issues/1304**
+
+```bash
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+```
+
+
 
 ### 新增zpug插件配置
 
