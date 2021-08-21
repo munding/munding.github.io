@@ -5,7 +5,16 @@
     <link>https://aladdinding.cn/</link>
     <description>Recent content on 阿拉丁的博客</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 30 Jul 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://aladdinding.cn/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 21 Aug 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://aladdinding.cn/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>学习《深入理解计算机系统》</title>
+      <link>https://aladdinding.cn/2021/08/%E5%AD%A6%E4%B9%A0%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/</link>
+      <pubDate>Sat, 21 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://aladdinding.cn/2021/08/%E5%AD%A6%E4%B9%A0%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/</guid>
+      <description>教材 我用阿里云盘分享了「深入理解计算机系统（第三版）.pdf」，你可以不限速下载🚀 复制这段内容打开「阿里云盘」App 即可获取 链接：https://www.aliyundrive.com/s/bTBiCehPPJv 视频 #biliplayer { width: 100%; height: 550px; } @media only screen and (min-device-width: 320px) and (max-device-width: 480px) { #biliplayer { width: 100%; height: 250px; } } 其他 https://github.com/EugeneLiu/translationCSAPP</description>
+    </item>
+    
     <item>
       <title>MacOS使用小方法总结</title>
       <link>https://aladdinding.cn/2021/07/macOS%E4%BD%BF%E7%94%A8%E5%B0%8F%E6%96%B9%E6%B3%95%E6%80%BB%E7%BB%93/</link>

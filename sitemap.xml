@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://aladdinding.cn/posts/</loc>
+    <lastmod>2021-08-21T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://aladdinding.cn/2021/08/%E5%AD%A6%E4%B9%A0%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/</loc>
+    <lastmod>2021-08-21T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://aladdinding.cn/</loc>
+    <lastmod>2021-08-21T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://aladdinding.cn/categories/</loc>
     <lastmod>2021-07-30T00:00:00+00:00</lastmod>
   </url><url>
@@ -9,12 +18,6 @@
     <lastmod>2021-07-30T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://aladdinding.cn/2021/07/macOS%E4%BD%BF%E7%94%A8%E5%B0%8F%E6%96%B9%E6%B3%95%E6%80%BB%E7%BB%93/</loc>
-    <lastmod>2021-07-30T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://aladdinding.cn/posts/</loc>
-    <lastmod>2021-07-30T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://aladdinding.cn/</loc>
     <lastmod>2021-07-30T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://aladdinding.cn/tags/docker/</loc>
