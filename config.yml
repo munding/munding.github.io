@@ -79,7 +79,7 @@ params:
         - name: telegram
           url: "https://telegram.me/aladdinding"
         - name: email
-          url: "mailto:aladdinding@qq.com"
+          url: "mailto:aladdinding@foxmail.com"
         - name: twitter
           url: "https://twitter.com/aladdinding"
         - name: rss
