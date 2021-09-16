@@ -3,12 +3,21 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://aladdinding.cn/posts/</loc>
-    <lastmod>2021-08-21T00:00:00+00:00</lastmod>
+    <lastmod>2021-09-13T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://aladdinding.cn/2021/08/%E5%AD%A6%E4%B9%A0%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/</loc>
-    <lastmod>2021-08-21T00:00:00+00:00</lastmod>
+    <loc>https://aladdinding.cn/tags/</loc>
+    <lastmod>2021-09-13T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://aladdinding.cn/tags/%E6%80%BB%E7%BB%93/</loc>
+    <lastmod>2021-09-13T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://aladdinding.cn/2021/09/%E7%82%96%E6%8E%92%E9%AA%A8%E6%B1%A4%E7%9A%84%E6%8A%80%E5%B7%A7/</loc>
+    <lastmod>2021-09-13T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://aladdinding.cn/</loc>
+    <lastmod>2021-09-13T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://aladdinding.cn/2021/08/%E5%AD%A6%E4%B9%A0%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/</loc>
     <lastmod>2021-08-21T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://aladdinding.cn/categories/</loc>
@@ -24,9 +33,6 @@
     <lastmod>2021-07-25T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://aladdinding.cn/2021/07/Docker%E9%83%A8%E7%BD%B2%E5%B9%B6%E7%A0%B4%E8%A7%A3ConfluenceJIRA%E5%8F%8A%E6%8F%92%E4%BB%B6/</loc>
-    <lastmod>2021-07-25T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://aladdinding.cn/tags/</loc>
     <lastmod>2021-07-25T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://aladdinding.cn/2021/07/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E4%B9%8B%E6%97%B6%E9%97%B4%E7%A9%BA%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6/</loc>
@@ -109,9 +115,6 @@
   </url><url>
     <loc>https://aladdinding.cn/2019/10/SSH%E7%9B%B8%E5%85%B3%E7%9A%84%E5%BF%AB%E9%80%9F%E9%85%8D%E7%BD%AE/</loc>
     <lastmod>2019-10-09T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://aladdinding.cn/tags/%E6%80%BB%E7%BB%93/</loc>
-    <lastmod>2019-10-02T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://aladdinding.cn/2019/10/%E6%90%9E%E6%B8%85%E6%A5%9A%E5%AD%97%E7%AC%A6%E9%9B%86%E5%92%8C%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81/</loc>
     <lastmod>2019-10-02T00:00:00+00:00</lastmod>
