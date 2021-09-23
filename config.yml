@@ -31,7 +31,7 @@ params:
     title: Aladdin
     description: "Aladdin的个人博客，学习总结，分享心得。"
     keywords: [Blog, PaperMod, Python, Hugo]
-    ICP: 鄂ICP备2020021592号-1
+    ICP: 鄂ICP备2021016339号-1
     # author: ["Me", "You"] # multiple authors
     # images: ["<link or path of image for opengraph, twitter-cards>"]
     # DateFormat: ""
