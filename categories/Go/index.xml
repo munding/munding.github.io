@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Go on 阿拉丁的博客</title>
+    <link>https://aladdinding.cn/categories/Go/</link>
+    <description>Recent content in Go on 阿拉丁的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Fri, 29 Oct 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://aladdinding.cn/categories/Go/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Go语言跨平台编译</title>
+      <link>https://aladdinding.cn/2021/10/Go%E8%AF%AD%E8%A8%80%E8%B7%A8%E5%B9%B3%E5%8F%B0%E7%BC%96%E8%AF%91/</link>
+      <pubDate>Fri, 29 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://aladdinding.cn/2021/10/Go%E8%AF%AD%E8%A8%80%E8%B7%A8%E5%B9%B3%E5%8F%B0%E7%BC%96%E8%AF%91/</guid>
+      <description>默认我们go build的可执行文件都是当前操作系统可执行的文件，如果我想在macOS下编译一个linux下可执行文件，那需要怎么做呢</description>
+    </item>
+    
+  </channel>
+</rss>
