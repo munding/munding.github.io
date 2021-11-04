@@ -48,7 +48,7 @@ jobs:
           github_token: ${{ secrets.ACCESS_TOKEN }}
           publish_dir: ./public
 
-      # Deploy to Staging server
+      # Deploy to Server
       - name: Server
         uses: easingthemes/ssh-deploy@main
         env:
