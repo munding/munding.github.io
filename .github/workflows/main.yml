@@ -48,7 +48,7 @@ jobs:
           github_token: ${{ secrets.ACCESS_TOKEN }}
           publish_dir: ./public
 
-      - name: Deploy To Server
+      - name: Server
         uses: wlixcc/SFTP-Deploy-Action@v1.0
         with:
           username: 'root'
