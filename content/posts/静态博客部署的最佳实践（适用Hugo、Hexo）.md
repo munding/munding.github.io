@@ -25,21 +25,23 @@ draft: false
 
 
 
-之前博客一直部署在Github+Vercel，奈何美国服务器延迟太高
+之前博客一直部署在Github+Vercel，奈何美国服务器延迟太高，
 
-国内的阿里云、腾讯云的网站托管、云开发体验太差
+国内的阿里云、腾讯云的网站托管、云开发体验太差，
 
-刚好双十一购入三年的2核4G 8M带宽的轻量服务器（腾讯云YYDS）
+刚好双十一购入三年的2核4G 8M带宽的轻量服务器（腾讯云YYDS）！！！
 
-趁着周末研究研究如何部署到云服务器上
+趁着周末研究研究如何部署到云服务器上，
 
-总体体验不错，满足了我既要远程编译，Github托管代码、访问速度要快的需求
+总体体验不错，满足了我既要远程编译，Github托管代码、访问速度要快的需求，
 
-这套流程中你只需要写好文章（不需要Go环境），推送至Github即可
+这套流程中你只需要写好文章（不需要Go环境），推送至Github即可，
 
-没有跑完这整个流程之前还比较担心Github rsync到腾讯云服务器会不会要很久
+没有跑完这整个流程之前还比较担心Github rsync到腾讯云服务器会不会要很久，毕竟Github服务器在美国
 
-实际测试30s内就可以完成整套workflow，还是比较满意的（首次可能会慢点，后续的rsync应该都是增量更新）
+实际测试30s内就可以完成整套workflow，还是比较满意的
+
+PS：首次可能会慢点，后续的rsync应该都是增量更新
 
 ![VV5VrP](https://img.aladdinding.cn/VV5VrP.png)
 
@@ -63,7 +65,8 @@ ssh-keygen -m PEM -t rsa -b 4096
 cd .ssh/;cat id_rsa.pub >> authorized_keys
 ```
 
-.github/workflows/main.yml
+**.github/workflows/main.yml**
+
 ```yaml
 # This is a basic workflow to help you get started with Actions
 
@@ -126,7 +129,9 @@ jobs:
           TARGET: ${{ secrets.REMOTE_TARGET }}
 ```
 
-Nginx 配置文件
+
+
+**Nginx 配置文件**
 
 - 开启了HTTP/2.0
 - HTTP访问301跳转到HTTPS
