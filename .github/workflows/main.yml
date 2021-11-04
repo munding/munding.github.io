@@ -52,6 +52,7 @@ jobs:
       - name: Server
         uses: easingthemes/ssh-deploy@main
         env:
+          # 注意: cat id_rsa.pub >> authorized_keys
           SSH_PRIVATE_KEY: ${{ secrets.SERVER_SSH_KEY }}
           SOURCE: "public/"
           REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
