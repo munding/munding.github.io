@@ -49,7 +49,7 @@ jobs:
           publish_dir: ./public
 
       # Deploy to Staging server
-      - name: Staging Server
+      - name: Server
         uses: easingthemes/ssh-deploy@main
         env:
           SSH_PRIVATE_KEY: ${{ secrets.SERVER_SSH_KEY }}
