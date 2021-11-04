@@ -16,14 +16,14 @@ draft: false
 2. 本地编译 + rsync远程服务器
 3. 本地编译 + 推送对象存储（七牛云）
 
-#### 最佳实践：
+### 最佳实践：
 
 1. 本地更新完文章提交推送
 2. 触发Github Action
 3. Action的workflow中完成静态资源的编译、推送至云服务器
 4. 云服务器Nginx访问静态资源
 
-
+------
 
 之前博客一直部署在Github+Vercel，奈何美国服务器延迟太高，
 
@@ -51,7 +51,7 @@ PS：首次可能会慢点，后续的rsync应该都是增量更新
 
 ![image-20211104233528117](https://img.aladdinding.cn/image-20211104233528117.png)
 
-#### 部分配置文件:
+### 部分配置文件:
 
 使用`PEM`格式生成公钥私钥
 
@@ -65,7 +65,7 @@ ssh-keygen -m PEM -t rsa -b 4096
 cd .ssh/;cat id_rsa.pub >> authorized_keys
 ```
 
-**.github/workflows/main.yml**
+#### .github/workflows/main.yml
 
 ```yaml
 # This is a basic workflow to help you get started with Actions
@@ -131,7 +131,7 @@ jobs:
 
 
 
-**Nginx 配置文件**
+#### Nginx 配置文件
 
 - 开启了HTTP/2.0
 - HTTP访问301跳转到HTTPS
