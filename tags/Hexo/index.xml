@@ -12,7 +12,7 @@
       <pubDate>Thu, 04 Nov 2021 00:00:00 +0000</pubDate>
       
       <guid>https://aladdinding.cn/2021/11/%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2%E9%83%A8%E7%BD%B2%E7%9A%84%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5%E9%80%82%E7%94%A8HugoHexo/</guid>
-      <description>有关静态博客部署的文章、视频教程已经很多了。 大致总结可以分为三类： Github Pages + Github Action（网站托管，如：Vercel） 本地编译 + rsync远程服务器 本地编译 + 推送对象存储（七牛云） 之前博客一直部署在Github+Vercel，奈何美国服务器延迟太高 国内的阿里云、腾讯云的网站托管、云</description>
+      <description>有关静态博客部署的文章、视频教程已经很多了。 大致总结可以分为三类： Github Pages + Github Action（网站托管，如：Vercel） 本地编译 + rsync远程服务器 本地编译 + 推送对象存储（七牛云） 最佳实践： 本地更新完文章提交推送 触发Github Action Action的workflow中完成静态资源的编译、</description>
     </item>
     
   </channel>
