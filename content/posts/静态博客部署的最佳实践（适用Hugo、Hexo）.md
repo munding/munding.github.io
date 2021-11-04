@@ -16,6 +16,13 @@ draft: false
 2. 本地编译 + rsync远程服务器
 3. 本地编译 + 推送对象存储（七牛云）
 
+#### 最佳实践：
+
+1. 本地更新完文章提交推送
+2. 触发Github Action
+3. Action的workflow中完成静态资源的编译、推送至云服务器
+4. 云服务器Nginx访问静态资源
+
 
 
 之前博客一直部署在Github+Vercel，奈何美国服务器延迟太高
@@ -30,14 +37,17 @@ draft: false
 
 这套流程中你只需要写好文章（不需要Go环境），推送至Github即可
 
-#### 最佳实践：
+没有跑完这整个流程之前还比较担心Github rsync到腾讯云服务器会不会要很久
 
-1. 本地更新完文章提交推送
-2. 触发Github Action
-3. Action的workflow中完成静态资源的编译、推送至云服务器
-4. 云服务器Nginx访问静态资源
+实际测试30s内就可以完成整套workflow，还是比较满意的（首次可能会慢点，后续的rsync应该都是增量更新）
 
+![VV5VrP](https://img.aladdinding.cn/VV5VrP.png)
 
+![image-20211104233251348](https://img.aladdinding.cn/image-20211104233251348.png)
+
+顺带也开启了HTTP/2.0，还是挺香的
+
+![image-20211104233528117](https://img.aladdinding.cn/image-20211104233528117.png)
 
 #### 部分配置文件:
 
@@ -151,8 +161,6 @@ server {
         
 }
 ```
-
-
 
 
 
