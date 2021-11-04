@@ -3,22 +3,34 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://aladdinding.cn/categories/</loc>
-    <lastmod>2021-10-29T00:00:00+00:00</lastmod>
+    <lastmod>2021-11-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://aladdinding.cn/tags/Hexo/</loc>
+    <lastmod>2021-11-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://aladdinding.cn/tags/Hugo/</loc>
+    <lastmod>2021-11-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://aladdinding.cn/posts/</loc>
+    <lastmod>2021-11-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://aladdinding.cn/tags/</loc>
+    <lastmod>2021-11-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://aladdinding.cn/categories/%E9%83%A8%E7%BD%B2/</loc>
+    <lastmod>2021-11-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://aladdinding.cn/</loc>
+    <lastmod>2021-11-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://aladdinding.cn/2021/11/%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2%E9%83%A8%E7%BD%B2%E7%9A%84%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5%E9%80%82%E7%94%A8HugoHexo/</loc>
+    <lastmod>2021-11-04T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://aladdinding.cn/categories/Go/</loc>
     <lastmod>2021-10-29T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://aladdinding.cn/2021/10/Go%E8%AF%AD%E8%A8%80%E8%B7%A8%E5%B9%B3%E5%8F%B0%E7%BC%96%E8%AF%91/</loc>
     <lastmod>2021-10-29T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://aladdinding.cn/posts/</loc>
-    <lastmod>2021-10-29T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://aladdinding.cn/</loc>
-    <lastmod>2021-10-29T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://aladdinding.cn/tags/</loc>
-    <lastmod>2021-09-13T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://aladdinding.cn/tags/%E6%80%BB%E7%BB%93/</loc>
     <lastmod>2021-09-13T00:00:00+00:00</lastmod>
