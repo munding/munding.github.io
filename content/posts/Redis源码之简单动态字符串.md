@@ -4,7 +4,7 @@ date: 2021-11-05
 tags: ["源码阅读",""]
 categories: ["Redis",""]
 description: ""
-summary: ""
+summary: "Redis中字符串的实现并没有完全使用C字符串，而是重新定义了简单动态字符串SDS（Simple Dynamic String）用来表示字符串。"
 draft: false
 ---
 
