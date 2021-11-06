@@ -7,12 +7,12 @@
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Fri, 05 Nov 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://aladdinding.cn/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Redis源码之简单动态字符串</title>
+      <title>Redis 源码之简单动态字符串</title>
       <link>https://aladdinding.cn/2021/11/Redis%E6%BA%90%E7%A0%81%E4%B9%8B%E7%AE%80%E5%8D%95%E5%8A%A8%E6%80%81%E5%AD%97%E7%AC%A6%E4%B8%B2/</link>
       <pubDate>Fri, 05 Nov 2021 00:00:00 +0000</pubDate>
       
       <guid>https://aladdinding.cn/2021/11/Redis%E6%BA%90%E7%A0%81%E4%B9%8B%E7%AE%80%E5%8D%95%E5%8A%A8%E6%80%81%E5%AD%97%E7%AC%A6%E4%B8%B2/</guid>
-      <description>Redis中字符串的实现并没有完全使用C字符串，而是重新定义了简单动态字符串SDS（Simple Dynamic String）用来表示字符串。</description>
+      <description>Redis 中字符串的实现并没有完全使用 C 字符串，而是重新定义了简单动态字符串 SDS（Simple Dynamic String）用来表示字符串。</description>
     </item>
     
     <item>
