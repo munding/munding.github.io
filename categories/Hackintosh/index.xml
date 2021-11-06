@@ -7,12 +7,12 @@
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Sat, 11 Jul 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://aladdinding.cn/categories/Hackintosh/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>黑苹果一键开启HiDPI</title>
+      <title>黑苹果一键开启 HiDPI</title>
       <link>https://aladdinding.cn/2020/07/%E9%BB%91%E8%8B%B9%E6%9E%9C%E4%B8%80%E9%94%AE%E5%BC%80%E5%90%AFHiDPI/</link>
       <pubDate>Sat, 11 Jul 2020 00:00:00 +0000</pubDate>
       
       <guid>https://aladdinding.cn/2020/07/%E9%BB%91%E8%8B%B9%E6%9E%9C%E4%B8%80%E9%94%AE%E5%BC%80%E5%90%AFHiDPI/</guid>
-      <description>黑苹果和白苹果最大的区别其实在显示效果上。同样一个网页，白苹果的显示就会细腻很多，而黑苹果颗粒感非常严重，造成上述原因是因为大多数苹果设备的屏幕本身的分辨率很高，如果你的显示器分辨率达到视网膜级别的话，哪怕是黑苹果也是默认开启 HiDPI 的。So 本人的2k分辨率显示器就很尴尬了，下面记录一</description>
+      <description>黑苹果和白苹果最大的区别其实在显示效果上。同样一个网页，白苹果的显示就会细腻很多，而黑苹果颗粒感非常严重，造成上述原因是因为大多数苹果设备的屏幕本身的分辨率很高，如果你的显示器分辨率达到视网膜级别的话，哪怕是黑苹果也是默认开启 HiDPI 的。So 本人的 2k 分辨率显示器就很尴尬了，下面记录一下</description>
     </item>
     
   </channel>

@@ -7,21 +7,21 @@
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Thu, 04 Nov 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://aladdinding.cn/categories/%E9%83%A8%E7%BD%B2/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>静态博客部署的最佳实践（适用Hugo、Hexo）</title>
+      <title>静态博客部署的最佳实践（适用 Hugo、Hexo）</title>
       <link>https://aladdinding.cn/2021/11/%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2%E9%83%A8%E7%BD%B2%E7%9A%84%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5%E9%80%82%E7%94%A8HugoHexo/</link>
       <pubDate>Thu, 04 Nov 2021 00:00:00 +0000</pubDate>
       
       <guid>https://aladdinding.cn/2021/11/%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2%E9%83%A8%E7%BD%B2%E7%9A%84%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5%E9%80%82%E7%94%A8HugoHexo/</guid>
-      <description>有关静态博客部署的文章、视频教程已经很多了。 大致总结可以分为三类： Github Pages + Github Action（网站托管，如：Vercel） 本地编译 + rsync远程服务器 本地编译 + 推送对象存储（七牛云） 最佳实践： 本地更新完文章提交推送 触发Github Action Action的workflow中完成静态资源的编译、</description>
+      <description>有关静态博客部署的文章、视频教程已经很多了。 大致总结可以分为三类： Github Pages + Github Action（网站托管，如：Vercel） 本地编译 + rsync 远程服务器 本地编译 + 推送对象存储（七牛云） 最佳实践： 本地更新完文章提交推送 触发 Github Action Action 的 workflow 中完成静态资源的编译、推送至云服务器 云服务器 Nginx 访问静态资源 之前博</description>
     </item>
     
     <item>
-      <title>Docker部署并破解Confluence、JIRA及插件</title>
+      <title>Docker 部署并破解 Confluence、JIRA 及插件</title>
       <link>https://aladdinding.cn/2021/07/Docker%E9%83%A8%E7%BD%B2%E5%B9%B6%E7%A0%B4%E8%A7%A3ConfluenceJIRA%E5%8F%8A%E6%8F%92%E4%BB%B6/</link>
       <pubDate>Sun, 25 Jul 2021 00:00:00 +0000</pubDate>
       
       <guid>https://aladdinding.cn/2021/07/Docker%E9%83%A8%E7%BD%B2%E5%B9%B6%E7%A0%B4%E8%A7%A3ConfluenceJIRA%E5%8F%8A%E6%8F%92%E4%BB%B6/</guid>
-      <description>Confluence Confluence是一个专业的企业知识管理与协同软件，也可以用于构建企业wiki。使用简单，但它强大的编辑和站点管理特征能够帮助团队成员之间共享信息、文档协作、集体讨论，信息推送 数据库设置 不建议将数据库部署在Docker容器，推荐使用云数据库或者物理机数据库。 文档 Confluence Data Center and Server documentation</description>
+      <description>Confluence Confluence 是一个专业的企业知识管理与协同软件，也可以用于构建企业 wiki。使用简单，但它强大的编辑和站点管理特征能够帮助团队成员之间共享信息、文档协作、集体讨论，信息推送 数据库设置 不建议将数据库部署在 Docker 容器，推荐使用云数据库或者物理机数据库。 文档 Confluence Data Center and Server documentation Database Configuration 数据库设置 选择安装的 Confluence 版</description>
     </item>
     
   </channel>

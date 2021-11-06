@@ -7,12 +7,12 @@
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Fri, 09 Aug 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://aladdinding.cn/tags/vim/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Vim操作速查</title>
+      <title>Vim 操作速查</title>
       <link>https://aladdinding.cn/2019/08/Vim%E6%93%8D%E4%BD%9C%E9%80%9F%E6%9F%A5/</link>
       <pubDate>Fri, 09 Aug 2019 00:00:00 +0000</pubDate>
       
       <guid>https://aladdinding.cn/2019/08/Vim%E6%93%8D%E4%BD%9C%E9%80%9F%E6%9F%A5/</guid>
-      <description>进入Vim 命令 描述 vim filename 打开或新建文件，并将光标置于第一行首 vim +n filename 打开文件，并将光标置于第n行首 vim + flename 打开文件,并将光标置于最后一-行首 vim +/pattern filename 打开文件,并将光标置于第一一个 与pattern匹配的串处 vim -r filename 在上次正用vim编辑时发生系统崩溃，恢复 flename vim filename&amp;hellip; filename 打开多个文件,依次编辑 Vim配</description>
+      <description>进入 Vim 命令 描述 vim filename 打开或新建文件，并将光标置于第一行首 vim +n filename 打开文件，并将光标置于第 n 行首 vim + flename 打开文件, 并将光标置于最后一 - 行首 vim +/pattern filename 打开文件, 并将光标置于第一一个 与 pattern 匹配的串处 vim -r filename 在上次正用 vim 编辑时发生系统崩溃，恢复 flename vim filename&amp;hellip; filename 打开多个文件, 依次编辑 Vim 配置 命令 描述 all 列出所有选项</description>
     </item>
     
   </channel>

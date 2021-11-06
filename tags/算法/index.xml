@@ -12,7 +12,7 @@
       <pubDate>Sat, 24 Jul 2021 00:00:00 +0000</pubDate>
       
       <guid>https://aladdinding.cn/2021/07/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E4%B9%8B%E6%97%B6%E9%97%B4%E7%A9%BA%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6/</guid>
-      <description>时间复杂度 算法的执行时间与算法输入值之间的的关系，即算法的执行效率 大O表示法 用常数 1 取代运行时间中的所有加法常数。 在修改后的运行次数函数中，只保留最高阶项。 如果最高阶项存在且不是 1，则去除与这个项相乘的常数。得到的结果就是大 O 阶 常见时间复杂度 O(1) 常数阶 def O1(num): i = num j = num*2 return i + j O(logn) 对数</description>
+      <description>时间复杂度 算法的执行时间与算法输入值之间的的关系，即算法的执行效率 大 O 表示法 用常数 1 取代运行时间中的所有加法常数。 在修改后的运行次数函数中，只保留最高阶项。 如果最高阶项存在且不是 1，则去除与这个项相乘的常数。得到的结果就是大 O 阶 常见时间复杂度 O(1) 常数阶 def O1(num): i = num j = num*2 return i + j O(logn) 对数</description>
     </item>
     
   </channel>
