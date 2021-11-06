@@ -1,5 +1,5 @@
 ---
-title: "MacOS软件包的管理器Homebrew"
+title: "MacOS 软件包的管理器 Homebrew"
 date: 2020-01-05
 tags: ["",""]
 categories: ["macOS",""]
@@ -10,9 +10,9 @@ draft: false
 
 [introduce]: https://brew.sh/index_zh-cn
 
-# Homebrew简介
+# Homebrew 简介
 
-> [Homebrew][introduce]是一款MacOS平台下的软件包管理工具，拥有安装、卸载、更新、查看、搜索等很多实用的功能。简单的一条指令，就可以实现包管理，而不用你关心各种依赖和文件路径的情况，十分方便快捷。
+> [Homebrew][introduce] 是一款 MacOS 平台下的软件包管理工具，拥有安装、卸载、更新、查看、搜索等很多实用的功能。简单的一条指令，就可以实现包管理，而不用你关心各种依赖和文件路径的情况，十分方便快捷。
 
 # Homebrew 的几个核心概念
 
@@ -28,7 +28,7 @@ draft: false
 | cask        | 安装 macOS native 应用的扩展，你也可以理解为有图形化界面的应用。 |
 | bundle      | 描述 Homebrew 依赖的扩展                                     |
 
-# Homebrew安装
+# Homebrew 安装
 
 将以下命令粘贴至终端，回车运行
 
@@ -36,22 +36,22 @@ draft: false
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 ```
 
-如果出现`curl: (7) Failed to connect to raw.githubusercontent.com port 443:xxx`，应该是被墙了，挂上梯子即可
+如果出现 `curl: (7) Failed to connect to raw.githubusercontent.com port 443:xxx`，应该是被墙了，挂上梯子即可
 
 ```bash
 export https_proxy=http://127.0.0.1:7890 http_proxy=http://127.0.0.1:7890 all_proxy=socks5://127.0.0.1:7890
 ```
 
-# Homebrew更换国内源
+# Homebrew 更换国内源
 
 ## 替换默认源
 
 ``` bash
-# 步骤一：替换brew.git
+# 步骤一：替换 brew.git
 cd "$(brew --repo)"
 git remote set-url origin https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/brew.git
 
-# 步骤二：替换homebrew-core.git
+# 步骤二：替换 homebrew-core.git
 cd "$(brew --repo)/Library/Taps/homebrew/homebrew-core"
 git remote set-url origin https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/homebrew-core.git
 
@@ -59,9 +59,9 @@ git remote set-url origin https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/home
 brew update
 ```
 
-## 替换Homebrew Bottles源
+## 替换 Homebrew Bottles 源
 
->Homebrew是OS X系统的一款开源的包管理器。出于节省时间的考虑，Homebrew默认从Homebrew Bottles源中下载二进制代码包安装。Homebrew Bottles是Homebrew提供的二进制代码包，目前镜像站收录了以下仓库：
+>Homebrew 是 OS X 系统的一款开源的包管理器。出于节省时间的考虑，Homebrew 默认从 Homebrew Bottles 源中下载二进制代码包安装。Homebrew Bottles 是 Homebrew 提供的二进制代码包，目前镜像站收录了以下仓库：
 
 - homebrew/homebrew-core
 - homebrew/homebrew-dupes
@@ -74,7 +74,7 @@ brew update
 - homebrew/homebrew-x11
 
 ``````bash
-# 根据自己使用的shell
+# 根据自己使用的 shell
 echo 'export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles' >> ~/.bash_profile
 ``````
 
@@ -98,11 +98,11 @@ git remote set-url origin https://github.com/Homebrew/homebrew-core
 brew update
 ```
 
-# Homebrew常用命令
+# Homebrew 常用命令
 
 ## 安装卸载软件
 
-- `brew --version`或者`brew -v` 显示brew版本信息
+- `brew --version` 或者 `brew -v` 显示 brew 版本信息
 - `brew install` 安装指定软件
 - `brew unistall`  卸载指定软件
 - `brew list`  显示所有的已安装的软件
@@ -111,10 +111,10 @@ brew update
 
 ##  升级软件相关
 
-- `brew update` 自动升级homebrew（从github下载最新版本）
+- `brew update` 自动升级 homebrew（从 github 下载最新版本）
 - `brew outdated` 检测已经过时的软件
 - `brew upgrade`  升级所有已过时的软件，即列出的以过时软件
-- `brew upgrade`升级指定的软件
+- `brew upgrade` 升级指定的软件
 - `brew pin` 禁止指定软件升级
 - `brew unpin` 解锁禁止升级
 - `brew upgrade --all` 升级所有的软件包，包括未清理干净的旧版本的包
@@ -129,10 +129,10 @@ brew update
 
 ## 服务相关
 
-- `brew services start mysql` 启动Mysql
+- `brew services start mysql` 启动 Mysql
 
-- `brew services stop mysql` 停止Mysql
+- `brew services stop mysql` 停止 Mysql
 
-- `brew services restart mysql` 重启Mysql
+- `brew services restart mysql` 重启 Mysql
 
 - `brew services list` 查看启动列表

@@ -4,7 +4,7 @@ date: 2020-01-16
 tags: [""]
 categories: ["Python",""]
 description: ""
-summary: "The Zen of Python是Python语言的指导原则，遵循这些基本原则，你就可以像个Pythonista一样编程。"
+summary: "The Zen of Python 是 Python 语言的指导原则，遵循这些基本原则，你就可以像个 Pythonista 一样编程。"
 draft: false
 ---
 
@@ -34,11 +34,11 @@ draft: false
 
 # 解读
 
-The Zen of Python是Python语言的指导原则，遵循这些基本原则，你就可以像个Pythonista一样编程。具体内容你可以在Python命令行输`import this`看到：
+The Zen of Python 是 Python 语言的指导原则，遵循这些基本原则，你就可以像个 Pythonista 一样编程。具体内容你可以在 Python 命令行输 `import this` 看到：
 
 - Beautiful is better than ugly.
 
-  \# 优美胜于丑陋（Python以编写优美的代码为目标）
+  \# 优美胜于丑陋（Python 以编写优美的代码为目标）
 
 - Explicit is better than implicit.
 
@@ -72,7 +72,7 @@ The Zen of Python是Python语言的指导原则，遵循这些基本原则，你
 - Errors should never pass silently.
   Unless explicitly silenced.
 
-  \# 不要包容所有错误，除非你确定需要这样做（精准地捕获异常，不写except:pass风格的代码）
+  \# 不要包容所有错误，除非你确定需要这样做（精准地捕获异常，不写 except:pass 风格的代码）
 
 - In the face of ambiguity, refuse the temptation to guess.
 
@@ -84,7 +84,7 @@ The Zen of Python是Python语言的指导原则，遵循这些基本原则，你
 
 - Although that way may not be obvious at first unless you're Dutch.
 
-  \# 虽然这并不容易，因为你不是 Python 之父（这里的Dutch是指Guido）
+  \# 虽然这并不容易，因为你不是 Python 之父（这里的 Dutch 是指 Guido）
 
 - Now is better than never.
   Although never is often better than *right* now.
@@ -103,4 +103,4 @@ The Zen of Python是Python语言的指导原则，遵循这些基本原则，你
 
   \# 命名空间是一种绝妙的理念，我们应当多加利用（倡导与号召）
 
-这首特别的“诗”开始作为一个笑话，但它确实包含了很多关于Python背后的哲学真理。Python之禅已经正式成文PEP 20，具体内容见：[PEP 20](https://www.python.org/dev/peps/pep-0020/)
+这首特别的 “诗” 开始作为一个笑话，但它确实包含了很多关于 Python 背后的哲学真理。Python 之禅已经正式成文 PEP 20，具体内容见：[PEP 20](https://www.python.org/dev/peps/pep-0020/)
