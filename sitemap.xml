@@ -2,10 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://aladdinding.cn/categories/</loc>
-    <lastmod>2021-11-05T00:00:00+00:00</lastmod>
+    <loc>https://aladdinding.cn/2021/11/HTTPS%E5%8D%8F%E8%AE%AE%E7%9B%B8%E5%85%B3%E5%AD%A6%E4%B9%A0/</loc>
+    <lastmod>2021-11-23T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://aladdinding.cn/posts/</loc>
+    <lastmod>2021-11-23T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://aladdinding.cn/</loc>
+    <lastmod>2021-11-23T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://aladdinding.cn/categories/</loc>
     <lastmod>2021-11-05T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://aladdinding.cn/categories/Redis/</loc>
@@ -18,9 +24,6 @@
     <lastmod>2021-11-05T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://aladdinding.cn/tags/%E6%BA%90%E7%A0%81%E9%98%85%E8%AF%BB/</loc>
-    <lastmod>2021-11-05T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://aladdinding.cn/</loc>
     <lastmod>2021-11-05T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://aladdinding.cn/tags/Hexo/</loc>
