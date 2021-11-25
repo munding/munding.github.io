@@ -1,0 +1,323 @@
+<!doctype html><html lang=zh-cn><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge,chrome=1"><title>Redis 源码之简单动态字符串 - Aladdin's blog</title><meta name=renderer content="webkit"><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><meta http-equiv=cache-control content="no-transform"><meta http-equiv=cache-control content="no-siteapp"><meta name=theme-color content="#f8f5ec"><meta name=msapplication-navbutton-color content="#f8f5ec"><meta name=apple-mobile-web-app-capable content="yes"><meta name=apple-mobile-web-app-status-bar-style content="#f8f5ec"><meta name=author content="Aladdin"><meta name=description content="Redis 中字符串的实现并没有完全使用 C 字符串，而是重新定义了简单动态字符串 SDS（Simple Dynamic String）用来表示字符串。"><meta name=keywords content="Hugo,theme,even"><meta name=google-site-verification content="G-QY1H3LE9QK"><meta name=generator content="Hugo 0.85.0 with theme even"><link rel=canonical href=https://aladdinding.cn/post/redis%E6%BA%90%E7%A0%81%E4%B9%8B%E7%AE%80%E5%8D%95%E5%8A%A8%E6%80%81%E5%AD%97%E7%AC%A6%E4%B8%B2/><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=manifest href=/manifest.json><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><script async src=//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js></script><link href=/sass/main.min.f92fd13721ddf72129410fd8250e73152cc6f2438082b6c0208dc24ee7c13fc4.css rel=stylesheet><link href=/lib/fancybox/jquery.fancybox-3.1.20.min.css rel=stylesheet><meta property="og:title" content="Redis 源码之简单动态字符串"><meta property="og:description" content="Redis 中字符串的实现并没有完全使用 C 字符串，而是重新定义了简单动态字符串 SDS（Simple Dynamic String）用来表示字符串。"><meta property="og:type" content="article"><meta property="og:url" content="https://aladdinding.cn/post/redis%E6%BA%90%E7%A0%81%E4%B9%8B%E7%AE%80%E5%8D%95%E5%8A%A8%E6%80%81%E5%AD%97%E7%AC%A6%E4%B8%B2/"><meta property="article:section" content="post"><meta property="article:published_time" content="2021-11-05T00:00:00+00:00"><meta property="article:modified_time" content="2021-11-05T00:00:00+00:00"><meta itemprop=name content="Redis 源码之简单动态字符串"><meta itemprop=description content="Redis 中字符串的实现并没有完全使用 C 字符串，而是重新定义了简单动态字符串 SDS（Simple Dynamic String）用来表示字符串。"><meta itemprop=datePublished content="2021-11-05T00:00:00+00:00"><meta itemprop=dateModified content="2021-11-05T00:00:00+00:00"><meta itemprop=wordCount content="2318"><meta itemprop=keywords content="源码阅读,,"><meta name=twitter:card content="summary"><meta name=twitter:title content="Redis 源码之简单动态字符串"><meta name=twitter:description content="Redis 中字符串的实现并没有完全使用 C 字符串，而是重新定义了简单动态字符串 SDS（Simple Dynamic String）用来表示字符串。"><!--[if lte IE 9]><script src=https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js></script><![endif]--><!--[if lt IE 9]><script src=https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js></script><script src=https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js></script><![endif]--></head><body><div id=mobile-navbar class=mobile-navbar><div class=mobile-header-logo><a href=/ class=logo>Aladdin</a></div><div class=mobile-navbar-icon><span></span><span></span><span></span></div></div><nav id=mobile-menu class="mobile-menu slideout-menu"><ul class=mobile-menu-list><a href=/><li class=mobile-menu-item>Home</li></a><a href=/post/><li class=mobile-menu-item>Archives</li></a><a href=/tags/><li class=mobile-menu-item>Tags</li></a><a href=/categories/><li class=mobile-menu-item>Categories</li></a><a href=/about/><li class=mobile-menu-item>About</li></a></ul></nav><div class=container id=mobile-panel><header id=header class=header><div class=logo-wrapper><a href=/ class=logo>Aladdin</a></div><nav class=site-navbar><ul id=menu class=menu><li class=menu-item><a class=menu-item-link href=/>Home</a></li><li class=menu-item><a class=menu-item-link href=/post/>Archives</a></li><li class=menu-item><a class=menu-item-link href=/tags/>Tags</a></li><li class=menu-item><a class=menu-item-link href=/categories/>Categories</a></li><li class=menu-item><a class=menu-item-link href=/about/>About</a></li></ul></nav></header><main id=main class=main><div class=content-wrapper><div id=content class=content><article class=post><header class=post-header><h1 class=post-title>Redis 源码之简单动态字符串</h1><div class=post-meta><span class=post-time>2021-11-05</span><div class=post-category><a href=/categories/redis/>Redis</a>
+<a href=/categories//></a></div><span class=more-meta>约 2318 字</span>
+<span class=more-meta>预计阅读 5 分钟</span>
+<span id=busuanzi_container_page_pv class=more-meta><span id=busuanzi_value_page_pv><img src=/img/spinner.svg alt=spinner.svg></span> 次阅读</span></div></header><div class=post-toc id=post-toc><h2 class=post-toc-title>文章目录</h2><div class="post-toc-content always-active"><nav id=TableOfContents><ul><li><ul><li><ul><li><a href=#兼容部分-c-字符串函数>兼容部分 C 字符串函数</a></li><li><a href=#常数复杂度获取字符串长度>常数复杂度获取字符串长度</a></li><li><a href=#杜绝缓冲区溢出>杜绝缓冲区溢出</a></li><li><a href=#减少修改字符串长度时所需内存重分配次数>减少修改字符串长度时所需内存重分配次数</a></li><li><a href=#二进制安全>二进制安全</a></li><li><a href=#sds-api>SDS API</a></li></ul></li></ul></li></ul></nav></div></div><div class=post-content><p>Redis 中字符串的实现并没有完全使用 C 字符串，而是重新定义了简单动态字符串 SDS（Simple Dynamic String）用来表示字符串。</p><p>sds.h/sdshdr</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-c data-lang=c><span class=k>struct</span> <span class=n>sdshdr</span> <span class=p>{</span>
+    <span class=kt>unsigned</span> <span class=kt>int</span> <span class=n>len</span><span class=p>;</span> <span class=c1>// 记录 buf 数组中已使字节的数量
+</span><span class=c1></span>    <span class=kt>unsigned</span> <span class=kt>int</span> <span class=n>free</span><span class=p>;</span> <span class=c1>// 记录 buf 数组中未使用字节的数量
+</span><span class=c1></span>    <span class=kt>char</span> <span class=n>buf</span><span class=p>[];</span> <span class=c1>// 字节数组，用于保存字符串
+</span><span class=c1></span><span class=p>};</span>
+</code></pre></td></tr></table></div></div><p>buf 数组长度不一定就是字符串长度 + 1（"\0"），还有 free 空间，数组内未使用的字节通过 free 属性记录。</p><p>相比于 C 字符串，SDS 有以下优势：</p><h3 id=兼容部分-c-字符串函数>兼容部分 C 字符串函数</h3><p>sds.c/sdsnew</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-c data-lang=c> <span class=o>*</span> <span class=n>mystring</span> <span class=o>=</span> <span class=n>sdsnewlen</span><span class=p>(</span><span class=s>&#34;abc&#34;</span><span class=p>,</span><span class=mi>3</span><span class=p>);</span>
+ <span class=o>*</span>
+ <span class=o>*</span> <span class=n>You</span> <span class=n>can</span> <span class=n>print</span> <span class=n>the</span> <span class=n>string</span> <span class=n>with</span> <span class=nf>printf</span><span class=p>()</span> <span class=n>as</span> <span class=n>there</span> <span class=n>is</span> <span class=n>an</span> <span class=n>implicit</span> <span class=err>\</span><span class=mi>0</span> <span class=n>at</span> <span class=n>the</span>
+ <span class=o>*</span> <span class=n>end</span> <span class=n>of</span> <span class=n>the</span> <span class=n>string</span><span class=p>.</span> <span class=n>However</span> <span class=n>the</span> <span class=n>string</span> <span class=n>is</span> <span class=n>binary</span> <span class=n>safe</span> <span class=n>and</span> <span class=n>can</span> <span class=n>contain</span>
+ <span class=o>*</span> <span class=err>\</span><span class=mi>0</span> <span class=n>characters</span> <span class=n>in</span> <span class=n>the</span> <span class=n>middle</span><span class=p>,</span> <span class=n>as</span> <span class=n>the</span> <span class=n>length</span> <span class=n>is</span> <span class=n>stored</span> <span class=n>in</span> <span class=n>the</span> <span class=n>sds</span> <span class=n>header</span><span class=p>.</span> <span class=err>*/</span>
+<span class=n>sds</span> <span class=n>sdsnewlen</span><span class=p>(</span><span class=k>const</span> <span class=kt>void</span> <span class=o>*</span><span class=n>init</span><span class=p>,</span> <span class=n>size_t</span> <span class=n>initlen</span><span class=p>)</span> <span class=p>{</span>
+    <span class=k>struct</span> <span class=n>sdshdr</span> <span class=o>*</span><span class=n>sh</span><span class=p>;</span>
+
+    <span class=k>if</span> <span class=p>(</span><span class=n>init</span><span class=p>)</span> <span class=p>{</span>
+        <span class=n>sh</span> <span class=o>=</span> <span class=n>zmalloc</span><span class=p>(</span><span class=k>sizeof</span><span class=p>(</span><span class=k>struct</span> <span class=n>sdshdr</span><span class=p>)</span><span class=o>+</span><span class=n>initlen</span><span class=o>+</span><span class=mi>1</span><span class=p>);</span>
+    <span class=p>}</span> <span class=k>else</span> <span class=p>{</span>
+        <span class=n>sh</span> <span class=o>=</span> <span class=n>zcalloc</span><span class=p>(</span><span class=k>sizeof</span><span class=p>(</span><span class=k>struct</span> <span class=n>sdshdr</span><span class=p>)</span><span class=o>+</span><span class=n>initlen</span><span class=o>+</span><span class=mi>1</span><span class=p>);</span>
+    <span class=p>}</span>
+    <span class=k>if</span> <span class=p>(</span><span class=n>sh</span> <span class=o>==</span> <span class=nb>NULL</span><span class=p>)</span> <span class=k>return</span> <span class=nb>NULL</span><span class=p>;</span>
+    <span class=n>sh</span><span class=o>-&gt;</span><span class=n>len</span> <span class=o>=</span> <span class=n>initlen</span><span class=p>;</span>
+    <span class=n>sh</span><span class=o>-&gt;</span><span class=n>free</span> <span class=o>=</span> <span class=mi>0</span><span class=p>;</span>
+    <span class=k>if</span> <span class=p>(</span><span class=n>initlen</span> <span class=o>&amp;&amp;</span> <span class=n>init</span><span class=p>)</span>
+        <span class=n>memcpy</span><span class=p>(</span><span class=n>sh</span><span class=o>-&gt;</span><span class=n>buf</span><span class=p>,</span> <span class=n>init</span><span class=p>,</span> <span class=n>initlen</span><span class=p>);</span>
+    <span class=n>sh</span><span class=o>-&gt;</span><span class=n>buf</span><span class=p>[</span><span class=n>initlen</span><span class=p>]</span> <span class=o>=</span> <span class=sc>&#39;\0&#39;</span><span class=p>;</span>
+    <span class=k>return</span> <span class=p>(</span><span class=kt>char</span><span class=o>*</span><span class=p>)</span><span class=n>sh</span><span class=o>-&gt;</span><span class=n>buf</span><span class=p>;</span>
+<span class=p>}</span>
+
+<span class=cm>/* Create a new sds string starting from a null termined C string. */</span>
+<span class=n>sds</span> <span class=nf>sdsnew</span><span class=p>(</span><span class=k>const</span> <span class=kt>char</span> <span class=o>*</span><span class=n>init</span><span class=p>)</span> <span class=p>{</span>
+    <span class=n>size_t</span> <span class=n>initlen</span> <span class=o>=</span> <span class=p>(</span><span class=n>init</span> <span class=o>==</span> <span class=nb>NULL</span><span class=p>)</span> <span class=o>?</span> <span class=mi>0</span> <span class=o>:</span> <span class=n>strlen</span><span class=p>(</span><span class=n>init</span><span class=p>);</span>
+    <span class=k>return</span> <span class=n>sdsnewlen</span><span class=p>(</span><span class=n>init</span><span class=p>,</span> <span class=n>initlen</span><span class=p>);</span>
+</code></pre></td></tr></table></div></div><p>从 SDS 的创建逻辑中可以看出</p><ol><li>SDS 遵循 C 字符串以空字符（"\0"）结尾。</li><li>SDS 中的 len 属性（sds.h/sdslen）同 C 字符串函数 strlen 返回结果相同，即不计算尾部空字符。</li></ol><p>这样 SDS 就可以直接重用一部分 C 字符串函数库里面的函数（如打印，显示类函数，&lt;stdio.h>/printf），而字符串的修改操作，则使用 SDS 自定义优化后的函数。</p><h3 id=常数复杂度获取字符串长度>常数复杂度获取字符串长度</h3><p>C 获取一个 C 字符串的长度，程序必须遍历整个字符串，直到遇到代表字符串结尾的空字符串位置，这个操作的复杂度为 O(N)。</p><p>但是对于 SDS 来说，获取字符串长度只需要访问 SDS 中的 len 属性。复杂度仅为 O(1)，确保了获取字符串长度这样的高频操作不会成为 Redis 性能瓶颈。</p><p>对于 SDS 的修改操作，SDS 会实时维护 len 属性，如 sds.c/sdscat（追加 C 字符串到 SDS 字符串）</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-c data-lang=c><span class=cm>/* Append the specified binary-safe string pointed by &#39;t&#39; of &#39;len&#39; bytes to the
+</span><span class=cm> * end of the specified sds string &#39;s&#39;.
+</span><span class=cm> *
+</span><span class=cm> * After the call, the passed sds string is no longer valid and all the
+</span><span class=cm> * references must be substituted with the new pointer returned by the call. */</span>
+<span class=n>sds</span> <span class=nf>sdscatlen</span><span class=p>(</span><span class=n>sds</span> <span class=n>s</span><span class=p>,</span> <span class=k>const</span> <span class=kt>void</span> <span class=o>*</span><span class=n>t</span><span class=p>,</span> <span class=n>size_t</span> <span class=n>len</span><span class=p>)</span> <span class=p>{</span>
+    <span class=k>struct</span> <span class=n>sdshdr</span> <span class=o>*</span><span class=n>sh</span><span class=p>;</span>
+    <span class=n>size_t</span> <span class=n>curlen</span> <span class=o>=</span> <span class=n>sdslen</span><span class=p>(</span><span class=n>s</span><span class=p>);</span>
+
+    <span class=n>s</span> <span class=o>=</span> <span class=n>sdsMakeRoomFor</span><span class=p>(</span><span class=n>s</span><span class=p>,</span><span class=n>len</span><span class=p>);</span>
+    <span class=k>if</span> <span class=p>(</span><span class=n>s</span> <span class=o>==</span> <span class=nb>NULL</span><span class=p>)</span> <span class=k>return</span> <span class=nb>NULL</span><span class=p>;</span>
+    <span class=n>sh</span> <span class=o>=</span> <span class=p>(</span><span class=kt>void</span><span class=o>*</span><span class=p>)</span> <span class=p>(</span><span class=n>s</span><span class=o>-</span><span class=p>(</span><span class=k>sizeof</span><span class=p>(</span><span class=k>struct</span> <span class=n>sdshdr</span><span class=p>)));</span>
+    <span class=n>memcpy</span><span class=p>(</span><span class=n>s</span><span class=o>+</span><span class=n>curlen</span><span class=p>,</span> <span class=n>t</span><span class=p>,</span> <span class=n>len</span><span class=p>);</span>
+    <span class=n>sh</span><span class=o>-&gt;</span><span class=n>len</span> <span class=o>=</span> <span class=n>curlen</span><span class=o>+</span><span class=n>len</span><span class=p>;</span>
+    <span class=n>sh</span><span class=o>-&gt;</span><span class=n>free</span> <span class=o>=</span> <span class=n>sh</span><span class=o>-&gt;</span><span class=n>free</span><span class=o>-</span><span class=n>len</span><span class=p>;</span>
+    <span class=n>s</span><span class=p>[</span><span class=n>curlen</span><span class=o>+</span><span class=n>len</span><span class=p>]</span> <span class=o>=</span> <span class=sc>&#39;\0&#39;</span><span class=p>;</span>
+    <span class=k>return</span> <span class=n>s</span><span class=p>;</span>
+<span class=p>}</span>
+
+<span class=cm>/* Append the specified sds &#39;t&#39; to the existing sds &#39;s&#39;.
+</span><span class=cm> *
+</span><span class=cm> * After the call, the modified sds string is no longer valid and all the
+</span><span class=cm> * references must be substituted with the new pointer returned by the call. */</span>
+<span class=n>sds</span> <span class=nf>sdscatsds</span><span class=p>(</span><span class=n>sds</span> <span class=n>s</span><span class=p>,</span> <span class=k>const</span> <span class=n>sds</span> <span class=n>t</span><span class=p>)</span> <span class=p>{</span>
+    <span class=k>return</span> <span class=n>sdscatlen</span><span class=p>(</span><span class=n>s</span><span class=p>,</span> <span class=n>t</span><span class=p>,</span> <span class=n>sdslen</span><span class=p>(</span><span class=n>t</span><span class=p>));</span>
+<span class=p>}</span>
+</code></pre></td></tr></table></div></div><h3 id=杜绝缓冲区溢出>杜绝缓冲区溢出</h3><p>C 字符串由于不记录自身长度，对其进行修改操作容易造成缓冲区溢出（buffer overflow）。如 C 字符串拼接函数 &lt;stdio.h>/strcat，内存中相邻的字符串 s1 和 s2，对 s1 字符串做拼接操作时，如果没有提前为 s1 分配足够的空间，则 s2 保存的内容会被意外修改。</p><p>SDS 内部维护了一个 free 字段，当 SDS API 需要对其进行修改时，API 会调用 <code>sdsMakeRoomForDS</code> 函数检测当前 SDS 的 free 空间是否满足要求，满足直接进行修改；不满足 <code>sdsMakeRoomForDS</code> 则会将 SDS 的空间扩展至执行修改所需的大小，避免缓冲区溢出的情况（如上方 sds.c/sdscat）。</p><h3 id=减少修改字符串长度时所需内存重分配次数>减少修改字符串长度时所需内存重分配次数</h3><p>Redis 作为数据库，经常被用于速度要求严苛，数据被频繁修改的场景。SDS 实现了 ** 空间预分配 ** 和 ** 惰性空间释放 ** 两种优化策略。</p><p>sds.c/sdsMakeRoomFor</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-c data-lang=c><span class=cm>/* Enlarge the free space at the end of the sds string so that the caller
+</span><span class=cm> * is sure that after calling this function can overwrite up to addlen
+</span><span class=cm> * bytes after the end of the string, plus one more byte for nul term.
+</span><span class=cm> *
+</span><span class=cm> * Note: this does not change the *length* of the sds string as returned
+</span><span class=cm> * by sdslen(), but only the free buffer space we have. */</span>
+<span class=n>sds</span> <span class=nf>sdsMakeRoomFor</span><span class=p>(</span><span class=n>sds</span> <span class=n>s</span><span class=p>,</span> <span class=n>size_t</span> <span class=n>addlen</span><span class=p>)</span> <span class=p>{</span>
+    <span class=k>struct</span> <span class=n>sdshdr</span> <span class=o>*</span><span class=n>sh</span><span class=p>,</span> <span class=o>*</span><span class=n>newsh</span><span class=p>;</span>
+    <span class=n>size_t</span> <span class=n>free</span> <span class=o>=</span> <span class=n>sdsavail</span><span class=p>(</span><span class=n>s</span><span class=p>);</span>
+    <span class=n>size_t</span> <span class=n>len</span><span class=p>,</span> <span class=n>newlen</span><span class=p>;</span>
+
+    <span class=k>if</span> <span class=p>(</span><span class=n>free</span><span class=o>&gt;=</span> <span class=n>addlen</span><span class=p>)</span> <span class=k>return</span> <span class=n>s</span><span class=p>;</span>
+    <span class=n>len</span> <span class=o>=</span> <span class=n>sdslen</span><span class=p>(</span><span class=n>s</span><span class=p>);</span>
+    <span class=n>sh</span> <span class=o>=</span> <span class=p>(</span><span class=kt>void</span><span class=o>*</span><span class=p>)</span> <span class=p>(</span><span class=n>s</span><span class=o>-</span><span class=p>(</span><span class=k>sizeof</span><span class=p>(</span><span class=k>struct</span> <span class=n>sdshdr</span><span class=p>)));</span>
+    <span class=n>newlen</span> <span class=o>=</span> <span class=p>(</span><span class=n>len</span><span class=o>+</span><span class=n>addlen</span><span class=p>);</span>
+    <span class=k>if</span> <span class=p>(</span><span class=n>newlen</span> <span class=o>&lt;</span> <span class=n>SDS_MAX_PREALLOC</span><span class=p>)</span>
+        <span class=n>newlen</span> <span class=o>*=</span> <span class=mi>2</span><span class=p>;</span>
+    <span class=k>else</span>
+        <span class=n>newlen</span> <span class=o>+=</span> <span class=n>SDS_MAX_PREALLOC</span><span class=p>;</span>
+    <span class=n>newsh</span> <span class=o>=</span> <span class=n>zrealloc</span><span class=p>(</span><span class=n>sh</span><span class=p>,</span> <span class=k>sizeof</span><span class=p>(</span><span class=k>struct</span> <span class=n>sdshdr</span><span class=p>)</span><span class=o>+</span><span class=n>newlen</span><span class=o>+</span><span class=mi>1</span><span class=p>);</span>
+    <span class=k>if</span> <span class=p>(</span><span class=n>newsh</span> <span class=o>==</span> <span class=nb>NULL</span><span class=p>)</span> <span class=k>return</span> <span class=nb>NULL</span><span class=p>;</span>
+
+    <span class=n>newsh</span><span class=o>-&gt;</span><span class=n>free</span> <span class=o>=</span> <span class=n>newlen</span> <span class=o>-</span> <span class=n>len</span><span class=p>;</span>
+    <span class=k>return</span> <span class=n>newsh</span><span class=o>-&gt;</span><span class=n>buf</span><span class=p>;</span>
+<span class=p>}</span>
+</code></pre></td></tr></table></div></div><h4 id=空间预分配>空间预分配</h4><p>可以发现，在 SDS API 进行字符串新增逻辑中会给 SDS 重新分配 free 空间。</p><ol><li>如果 SDS 的长度（len 属性）小于 <code>SDS_MAX_PREALLOC（1024KB=1M）</code>，则会分配和 len 属性同样大小的未使用空间给 buf，这时 SDS 的 len 属性和 free 属性值相同。</li><li>如果 SDS 长度大于或者等于 <code>SDS_MAX_PREALLOC（1024KB=1M）</code>，则会直接给 free 属性分配 <code>SDS_MAX_PREALLOC（1024KB=1M）</code> 的大小。</li></ol><p>通过空间预分配策略，Redis 可以减少连续执行字符串增长操作所需的内存重分配次数.</p><h4 id=惰性空间释放>惰性空间释放</h4><p>sds.c/sdstrim</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-c data-lang=c><span class=cm>/* Remove the part of the string from left and from right composed just of
+</span><span class=cm> * contiguous characters found in &#39;cset&#39;, that is a null terminted C string.
+</span><span class=cm> *
+</span><span class=cm> * After the call, the modified sds string is no longer valid and all the
+</span><span class=cm> * references must be substituted with the new pointer returned by the call.
+</span><span class=cm> *
+</span><span class=cm> * Example:
+</span><span class=cm> *
+</span><span class=cm> * s = sdsnew(&#34;AA...AA.a.aa.aHelloWorld     :::&#34;);
+</span><span class=cm> * s = sdstrim(s,&#34;A. :&#34;);
+</span><span class=cm> * printf(&#34;%s\n&#34;, s);
+</span><span class=cm> *
+</span><span class=cm> * Output will be just &#34;Hello World&#34;.
+</span><span class=cm> */</span>
+<span class=n>sds</span> <span class=nf>sdstrim</span><span class=p>(</span><span class=n>sds</span> <span class=n>s</span><span class=p>,</span> <span class=k>const</span> <span class=kt>char</span> <span class=o>*</span><span class=n>cset</span><span class=p>)</span> <span class=p>{</span>
+    <span class=k>struct</span> <span class=n>sdshdr</span> <span class=o>*</span><span class=n>sh</span> <span class=o>=</span> <span class=p>(</span><span class=kt>void</span><span class=o>*</span><span class=p>)</span> <span class=p>(</span><span class=n>s</span><span class=o>-</span><span class=p>(</span><span class=k>sizeof</span><span class=p>(</span><span class=k>struct</span> <span class=n>sdshdr</span><span class=p>)));</span>
+    <span class=kt>char</span> <span class=o>*</span><span class=n>start</span><span class=p>,</span> <span class=o>*</span><span class=n>end</span><span class=p>,</span> <span class=o>*</span><span class=n>sp</span><span class=p>,</span> <span class=o>*</span><span class=n>ep</span><span class=p>;</span>
+    <span class=n>size_t</span> <span class=n>len</span><span class=p>;</span>
+
+    <span class=n>sp</span> <span class=o>=</span> <span class=n>start</span> <span class=o>=</span> <span class=n>s</span><span class=p>;</span>
+    <span class=n>ep</span> <span class=o>=</span> <span class=n>end</span> <span class=o>=</span> <span class=n>s</span><span class=o>+</span><span class=n>sdslen</span><span class=p>(</span><span class=n>s</span><span class=p>)</span><span class=o>-</span><span class=mi>1</span><span class=p>;</span>
+    <span class=k>while</span><span class=p>(</span><span class=n>sp</span> <span class=o>&lt;=</span> <span class=n>end</span> <span class=o>&amp;&amp;</span> <span class=n>strchr</span><span class=p>(</span><span class=n>cset</span><span class=p>,</span> <span class=o>*</span><span class=n>sp</span><span class=p>))</span> <span class=n>sp</span><span class=o>++</span><span class=p>;</span>
+    <span class=k>while</span><span class=p>(</span><span class=n>ep</span><span class=o>&gt;</span> <span class=n>start</span> <span class=o>&amp;&amp;</span> <span class=n>strchr</span><span class=p>(</span><span class=n>cset</span><span class=p>,</span> <span class=o>*</span><span class=n>ep</span><span class=p>))</span> <span class=n>ep</span><span class=o>--</span><span class=p>;</span>
+    <span class=n>len</span> <span class=o>=</span> <span class=p>(</span><span class=n>sp</span><span class=o>&gt;</span> <span class=n>ep</span><span class=p>)</span> <span class=o>?</span> <span class=mi>0</span> <span class=o>:</span> <span class=p>((</span><span class=n>ep</span><span class=o>-</span><span class=n>sp</span><span class=p>)</span><span class=o>+</span><span class=mi>1</span><span class=p>);</span>
+    <span class=k>if</span> <span class=p>(</span><span class=n>sh</span><span class=o>-&gt;</span><span class=n>buf</span> <span class=o>!=</span> <span class=n>sp</span><span class=p>)</span> <span class=n>memmove</span><span class=p>(</span><span class=n>sh</span><span class=o>-&gt;</span><span class=n>buf</span><span class=p>,</span> <span class=n>sp</span><span class=p>,</span> <span class=n>len</span><span class=p>);</span>
+    <span class=n>sh</span><span class=o>-&gt;</span><span class=n>buf</span><span class=p>[</span><span class=n>len</span><span class=p>]</span> <span class=o>=</span> <span class=sc>&#39;\0&#39;</span><span class=p>;</span>
+    <span class=n>sh</span><span class=o>-&gt;</span><span class=n>free</span> <span class=o>=</span> <span class=n>sh</span><span class=o>-&gt;</span><span class=n>free</span><span class=o>+</span><span class=p>(</span><span class=n>sh</span><span class=o>-&gt;</span><span class=n>len</span><span class=o>-</span><span class=n>len</span><span class=p>);</span>
+    <span class=n>sh</span><span class=o>-&gt;</span><span class=n>len</span> <span class=o>=</span> <span class=n>len</span><span class=p>;</span>
+    <span class=k>return</span> <span class=n>s</span><span class=p>;</span>
+<span class=p>}</span>
+</code></pre></td></tr></table></div></div><p>可以发现，在进行字符串剪切操作时，多出的 buf 空间并不会直接释放，而是存储在 free 字段中。</p><p>同时为了避免内存泄露，SDS 也提供了 sds.c/sdsRemoveFreeSpace 释放 free 空间操作，在 redis.c/clientsCronResizeQueryBuffer 中可以看到，当 querybuf 大于 1024 字节，会进行释放操作。</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span><span class=lnt>33
+</span><span class=lnt>34
+</span><span class=lnt>35
+</span><span class=lnt>36
+</span><span class=lnt>37
+</span><span class=lnt>38
+</span><span class=lnt>39
+</span><span class=lnt>40
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-c data-lang=c><span class=cm>/* Reallocate the sds string so that it has no free space at the end. The
+</span><span class=cm> * contained string remains not altered, but next concatenation operations
+</span><span class=cm> * will require a reallocation.
+</span><span class=cm> *
+</span><span class=cm> * After the call, the passed sds string is no longer valid and all the
+</span><span class=cm> * references must be substituted with the new pointer returned by the call. */</span>
+<span class=n>sds</span> <span class=nf>sdsRemoveFreeSpace</span><span class=p>(</span><span class=n>sds</span> <span class=n>s</span><span class=p>)</span> <span class=p>{</span>
+    <span class=k>struct</span> <span class=n>sdshdr</span> <span class=o>*</span><span class=n>sh</span><span class=p>;</span>
+
+    <span class=n>sh</span> <span class=o>=</span> <span class=p>(</span><span class=kt>void</span><span class=o>*</span><span class=p>)</span> <span class=p>(</span><span class=n>s</span><span class=o>-</span><span class=p>(</span><span class=k>sizeof</span><span class=p>(</span><span class=k>struct</span> <span class=n>sdshdr</span><span class=p>)));</span>
+    <span class=n>sh</span> <span class=o>=</span> <span class=n>zrealloc</span><span class=p>(</span><span class=n>sh</span><span class=p>,</span> <span class=k>sizeof</span><span class=p>(</span><span class=k>struct</span> <span class=n>sdshdr</span><span class=p>)</span><span class=o>+</span><span class=n>sh</span><span class=o>-&gt;</span><span class=n>len</span><span class=o>+</span><span class=mi>1</span><span class=p>);</span>
+    <span class=n>sh</span><span class=o>-&gt;</span><span class=n>free</span> <span class=o>=</span> <span class=mi>0</span><span class=p>;</span>
+    <span class=k>return</span> <span class=n>sh</span><span class=o>-&gt;</span><span class=n>buf</span><span class=p>;</span>
+<span class=p>}</span>
+
+<span class=cm>/* The client query buffer is an sds.c string that can end with a lot of
+</span><span class=cm> * free space not used, this function reclaims space if needed.
+</span><span class=cm> *
+</span><span class=cm> * The function always returns 0 as it never terminates the client. */</span>
+<span class=kt>int</span> <span class=nf>clientsCronResizeQueryBuffer</span><span class=p>(</span><span class=n>redisClient</span> <span class=o>*</span><span class=n>c</span><span class=p>)</span> <span class=p>{</span>
+    <span class=n>size_t</span> <span class=n>querybuf_size</span> <span class=o>=</span> <span class=n>sdsAllocSize</span><span class=p>(</span><span class=n>c</span><span class=o>-&gt;</span><span class=n>querybuf</span><span class=p>);</span>
+    <span class=n>time_t</span> <span class=n>idletime</span> <span class=o>=</span> <span class=n>server</span><span class=p>.</span><span class=n>unixtime</span> <span class=o>-</span> <span class=n>c</span><span class=o>-&gt;</span><span class=n>lastinteraction</span><span class=p>;</span>
+
+    <span class=cm>/* There are two conditions to resize the query buffer:
+</span><span class=cm>     * 1) Query buffer is &gt; BIG_ARG and too big for latest peak.
+</span><span class=cm>     * 2) Client is inactive and the buffer is bigger than 1k. */</span>
+    <span class=k>if</span> <span class=p>(((</span><span class=n>querybuf_size</span><span class=o>&gt;</span> <span class=n>REDIS_MBULK_BIG_ARG</span><span class=p>)</span> <span class=o>&amp;&amp;</span>
+         <span class=p>(</span><span class=n>querybuf_size</span><span class=o>/</span><span class=p>(</span><span class=n>c</span><span class=o>-&gt;</span><span class=n>querybuf_peak</span><span class=o>+</span><span class=mi>1</span><span class=p>))</span> <span class=o>&gt;</span> <span class=mi>2</span><span class=p>)</span> <span class=o>||</span>
+         <span class=p>(</span><span class=n>querybuf_size</span><span class=o>&gt;</span> <span class=mi>1024</span> <span class=o>&amp;&amp;</span> <span class=n>idletime</span> <span class=o>&gt;</span> <span class=mi>2</span><span class=p>))</span>
+    <span class=p>{</span>
+        <span class=cm>/* Only resize the query buffer if it is actually wasting space. */</span>
+        <span class=k>if</span> <span class=p>(</span><span class=n>sdsavail</span><span class=p>(</span><span class=n>c</span><span class=o>-&gt;</span><span class=n>querybuf</span><span class=p>)</span> <span class=o>&gt;</span> <span class=mi>1024</span><span class=p>)</span> <span class=p>{</span>
+            <span class=n>c</span><span class=o>-&gt;</span><span class=n>querybuf</span> <span class=o>=</span> <span class=n>sdsRemoveFreeSpace</span><span class=p>(</span><span class=n>c</span><span class=o>-&gt;</span><span class=n>querybuf</span><span class=p>);</span>
+        <span class=p>}</span>
+    <span class=p>}</span>
+    <span class=cm>/* Reset the peak again to capture the peak memory usage in the next
+</span><span class=cm>     * cycle. */</span>
+    <span class=n>c</span><span class=o>-&gt;</span><span class=n>querybuf_peak</span> <span class=o>=</span> <span class=mi>0</span><span class=p>;</span>
+    <span class=k>return</span> <span class=mi>0</span><span class=p>;</span>
+<span class=p>}</span>
+</code></pre></td></tr></table></div></div><h3 id=二进制安全>二进制安全</h3><p>SDS API 都会以处理二进制的方式来处理 SDS 存放在 buf 数组里的数据（如不以 &ldquo;\0&rdquo; 当作字符串结尾），程序不会对其中的数据做任何限制、过滤、或者假设，数据在写入时是什么样的，他被读取时就是什么样子。因此 Redis 可以不仅可以保存文本数据，还可以保存图片、音频、视频、压缩文件这样的二进制数据。</p><h3 id=sds-api>SDS API</h3><p><img src=https://img.aladdinding.cn/sdsapi.png alt></p></div><footer class=post-footer><div class=post-tags><a href=/tags/%E6%BA%90%E7%A0%81%E9%98%85%E8%AF%BB/>源码阅读</a>
+<a href=/tags//></a></div><nav class=post-nav><a class=prev href=/post/https%E5%8D%8F%E8%AE%AE%E7%9B%B8%E5%85%B3%E5%AD%A6%E4%B9%A0/><i class="iconfont icon-left"></i>
+<span class="prev-text nav-default">HTTPS 协议相关学习记录</span>
+<span class="prev-text nav-mobile">上一篇</span></a>
+<a class=next href=/post/%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2%E9%83%A8%E7%BD%B2%E7%9A%84%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5%E9%80%82%E7%94%A8hugohexo/><span class="next-text nav-default">静态博客部署的最佳实践（适用 Hugo、Hexo）</span>
+<span class="next-text nav-mobile">下一篇</span>
+<i class="iconfont icon-right"></i></a></nav></footer></article></div></div></main><footer id=footer class=footer><div class=social-links><a href=mailto:aladdinding@foxmail.com class="iconfont icon-email" title=email></a><a href=https://twitter.com/aladdinding class="iconfont icon-twitter" title=twitter></a><a href=https://github.com/aladdinding class="iconfont icon-github" title=github></a><a href=https://aladdinding.cn/index.xml type=application/rss+xml class="iconfont icon-rss" title=rss></a></div><div class=copyright><span class=power-by>由 <a class=hexo-link href=https://gohugo.io>Hugo</a> 强力驱动</span>
+<span class=division>|</span>
+<span class=theme-info>主题 -
+<a class=theme-link href=https://github.com/olOwOlo/hugo-theme-even>Even</a></span><div class=busuanzi-footer><span id=busuanzi_container_site_pv>本站总访问量 <span id=busuanzi_value_site_pv><img src=/img/spinner.svg alt=spinner.svg></span> 次</span>
+<span class=division>|</span>
+<span id=busuanzi_container_site_uv>本站总访客数 <span id=busuanzi_value_site_uv><img src=/img/spinner.svg alt=spinner.svg></span> 人</span></div><span class=copyright-year>&copy;
+2019 -
+2021<span class=heart><i class="iconfont icon-heart"></i></span><span>Aladdin
+<span class=division>|</span>
+<span class=theme-info><a class=theme-link href=https://beian.miit.gov.cn/ rel="noopener noreferrer" target=_blank>鄂ICP备2021016339号-1</a></span></span></span></div></footer><div class=back-to-top id=back-to-top><i class="iconfont icon-up"></i></div></div><script type=text/javascript src=/lib/jquery/jquery-3.2.1.min.js></script><script type=text/javascript src=/lib/slideout/slideout-1.0.1.min.js></script><script type=text/javascript src=/lib/fancybox/jquery.fancybox-3.1.20.min.js></script><script type=text/javascript src=/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js></script></body></html>

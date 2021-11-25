@@ -1,0 +1,117 @@
+<!doctype html><html lang=zh-cn><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge,chrome=1"><title>HTTPS 协议相关学习记录 - Aladdin's blog</title><meta name=renderer content="webkit"><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><meta http-equiv=cache-control content="no-transform"><meta http-equiv=cache-control content="no-siteapp"><meta name=theme-color content="#f8f5ec"><meta name=msapplication-navbutton-color content="#f8f5ec"><meta name=apple-mobile-web-app-capable content="yes"><meta name=apple-mobile-web-app-status-bar-style content="#f8f5ec"><meta name=author content="Aladdin"><meta name=description content="HTTPS (Hypertext Transfer Protocol Secure) 是基于 HTTP 的扩展，用于计算机网络的安全通信，已经在互联网得到广泛应用。在 HTTPS 中，原有的 HTTP 协议会得到 TLS （安全传输层协议） 或其前辈 SSL （安全套接层） 的加密。因此 HTTPS 也常指 HTTP over TLS 或 HTTP over SSL。"><meta name=keywords content="Hugo,theme,even"><meta name=google-site-verification content="G-QY1H3LE9QK"><meta name=generator content="Hugo 0.85.0 with theme even"><link rel=canonical href=https://aladdinding.cn/post/https%E5%8D%8F%E8%AE%AE%E7%9B%B8%E5%85%B3%E5%AD%A6%E4%B9%A0/><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=manifest href=/manifest.json><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><script async src=//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js></script><link href=/sass/main.min.f92fd13721ddf72129410fd8250e73152cc6f2438082b6c0208dc24ee7c13fc4.css rel=stylesheet><link href=/lib/fancybox/jquery.fancybox-3.1.20.min.css rel=stylesheet><meta property="og:title" content="HTTPS 协议相关学习记录"><meta property="og:description" content="HTTPS (Hypertext Transfer Protocol Secure) 是基于 HTTP 的扩展，用于计算机网络的安全通信，已经在互联网得到广泛应用。在 HTTPS 中，原有的 HTTP 协议会得到 TLS （安全传输层协议） 或其前辈 SSL （安全套接层） 的加密。因此 HTTPS 也常指 HTTP over TLS 或 HTTP over SSL。"><meta property="og:type" content="article"><meta property="og:url" content="https://aladdinding.cn/post/https%E5%8D%8F%E8%AE%AE%E7%9B%B8%E5%85%B3%E5%AD%A6%E4%B9%A0/"><meta property="article:section" content="post"><meta property="article:published_time" content="2021-11-23T00:00:00+00:00"><meta property="article:modified_time" content="2021-11-23T00:00:00+00:00"><meta itemprop=name content="HTTPS 协议相关学习记录"><meta itemprop=description content="HTTPS (Hypertext Transfer Protocol Secure) 是基于 HTTP 的扩展，用于计算机网络的安全通信，已经在互联网得到广泛应用。在 HTTPS 中，原有的 HTTP 协议会得到 TLS （安全传输层协议） 或其前辈 SSL （安全套接层） 的加密。因此 HTTPS 也常指 HTTP over TLS 或 HTTP over SSL。"><meta itemprop=datePublished content="2021-11-23T00:00:00+00:00"><meta itemprop=dateModified content="2021-11-23T00:00:00+00:00"><meta itemprop=wordCount content="3543"><meta itemprop=keywords content="https,,"><meta name=twitter:card content="summary"><meta name=twitter:title content="HTTPS 协议相关学习记录"><meta name=twitter:description content="HTTPS (Hypertext Transfer Protocol Secure) 是基于 HTTP 的扩展，用于计算机网络的安全通信，已经在互联网得到广泛应用。在 HTTPS 中，原有的 HTTP 协议会得到 TLS （安全传输层协议） 或其前辈 SSL （安全套接层） 的加密。因此 HTTPS 也常指 HTTP over TLS 或 HTTP over SSL。"><!--[if lte IE 9]><script src=https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js></script><![endif]--><!--[if lt IE 9]><script src=https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js></script><script src=https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js></script><![endif]--></head><body><div id=mobile-navbar class=mobile-navbar><div class=mobile-header-logo><a href=/ class=logo>Aladdin</a></div><div class=mobile-navbar-icon><span></span><span></span><span></span></div></div><nav id=mobile-menu class="mobile-menu slideout-menu"><ul class=mobile-menu-list><a href=/><li class=mobile-menu-item>Home</li></a><a href=/post/><li class=mobile-menu-item>Archives</li></a><a href=/tags/><li class=mobile-menu-item>Tags</li></a><a href=/categories/><li class=mobile-menu-item>Categories</li></a><a href=/about/><li class=mobile-menu-item>About</li></a></ul></nav><div class=container id=mobile-panel><header id=header class=header><div class=logo-wrapper><a href=/ class=logo>Aladdin</a></div><nav class=site-navbar><ul id=menu class=menu><li class=menu-item><a class=menu-item-link href=/>Home</a></li><li class=menu-item><a class=menu-item-link href=/post/>Archives</a></li><li class=menu-item><a class=menu-item-link href=/tags/>Tags</a></li><li class=menu-item><a class=menu-item-link href=/categories/>Categories</a></li><li class=menu-item><a class=menu-item-link href=/about/>About</a></li></ul></nav></header><main id=main class=main><div class=content-wrapper><div id=content class=content><article class=post><header class=post-header><h1 class=post-title>HTTPS 协议相关学习记录</h1><div class=post-meta><span class=post-time>2021-11-23</span><div class=post-category><a href=/categories//></a><a href=/categories//></a></div><span class=more-meta>约 3543 字</span>
+<span class=more-meta>预计阅读 8 分钟</span>
+<span id=busuanzi_container_page_pv class=more-meta><span id=busuanzi_value_page_pv><img src=/img/spinner.svg alt=spinner.svg></span> 次阅读</span></div></header><div class=post-toc id=post-toc><h2 class=post-toc-title>文章目录</h2><div class="post-toc-content always-active"><nav id=TableOfContents><ul><li><a href=#tls-报文格式>TLS 报文格式</a><ul><li><a href=#记录层协议tls-record-protocol>记录层协议（TLS Record Protocol）</a></li><li><a href=#握手协议tls-handshaking-protocols>握手协议（TLS Handshaking Protocols）</a></li></ul></li><li><a href=#tls-两个阶段>TLS 两个阶段</a><ul><li><a href=#handshake-阶段>HANDSHAKE 阶段</a><ul><li><a href=#client-hello>Client Hello</a></li><li><a href=#server-hello>Server Hello</a></li><li><a href=#certificate>Certificate</a></li><li><a href=#server-key-exchange>Server Key Exchange</a></li><li><a href=#certificate-request可选>Certificate Request（可选）</a></li><li><a href=#server-hello-done>Server Hello Done</a></li><li><a href=#certificate可选>Certificate（可选）</a></li><li><a href=#client-key-exchange>Client Key Exchange</a></li><li><a href=#change-cipher-spec>Change Cipher Spec</a></li><li><a href=#encrypted-handshake-messagefinshed>Encrypted Handshake Message（Finshed）</a></li><li><a href=#change-cipher-spec-1>Change Cipher Spec</a></li><li><a href=#encrypted-handshake-messagefinshed-1>Encrypted Handshake Message（Finshed）</a></li></ul></li><li><a href=#application_data-阶段>APPLICATION_DATA 阶段</a></li></ul></li><li><a href=#总结>总结</a></li><li><a href=#参考>参考</a></li></ul></nav></div></div><div class=post-content><blockquote><p>Hypertext Transfer Protocol Secure (HTTPS) is an extension of the Hypertext Transfer Protocol (HTTP). It is used for secure communication over a computer network, and is widely used on the Internet. In HTTPS, the communication protocol is encrypted using Transport Layer Security (TLS) or, formerly, its predecessor, Secure Sockets Layer (SSL). The protocol is therefore also often referred to as HTTP over TLS, or HTTP over SSL.</p></blockquote><p>HTTPS (Hypertext Transfer Protocol Secure) 是基于 HTTP 的扩展，用于计算机网络的安全通信，已经在互联网得到广泛应用。在 HTTPS 中，原有的 HTTP 协议会得到 TLS （安全传输层协议） 或其前辈 SSL （安全套接层） 的加密。因此 HTTPS 也常指 HTTP over TLS 或 HTTP over SSL。</p><h1 id=tls-报文格式>TLS 报文格式</h1><p>TLS 协议各种通常分为两部分：</p><ul><li>靠近应用层的握手协议 TLS Handshaking Protocols</li><li>靠近 TCP 的记录层协议 TLS Record Protocol</li></ul><h2 id=记录层协议tls-record-protocol>记录层协议（TLS Record Protocol）</h2><p>记录层协议也可以理解为报文头（TLS Record header），占用 5 个字节</p><ol><li>第 1 个字节是类型（Record Type Values），目前有 4 种类型</li><li>第 2-3 字节是版本（Version Values），目前有 4 种版本</li><li>第 4-5 字节是长度（不包含 TLS 报文头本身长度）</li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-fallback data-lang=fallback>           record type (1 byte)
+          /
+         /    version (1 byte major, 1 byte minor)
+        /    /
+       /    /         length (2 bytes)
+      /    /         /
+   +----+----+----+----+----+
+   |    |    |    |    |    |
+   |    |    |    |    |    | TLS Record header
+   +----+----+----+----+----+
+
+   Record Type Values       dec      hex
+   -------------------------------------
+   CHANGE_CIPHER_SPEC        20     0x14
+   ALERT                     21     0x15
+   HANDSHAKE                 22     0x16
+   APPLICATION_DATA          23     0x17
+
+   Version Values            dec     hex
+   -------------------------------------
+   SSL 3.0                   3,0  0x0300
+   TLS 1.0                   3,1  0x0301
+   TLS 1.1                   3,2  0x0302
+   TLS 1.2                   3,3  0x0303
+</code></pre></td></tr></table></div></div><h2 id=握手协议tls-handshaking-protocols>握手协议（TLS Handshaking Protocols）</h2><p>TLS 握手协议还能细分为 5 个子协议：</p><ul><li>change_cipher_spec （密码切换协议，在 TLS 1.3 中这个协议已经删除，为了兼容 TLS 老版本，可能还会存在）</li><li>alert（警告协议，用来表示关闭信息和错误）</li><li>handshake（握手协议，TLS 协议簇中最最核心的协议）</li><li>application_data（应用数据协议）</li><li>heartbeat （心跳协议，这个是 TLS 1.3 新加的，TLS 1.3 之前的版本没有这个协议）</li></ul><p>以记录类型为 handshake 举例：</p><p>其中 Handshake 协议中有 10 种握手消息类型（不计算扩展），格式如下：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-fallback data-lang=fallback>                           |
+         Record Layer      |  Handshake Layer
+                           |                                  |
+                           |                                  |  ...more messages
+  +----+----+----+----+----+----+----+----+----+------ - - - -+--
+  | 22 |    |    |    |    |    |    |    |    |              |
+  |0x16|    |    |    |    |    |    |    |    |message       |
+  +----+----+----+----+----+----+----+----+----+------ - - - -+--
+    /               /      | \    \----\-----\                |
+   /               /       |  \\
+  type: 22        /        |   \         handshake message length
+                 /              type
+                /
+           length: arbitrary (up to 16k)
+
+   Handshake Type Values    dec      hex
+   -------------------------------------
+   HELLO_REQUEST              0     0x00
+   CLIENT_HELLO               1     0x01
+   SERVER_HELLO               2     0x02
+   CERTIFICATE               11     0x0b
+   SERVER_KEY_EXCHANGE       12     0x0c
+   CERTIFICATE_REQUEST       13     0x0d
+   SERVER_DONE               14     0x0e
+   CERTIFICATE_VERIFY        15     0x0f
+   CLIENT_KEY_EXCHANGE       16     0x10
+   FINISHED                  20     0x14
+</code></pre></td></tr></table></div></div><h1 id=tls-两个阶段>TLS 两个阶段</h1><ol><li>握手（Handshake）阶段，其目的是通信双方约定在数据传输阶段使用的加密密钥（非对称加密算法）</li><li>数据传输（Application_Data）阶段，使用握手阶段协商出的加密密码，加密数据传输（为效率考虑，使用对称加密算法）。</li></ol><p>下面就详细介绍这两个切换，其中最重要的就是握手阶段</p><h2 id=handshake-阶段>HANDSHAKE 阶段</h2><h3 id=client-hello>Client Hello</h3><p>主要作用是告诉目标服务器，客户端所支持的 TLS 协议版本，以及所支持的加密算法等等。</p><p><img src=https://img.aladdinding.cn/20211123173731.png alt=image-20211123173729470></p><p><strong>客户端随机数（Random）</strong>：客户端生成的随机数，暂时称作 ClientHello random，用于后续的密钥协商。</p><p><strong>会话 ID（Session ID）</strong>：当 Client 通过一次完整的握手，与 Server 建立了一次完整的 Session，Server 会记录这次 Session 的信息，以备恢复会话的时候使用。上图中该字段为空，说明这是第一次连接到服务器。</p><p><a href=https://blog.helong.info/blog/2015/01/23/ssl_tls_ciphersuite_intro/>加密算法套件（Cipher Suite）</a>：以客户端所倾向的顺序（最推荐的在最先）包含了客户端所支持的密码算法套件。TLS 中使用的密码套件有一种标准格式。上面的报文中，客户端发送了 46 套加密套件，服务端会从中选出一种用于本次加密连接使用。一个加密算法套件是 4 个算法的组合。</p><p><strong>压缩方法（Compression Methods）</strong>：加密之前的压缩算法。这个字段在 TLS 1.2 中用的不多。在 TLS 1.3 中这个字段被删除。</p><p><a href=https://halfrost.com/https-extensions/>扩展（Extension）</a>：结构定义是一个枚举类型，用于携带一些扩展参数，加强 TLS 功能。（携带域名，是否支持 http/2.0 等等）</p><p>从 Server Hello 到 Server Hello Done，有些服务端的实现是每条单独发送，有服务端实现是合并到一起发送。Sever Hello 和 Server Hello Done 都是只有头没有内容的数据。</p><h3 id=server-hello>Server Hello</h3><p>收到 Client Hello 之后服务器必须发送 Server Hello 信息，服务器会检查指定诸如 TLS 版本和算法的 Client Hello 的条件，如果服务器接受并支持所有条件，它将发送其证书以及其他详细信息，否则，服务器将发送握手失败消息。</p><p><img src=https://img.aladdinding.cn/20211123175422.png alt=image-20211123175420329></p><p><strong>服务端随机数（Random）</strong>：服务端生成的随机数，暂时称作 ServerHello random。注意，至此客户端和服务端都拥有了两个随机数（ClientHello random+ ServerHello random），这两个随机数会在后续生成对称加密密钥等情况用到。</p><p><strong>会话 ID（Session ID）</strong>：服务器将约定的 Session 参数存储在 TLS 缓存中，并生成与其对应的 Session id。它与 Server Hello 一起发送到客户端。客户端可以写入约定的参数到此 Session id，并给定到期时间。客户端将在 Client Hello 中包含此 id。如果客户端在此到期时间之前再次连接到服务器，则服务器可以检查与 Session id 对应的缓存参数，并重用它们而无需完全握手。这非常有用，因为服务器和客户端都可以节省大量的计算成本。</p><p><strong><a href=https://blog.helong.info/blog/2015/01/23/ssl_tls_ciphersuite_intro/>加密算法套件（Cipher Suite）</a></strong>：抓包中服务端选择了 TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256 (0xc02f)，其中密钥协商算法是 ECDHE、身份认证算法是 RSA、加密模式是 AES_128_GCM、消息认证码算法（MAC）是 SHA256。</p><p><strong>压缩方法（Compression Methods）</strong>：如果支持，服务器将同意客户端的首选压缩方法。</p><p><strong><a href=https://halfrost.com/https-extensions/>扩展（Extension）</a></strong>：同上，只有由 Client 给出的扩展才能出现在 Server 的列表中。例子中访问的百度首页，发现服务端的 application_layer_protocol_negotiation 仅支持 http/1.1。</p><h3 id=certificate>Certificate</h3><p>服务器将数字证书和到根 CA 整个链发给客户端，使客户端能用服务器证书中的服务器<strong>公钥</strong>认证。</p><p><img src=https://img.aladdinding.cn/20211123175545.png alt=image-20211123175544807></p><h3 id=server-key-exchange>Server Key Exchange</h3><p>ServerKeyExchange 这个消息的目的就是传递了必要的密码信息，使客户端生成<strong>预备主密钥</strong>。</p><p>抓包中密钥协商算法是 ECDHE，所以需要 Server Key Exchange 消息传递动态/静态 DH 信息（DH 参数和 DH 公钥）。</p><p>如果密钥协商算法为 RSA ，客户端不需要额外参数就可以计算出<strong>预备主密钥</strong>，然后使用服务端 Certificate 中的公钥加密发送给服务端，所以不需要 Server Key Exchange 可以完成协商。</p><p>密钥交换算法这里就不继续深究，附上一片文章详细讲解此算法：<a href=https://cloud.tencent.com/developer/article/1780038>RSA 和 ECDHE 算法</a></p><p><img src=https://img.aladdinding.cn/20211123175625.png alt=image-20211123175624007></p><h3 id=certificate-request可选>Certificate Request（可选）</h3><p>这一步是可选的，如果有则表示双向认证。如果在对安全性要求高的常见可能用到。服务器用来验证客户端。服务器端发出 Certificate Request 消息，要求客户端发他自己的证书过来进行验证。该消息中包含服务器端支持的证书类型（RSA、DSA、ECDSA 等）和服务器端所信任的所有证书发行机构的 CA 列表，客户端会用这些信息来筛选证书。常见的就是银行给你发的 USB 盾牌。</p><h3 id=server-hello-done>Server Hello Done</h3><p>此消息完成握手协商的服务器部分。它不携带任何附加信息</p><p><img src=https://img.aladdinding.cn/20211123175639.png alt=image-20211123175638530></p><h3 id=certificate可选>Certificate（可选）</h3><p>如果在第二阶段服务器端要求发送客户端证书，客户端便会在该阶段将自己的证书发送过去。服务器端在之前发送的 Certificate Request 消息中包含了服务器端所支持的证书类型和 CA 列表，因此客户端会在自己的证书中选择满足这两个条件的第一个证书发送过去。若客户端没有证书，则发送一个 no_certificate 警告。</p><h3 id=client-key-exchange>Client Key Exchange</h3><p>作用：交换或者协商出<strong>预备主密钥</strong>，用于<strong>主密钥</strong>的计算。</p><p>对于 RSA 握手协商算法来说，客户端会生成的一个 48 字节的<strong>预备主密钥</strong>，其中前 2 个字节是 ProtocolVersion，后 46 字节是随机数，用服务端的公钥加密之后通过 Client Key Exchange 子消息发给 服务端，服务端用私钥来解密。</p><p>对于 (EC)DHE 来说，<strong>预备主密钥</strong>是双方通过椭圆曲线算法生成的，双方各自生成临时公私钥对，保留私钥，将公钥发给对方，然后就可以用自己的私钥以及对方的公钥通过椭圆曲线算法来生成<strong>预备主密钥</strong>，预备主密钥长度取决于 DH/ECDH 算法公钥。<strong>预备主密钥长度是 48 字节或者 X 字节</strong>。此时传递的是 DH/ECDH 算法公钥（图中的 Pubkey），<strong>预备主密钥</strong>是双端计算出来的。</p><p>当服务端得到<strong>预备主密钥</strong>后，结合之前的 ClientHello random 和 ServerHello random，通过伪随机函数 PRF 生成并截取 48 字节为<strong>主密钥</strong>，用于后续对称加密传输数据的密钥，客户端同理。</p><p><img src=https://img.aladdinding.cn/20211124152917.png alt=image-20211124152914343></p><h3 id=change-cipher-spec>Change Cipher Spec</h3><p>作用：表明接下来传输数据过程中可以对应用数据协议进行加密了。（注：此时报文头中类型为 CHANGE_CIPHER_SPEC（20），不属于握手 Handshake（22）类型报文）</p><p>密码切换协议，表示随后的信息都将用双方商定的加密方法和密钥发送（Change Cipher Spec 是一个独立的协议，体现在数据包中就是一个字节的数据，用于告知服务端，客户端已经切换到之前协商好的加密套件（Cipher Suite）的状态，准备使用之前协商好的加密套件加密数据并传输了。其中第一条加密的消息就是 Encrypted Handshake Message</p><p><img src=https://img.aladdinding.cn/20211124153942.png alt=image-20211124153940334></p><h3 id=encrypted-handshake-messagefinshed>Encrypted Handshake Message（Finshed）</h3><p>生成对称加密密钥之后，发送一条加密的数据，让服务端解密验证，确认密钥的正确性。</p><p><img src=https://img.aladdinding.cn/20211124154002.png alt=image-20211124154000101></p><h3 id=change-cipher-spec-1>Change Cipher Spec</h3><p>密码切换协议，服务端和客户端一样，告诉客户端可以开始加密通信。</p><p><img src=https://img.aladdinding.cn/20211124161057.png alt=image-20211124161056299></p><h3 id=encrypted-handshake-messagefinshed-1>Encrypted Handshake Message（Finshed）</h3><p>生成对称加密密钥之后，发送一条加密的数据，让客户端解密验证；如果对方可以解密，则双方认证无误开始通信。</p><p><img src=https://img.aladdinding.cn/20211124161121.png alt=image-20211124161120679></p><h2 id=application_data-阶段>APPLICATION_DATA 阶段</h2><p>这个阶段就很简单了，数据开始加密传输，Record Type Values 为 Application Data（23）</p><p><img src=https://img.aladdinding.cn/20211124182033.png alt=image-20211124182026481></p><h1 id=总结>总结</h1><ol><li>交换 Hello 信息中，交换随机数，协商出后续使用的加密套件和对应的算法</li><li>单向/双向发送证书允许客户端和服务端进行身份认证</li><li>Server/Client key Exchange 根据选择的算法交换相应参数，协商出<strong>预备主密钥</strong></li><li>双端通过<strong>预备主密钥</strong>、随机数计算出<strong>主密钥</strong>，用于后续的对称加密数据传输</li></ol><h1 id=参考>参考</h1><ol><li><a href=https://megamorf.gitlab.io/2020/03/03/traffic-analysis-of-a-tls-session/#handshake-protocol-format>Traffic analysis of a TLS session</a></li><li><a href=https://datatracker.ietf.org/doc/html/rfc5246>The Transport Layer Security (TLS) Protocol Version 1.2</a></li><li><a href=https://halfrost.com/tag/https/>HTTPS 温故知新系列——冰霜大佬</a></li></ol></div><footer class=post-footer><div class=post-tags><a href=/tags/https/>https</a>
+<a href=/tags//></a></div><nav class=post-nav><a class=next href=/post/redis%E6%BA%90%E7%A0%81%E4%B9%8B%E7%AE%80%E5%8D%95%E5%8A%A8%E6%80%81%E5%AD%97%E7%AC%A6%E4%B8%B2/><span class="next-text nav-default">Redis 源码之简单动态字符串</span>
+<span class="next-text nav-mobile">下一篇</span>
+<i class="iconfont icon-right"></i></a></nav></footer></article></div></div></main><footer id=footer class=footer><div class=social-links><a href=mailto:aladdinding@foxmail.com class="iconfont icon-email" title=email></a><a href=https://twitter.com/aladdinding class="iconfont icon-twitter" title=twitter></a><a href=https://github.com/aladdinding class="iconfont icon-github" title=github></a><a href=https://aladdinding.cn/index.xml type=application/rss+xml class="iconfont icon-rss" title=rss></a></div><div class=copyright><span class=power-by>由 <a class=hexo-link href=https://gohugo.io>Hugo</a> 强力驱动</span>
+<span class=division>|</span>
+<span class=theme-info>主题 -
+<a class=theme-link href=https://github.com/olOwOlo/hugo-theme-even>Even</a></span><div class=busuanzi-footer><span id=busuanzi_container_site_pv>本站总访问量 <span id=busuanzi_value_site_pv><img src=/img/spinner.svg alt=spinner.svg></span> 次</span>
+<span class=division>|</span>
+<span id=busuanzi_container_site_uv>本站总访客数 <span id=busuanzi_value_site_uv><img src=/img/spinner.svg alt=spinner.svg></span> 人</span></div><span class=copyright-year>&copy;
+2019 -
+2021<span class=heart><i class="iconfont icon-heart"></i></span><span>Aladdin
+<span class=division>|</span>
+<span class=theme-info><a class=theme-link href=https://beian.miit.gov.cn/ rel="noopener noreferrer" target=_blank>鄂ICP备2021016339号-1</a></span></span></span></div></footer><div class=back-to-top id=back-to-top><i class="iconfont icon-up"></i></div></div><script type=text/javascript src=/lib/jquery/jquery-3.2.1.min.js></script><script type=text/javascript src=/lib/slideout/slideout-1.0.1.min.js></script><script type=text/javascript src=/lib/fancybox/jquery.fancybox-3.1.20.min.js></script><script type=text/javascript src=/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js></script></body></html>
