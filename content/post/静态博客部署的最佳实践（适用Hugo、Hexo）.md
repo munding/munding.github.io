@@ -1,8 +1,8 @@
 ---
 title: "静态博客部署的最佳实践（适用 Hugo、Hexo）"
 date: 2021-11-04
-tags: ["Hugo","Hexo"]
-categories: ["部署",""]
+tags: ["博客"]
+categories: ["部署"]
 description: ""
 summary: ""
 draft: false
