@@ -306,7 +306,7 @@
     <span class=k>return</span> <span class=mi>0</span><span class=p>;</span>
 <span class=p>}</span>
 </code></pre></td></tr></table></div></div><h3 id=二进制安全>二进制安全</h3><p>SDS API 都会以处理二进制的方式来处理 SDS 存放在 buf 数组里的数据（如不以 &ldquo;\0&rdquo; 当作字符串结尾），程序不会对其中的数据做任何限制、过滤、或者假设，数据在写入时是什么样的，他被读取时就是什么样子。因此 Redis 可以不仅可以保存文本数据，还可以保存图片、音频、视频、压缩文件这样的二进制数据。</p><h3 id=sds-api>SDS API</h3><p><img src=https://img.aladdinding.cn/sdsapi.png alt></p></div><footer class=post-footer><div class=post-tags><a href=/tags/%E6%BA%90%E7%A0%81%E9%98%85%E8%AF%BB/>源码阅读</a>
-<a href=/tags//></a></div><nav class=post-nav><a class=prev href=/post/https%E5%8D%8F%E8%AE%AE%E7%9B%B8%E5%85%B3%E5%AD%A6%E4%B9%A0/><i class="iconfont icon-left"></i>
+<a href=/tags//></a></div><nav class=post-nav><a class=prev href=/post/https%E5%8D%8F%E8%AE%AE%E7%9B%B8%E5%85%B3%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/><i class="iconfont icon-left"></i>
 <span class="prev-text nav-default">HTTPS 协议相关学习记录</span>
 <span class="prev-text nav-mobile">上一篇</span></a>
 <a class=next href=/post/%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2%E9%83%A8%E7%BD%B2%E7%9A%84%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5%E9%80%82%E7%94%A8hugohexo/><span class="next-text nav-default">静态博客部署的最佳实践（适用 Hugo、Hexo）</span>
