@@ -5,7 +5,16 @@
     <link>https://aladdinding.cn/posts/</link>
     <description>Recent content in Posts on 阿拉丁的博客</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 05 Nov 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://aladdinding.cn/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 23 Nov 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://aladdinding.cn/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>HTTPS 协议相关学习记录</title>
+      <link>https://aladdinding.cn/2021/11/HTTPS%E5%8D%8F%E8%AE%AE%E7%9B%B8%E5%85%B3%E5%AD%A6%E4%B9%A0/</link>
+      <pubDate>Tue, 23 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://aladdinding.cn/2021/11/HTTPS%E5%8D%8F%E8%AE%AE%E7%9B%B8%E5%85%B3%E5%AD%A6%E4%B9%A0/</guid>
+      <description>HTTPS (Hypertext Transfer Protocol Secure) 是基于 HTTP 的扩展，用于计算机网络的安全通信，已经在互联网得到广泛应用。在 HTTPS 中，原有的 HTTP 协议会得到 TLS （安全传输层协议） 或其前辈 SSL （安全套接层） 的加密。因此 HTTPS 也常指 HTTP over TLS 或 HTTP over SSL。</description>
+    </item>
+    
     <item>
       <title>Redis 源码之简单动态字符串</title>
       <link>https://aladdinding.cn/2021/11/Redis%E6%BA%90%E7%A0%81%E4%B9%8B%E7%AE%80%E5%8D%95%E5%8A%A8%E6%80%81%E5%AD%97%E7%AC%A6%E4%B8%B2/</link>
