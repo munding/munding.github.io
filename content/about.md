@@ -1,18 +1,10 @@
 ---
 title: "About"
-layout: "about"
-url: "/about/"
-summary: about
-showToc: false
-TocOpen: false
-draft: false
-hidemeta: false
-comments: true
-hideSummary: true
-searchHidden: true
-ShowReadingTime: false
-ShowBreadCrumbs: false
-ShowPostNavLinks: false
+date: 2017-08-20T21:38:52+08:00
+lastmod: 2017-08-28T21:41:52+08:00
+menu: "main"
+weight: 50
+
 ---
 
 网络用名：大猫、Aladdin、aladdinding
