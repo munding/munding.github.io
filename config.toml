@@ -135,7 +135,7 @@ copyright = ""            # default: author.name ↓        # 默认为下面配
 
   [params.utteranc]       # https://utteranc.es/
     enable = true
-    issueTerm = "title"
+    issueTerm = "og:title"
     repo = "aladdinding/aladdinding.github.io"               # The repo to store comments
     theme = "github-light"
 
