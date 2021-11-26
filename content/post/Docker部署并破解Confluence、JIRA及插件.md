@@ -59,7 +59,7 @@ CREATE DATABASE <database-name> CHARACTER SET utf8mb4 COLLATE utf8mb4_bin;
 CREATE user '<confluenceuser>'@'localhost' IDENTIFIED BY '<password>';
 ```
 
-** 如果 Confluence 与数据库不在同一台服务器上运行（或者是 Docker 用户），请用 Confluence 服务器的主机名或 IP 地址替换 localhost（也可以使用 `%`，表示允许所有 host）**
+**如果 Confluence 与数据库不在同一台服务器上运行（或者是 Docker 用户），请用 Confluence 服务器的主机名或 IP 地址替换 localhost（也可以使用 `%`，表示允许所有 host）**
 
 - 授权
 
