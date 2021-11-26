@@ -10,7 +10,7 @@ draft: false
 
 说到 HTTPS 协议，很多人想到的是配置各种复杂的证书。其实不然，可以说大多数代理能够支持 https 都是通过 http 协议中的 Web 隧道（也有叫做 HTTP 隧道）功能来实现的。
 
-### Web 隧道
+# Web 隧道
 
 Web 隧道允许用户通过 HTTP 连接发送非 HTTP 流量（例如 FTP，Telnet，SMTP），这样就可以在 HTTP 上携带其他协议数据了。使用 Web 隧道最常见的原因就是要在 HTTP 链接中嵌入非 HTTP 流量。我们知道很多软件都是实现了自己的应用层协议，但是这些软件都支持设置代理，如 QQ，微信。
 
@@ -25,7 +25,7 @@ Web 隧道是用 HTTP 的 CONNECT 方法建立起来的。CONNECT 方法并不�
 
 客户端只有收到 `200 Connection Established` 才会继续发送数据。如果代理服务器和目标网站连接不成功怎么办呢？代理服务器可以自己灵活自定义：连接目标网站失败 `502 Bad Gateway`、代理认证未通过 `407 Proxy Authentication Required` 等等。
 
-### CONNECT 请求
+## CONNECT 请求
 
 除了起始行之外，CONNECT 的语法与其他 HTTP 方法类似，只不过是主机名和端口号取代了 URI。其中主机和端口都必须指定，不然代理服务器就不清楚与谁建立连接了。
 
@@ -44,7 +44,7 @@ CONNECT 请求的 header 通常只会携带建立 Web 隧道所需要的信息�
 
 ![](https://img.aladdinding.cn/wk_connect.png)
 
-### CONNECT 响应
+## CONNECT 响应
 
 发送了请求之后，客户端会等待来自网关的响应。和普通 HTTP 报文一样，响应码 200 表示成功。按照惯例，响应中的原因短语通常被设置为 “Connection Established”。
 
@@ -57,11 +57,11 @@ Proxy-Agent: Netscape-Proxy/1.1
 
 ![](https://img.aladdinding.cn/wk_connect_res.png)
 
-### 不止 HTTPS
+# 不止 HTTPS
 
 正因为有了 Web 隧道，代理服务器不需要其他应用层协议进行额外的编码解析，只要 Web 隧道建立成功之后即可发送任何非 HTTP 流量。
 
-#### websocket
+## websocket
 
 在 Python 的 websocket-client 框架中，如果使用 http 代理，首先会对代理发送 CONNECT 连接建立 Web 隧道，然后在传输 ws、wss 协议数据
 
@@ -95,7 +95,7 @@ def _tunnel(sock, host, port, auth):
     return sock
 ```
 
-### 非 Web 隧道
+# 非 Web 隧道
 
 当然，也有的代理服务器能够在不建立 Web 隧道的情况下，实现了对其他应用层协议的解析，从而实现代理转发的目的。
 
