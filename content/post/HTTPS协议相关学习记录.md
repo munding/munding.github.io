@@ -102,7 +102,28 @@ TLS 握手协议还能细分为 5 个子协议：
 1. 握手（Handshake）阶段，其目的是通信双方约定在数据传输阶段使用的加密密钥（非对称加密算法）
 2. 数据传输（Application_Data）阶段，使用握手阶段协商出的加密密码，加密数据传输（为效率考虑，使用对称加密算法）。
 
-下面就详细介绍这两个切换，其中最重要的就是握手阶段
+下面就详细介绍这两个切换，其中最重要的就是握手阶段:
+
+```
+      Client                                               Server
+
+      ClientHello                  -------->
+                                                      ServerHello
+                                                     Certificate*
+                                               ServerKeyExchange*
+                                              CertificateRequest*
+                                   <--------      ServerHelloDone
+      Certificate*
+      ClientKeyExchange
+      CertificateVerify*
+      [ChangeCipherSpec]
+      Finished                     -------->
+                                               [ChangeCipherSpec]
+                                   <--------             Finished
+      Application Data             <------->     Application Data
+```
+
+\*号意味着可选择
 
 ## HANDSHAKE 阶段
 
