@@ -126,7 +126,7 @@ TLS 握手协议还能细分为 5 个子协议：
       Application Data             <------->     Application Data
 ```
 
-`*`表示着此阶段在某些条件在不存在，`[]`表示类型不属于握手报文
+`*`表示着此阶段在某些条件下不存在，`[]`表示不属于握手报文
 
 ## Client Hello(Client -> Server)
 
