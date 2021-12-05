@@ -9,7 +9,7 @@ comment: false
 
 网络用名：大猫、Aladdin、aladdinding
 
-出生于湖北宜昌，毕业于湖北武汉WUT
+出生于湖北宜昌，毕业于湖北武汉 WUT
 
 现就职于一家武汉互联网公司，担任服务端开发工程师
 
