@@ -2,7 +2,7 @@
 title: "HTTPS 协议是如何握手的"
 date: 2021-11-23
 tags: ["https",""]
-categories: ["",""]
+categories: ["协议",""]
 description: ""
 summary: "HTTPS (Hypertext Transfer Protocol Secure) 是基于 HTTP 的扩展，用于计算机网络的安全通信，已经在互联网得到广泛应用。在 HTTPS 中，原有的 HTTP 协议会得到 TLS （安全传输层协议） 或其前辈 SSL （安全套接层） 的加密。因此 HTTPS 也常指 HTTP over TLS 或 HTTP over SSL。"
 draft: false
