@@ -8,7 +8,7 @@ summary: ""
 draft: false
 ---
 
-SOCKS 是一种网络传输协议，主要用于客户端与外网服务器之间通讯的中间传递。SOCKS 是 "Socket Secure" 的缩写。当防火墙后的客户端要访问外部的服务器时，就跟 SOCKS 代理服务器连接。这个代理服务器控制客户端访问外网的资格，允许的话，就将客户端的请求发往外部的服务器。这个协议最初由 David Koblas 开发，而后由 NEC 的 Ying-Da Lee 将其扩展到 SOCKS4。最新协议是 SOCKS5，与前一版本相比，增加支持 [UDP](https://zh.wikipedia.org/wiki / 用户数据报协议)、验证，以及[IPv6](https://zh.wikipedia.org/wiki/IPv6)。根据[OSI 模型](https://zh.wikipedia.org/wiki/OSI 模型)，SOCKS 是[会话层](https://zh.wikipedia.org/wiki / 会话层) 的协议，位于 [表示层](https://zh.wikipedia.org/wiki / 表示层) 与[传输层](https://zh.wikipedia.org/wiki / 传输层)之间。SOCKS 协议不提供[加密](https://zh.wikipedia.org/wiki / 加密)。
+>SOCKS 是一种网络传输协议，主要用于客户端与外网服务器之间通讯的中间传递。SOCKS 是 "Socket Secure" 的缩写。当防火墙后的客户端要访问外部的服务器时，就跟 SOCKS 代理服务器连接。这个代理服务器控制客户端访问外网的资格，允许的话，就将客户端的请求发往外部的服务器。这个协议最初由 David Koblas 开发，而后由 NEC 的 Ying-Da Lee 将其扩展到 SOCKS4。最新协议是 SOCKS5，与前一版本相比，增加支持 [UDP（用户数据报协议）](https://zh.wikipedia.org/wiki)、验证，以及 [IPv6](https://zh.wikipedia.org/wiki/IPv6)。根据 [OSI 模型](https://zh.wikipedia.org/wiki/OSI)，SOCKS 是 [会话层](https://zh.wikipedia.org/wiki) 的协议，位于 [表示层](https://zh.wikipedia.org/wiki) 与 [传输层](https://zh.wikipedia.org/wiki) 之间。SOCKS 协议不提供 [加密](https://zh.wikipedia.org/wiki)。
 
 # SOCKS5
 
@@ -181,7 +181,7 @@ SOCKS 4 只支持 TCP 转发
 # +-------+-------+----------+-----------+
 ```
 
-- VN：回复代码的版本，应为 0x00(注意不是 0x04)
+- VN：回复代码的版本，应为 0x00（注意不是 0x04)
 - CD：SOCK 命令码
   - 90(0x5a) 请求得到允许；
   - 91(0x5b) 请求被拒绝或失败；
