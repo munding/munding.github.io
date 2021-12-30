@@ -12,7 +12,7 @@ draft: false
 >
 > 无论您使用何种平台或语言，JetBrains 都为您提供了一个开发工具。
 
-`JetBrains`旗下的`IDE`不论是界面布局还是快捷键等都是通用的，所以掌握好`JetBrains`下产品的使用技巧还是非常值得的。
+JetBrains 旗下的 IDE 不论是界面布局还是快捷键等都是通用的，所以掌握好 JetBrains 下产品的使用技巧还是非常值得的。
 
 # 教程
 
@@ -37,20 +37,18 @@ JetBrains 自家产品的帮助中心已经非常完善了
 
 # 白嫖
 
-正常情况下 `JetBrains` 公司的每个 `IDE` 分为`Ultimate（企业版）`、`Professional（专业版）`和`Community（社区免费）`这几个版本。
+正常情况下 JetBrains 公司的每个 IDE 分为 Ultimate（企业版）、Professional（专业版）和 Community（社区免费）这几个版本，其中企业版和专业版是要收费的，相比于社区版功能更多。
 
- `JetBrains` 家产品都有免费一个月的试用期，安装一个到期重置试用插件即可。
+利用 JetBrains 家产品都有免费一个月的试用期，所以安装一个到期重置试用插件即可。
 
 [Jetbrains 系列产品重置试用方法](https://zhile.io/2020/11/18/jetbrains-eval-reset-da33a93d.html)
 
-[下载链接](https://plugins.zhile.io/files/ide-eval-resetter-2.3.5-c80a1d.zip)
+[ide-eval-resetter 下载链接](https://plugins.zhile.io/files/ide-eval-resetter-2.3.5-c80a1d.zip)
 
-还是建议支持正版，每年的 10.24 程序员节等某些节日会打折，
-
-如果你有自己的开源项目或者是教育邮箱也可以申请`JetBrains`全系列产品一年的免费期限。
+PS：每年的 10.24 程序员节等某些节日会打折，建议支持正版！如果你有自己的开源项目或者是教育邮箱也可以申请 JetBrains 全系列产品一年的免费期限。
 
 # 其他
 
-国内不少开发也写了不少 `JetBrains` 产品的教程，可以结合官网教程学习
+国内不少开发也分享了 JetBrains 产品的教程，可以结合官网教程学习
 
 [PyCharm 中文指南](https://github.com/iswbm/pycharm-guide)

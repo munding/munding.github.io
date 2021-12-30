@@ -8,7 +8,7 @@ summary: "Redis 中字符串的实现并没有完全使用 C 字符串，而是�
 draft: false
 ---
 
-Redis 中字符串的实现并没有完全使用 C 字符串，而是重新定义了简单动态字符串 SDS（Simple Dynamic String）用来表示字符串。
+Redis 中字符串的实现并没有完全使用 C 字符串，而是重新定义了简单动态字符串 SDS（Simple Dynamic String）用来表示字符串（Redis 3.2前）。
 
 sds.h/sdshdr
 
@@ -24,7 +24,7 @@ buf 数组长度不一定就是字符串长度 + 1（"\0"），还有 free 空�
 
 相比于 C 字符串，SDS 有以下优势：
 
-### 兼容部分 C 字符串函数
+# 兼容部分 C 字符串函数
 
 sds.c/sdsnew
 
@@ -64,7 +64,7 @@ sds sdsnew(const char *init) {
 
 这样 SDS 就可以直接重用一部分 C 字符串函数库里面的函数（如打印，显示类函数，<stdio.h>/printf），而字符串的修改操作，则使用 SDS 自定义优化后的函数。
 
-### 常数复杂度获取字符串长度
+# 常数复杂度获取字符串长度
 
 C 获取一个 C 字符串的长度，程序必须遍历整个字符串，直到遇到代表字符串结尾的空字符串位置，这个操作的复杂度为 O(N)。
 
@@ -101,7 +101,7 @@ sds sdscatsds(sds s, const sds t) {
 }
 ```
 
-### 杜绝缓冲区溢出
+# 杜绝缓冲区溢出
 
 C 字符串由于不记录自身长度，对其进行修改操作容易造成缓冲区溢出（buffer overflow）。如 C 字符串拼接函数 <stdio.h>/strcat，内存中相邻的字符串 s1 和 s2，对 s1 字符串做拼接操作时，如果没有提前为 s1 分配足够的空间，则 s2 保存的内容会被意外修改。
 
@@ -109,7 +109,7 @@ C 字符串由于不记录自身长度，对其进行修改操作容易造成缓
 
 SDS 内部维护了一个 free 字段，当 SDS API 需要对其进行修改时，API 会调用 `sdsMakeRoomForDS` 函数检测当前 SDS 的 free 空间是否满足要求，满足直接进行修改；不满足 `sdsMakeRoomForDS` 则会将 SDS 的空间扩展至执行修改所需的大小，避免缓冲区溢出的情况（如上方 sds.c/sdscat）。
 
-### 减少修改字符串长度时所需内存重分配次数
+# 减少修改字符串长度时所需内存重分配次数
 
 Redis 作为数据库，经常被用于速度要求严苛，数据被频繁修改的场景。SDS 实现了 **空间预分配** 和 **惰性空间释放** 两种优化策略。
 
@@ -143,7 +143,7 @@ sds sdsMakeRoomFor(sds s, size_t addlen) {
 }
 ```
 
-#### 空间预分配
+## 空间预分配
 
 可以发现，在 SDS API 进行字符串新增逻辑中会给 SDS 重新分配 free 空间。
 
@@ -152,7 +152,7 @@ sds sdsMakeRoomFor(sds s, size_t addlen) {
 
 通过空间预分配策略，Redis 可以减少连续执行字符串增长操作所需的内存重分配次数.
 
-#### 惰性空间释放
+## 惰性空间释放
 
 sds.c/sdstrim
 
@@ -236,11 +236,11 @@ int clientsCronResizeQueryBuffer(redisClient *c) {
 }
 ```
 
-### 二进制安全
+# 二进制安全
 
 SDS API 都会以处理二进制的方式来处理 SDS 存放在 buf 数组里的数据（如不以 "\0" 当作字符串结尾），程序不会对其中的数据做任何限制、过滤、或者假设，数据在写入时是什么样的，他被读取时就是什么样子。因此 Redis 可以不仅可以保存文本数据，还可以保存图片、音频、视频、压缩文件这样的二进制数据。
 
-### SDS API
+# SDS API
 
 ![](https://img.aladdinding.cn/sdsapi.png)
 
