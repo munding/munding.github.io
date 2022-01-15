@@ -8,13 +8,13 @@ summary: "macOS 下 iTerm2 + oh-my-zsh + powerlevel10k 环境快速配置"
 draft: false
 ---
 
-### 安装 iTerm2
+## 安装 iTerm2
 
 使用 iTerm2 替代 macOS 自带终端 Terminal
 
 Home&Download：*https://iterm2.com/*
 
-### 安装 iTerm2 主题
+## 安装 iTerm2 主题
 
 This is a set of color schemes for iTerm (aka iTerm2).
 
@@ -25,7 +25,7 @@ Example:
 - [Dracula](https://draculatheme.com/)
 - [iterm2-material-design](https://www.martinseeler.com/iterm2-material-design)
 
-### 安装 oh-my-zsh
+## 安装 oh-my-zsh
 
 Oh My Zsh is a delightful, open source, community-driven framework for managing your Zsh configuration.
 
@@ -38,7 +38,7 @@ Github：*https://github.com/ohmyzsh/ohmyzsh*
 $ sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
 
-### 安装 zplug 插件管理器
+## 安装 zplug 插件管理器
 
 Github：*https://github.com/zplug/zplug*
 
@@ -46,9 +46,9 @@ Github：*https://github.com/zplug/zplug*
 $ curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
 ```
 
-### 安装命令行工具
+## 安装命令行工具
 
-#### fzf
+### fzf
 
 命令行模糊搜索
 
@@ -68,7 +68,7 @@ $(brew --prefix)/opt/fzf/install
 
 
 
-### 新增 zpug 插件配置
+## 新增 zpug 插件配置
 
 添加到 `~/.zshrc` 文件
 
@@ -108,7 +108,7 @@ fi
 zplug load
 ```
 
-### 关于字体
+## 关于字体
 
 在配置 [powerlevel10k](https://github.com/romkatv/powerlevel10k) 主题时若缺少字体会提示下载，当然你也可以自行安装
 
