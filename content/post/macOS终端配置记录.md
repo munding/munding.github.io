@@ -63,7 +63,7 @@ $(brew --prefix)/opt/fzf/install
 **NOTE：put this line in the end of your zshrc, or it may not work, https://github.com/junegunn/fzf/issues/1304**
 
 ```bash
-[-f ~/.fzf.zsh] && source ~/.fzf.zsh
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 ```
 
 
@@ -76,13 +76,13 @@ $(brew --prefix)/opt/fzf/install
 # install zplug, plugin manager for zsh, https://github.com/zplug/zplug
 # curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
 # zplug configruation
-if [[! -d "${ZPLUG_HOME}" ]]; then
-  if [[! -d ~/.zplug]]; then
+if [[ ! -d "${ZPLUG_HOME}" ]]; then
+  if [[ ! -d ~/.zplug ]]; then
     git clone https://github.com/zplug/zplug ~/.zplug
     # If we can't get zplug, it'll be a very sobering shell experience. To at
     # least complete the sourcing of this file, we'll define an always-false
     # returning zplug function.
-    if [[$? != 0]]; then
+    if [[ $? != 0 ]]; then
       function zplug() {
         return 1
       }
@@ -90,7 +90,7 @@ if [[! -d "${ZPLUG_HOME}" ]]; then
   fi
   export ZPLUG_HOME=~/.zplug
 fi
-if [[-d "${ZPLUG_HOME}" ]]; then
+if [[ -d "${ZPLUG_HOME}" ]]; then
   source "${ZPLUG_HOME}/init.zsh"
 fi
 zplug 'plugins/git', from:oh-my-zsh, if:'which git'
