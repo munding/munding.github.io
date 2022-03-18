@@ -1,5 +1,5 @@
 ---
-title: "JetBrains 开发者工具相关资源教程"
+title: "JetBrains 开发者工具相关资源（含破解）"
 date: 2021-12-23
 tags: ["IDE",""]
 categories: ["",""]
