@@ -41,7 +41,7 @@ JetBrains 自家产品的帮助中心已经非常完善了
 
 利用 JetBrains 家产品都有免费一个月的试用期，所以安装一个到期重置试用插件即可。
 
-[Jetbrains 系列产品重置试用方法](https://zhile.io/2020/11/18/jetbrains-eval-reset-da33a93d.html)
+[Jetbrains 系列产品重置试用方法](https://zhile.io/2020/11/18/jetbrains-eval-reset-deprecated.html)
 
 [ide-eval-resetter 下载链接](https://plugins.zhile.io/files/ide-eval-resetter-2.3.5-c80a1d.zip)
 
