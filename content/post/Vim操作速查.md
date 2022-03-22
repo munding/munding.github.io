@@ -2,7 +2,7 @@
 title: "Vim 操作速查"
 date: 2019-08-09
 tags: ["vim",""]
-categories: ["",""]
+categories: ["最佳实践",""]
 description: ""
 summary: ""
 draft: false

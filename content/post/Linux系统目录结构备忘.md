@@ -1,8 +1,8 @@
 ---
 title: "Linux系统目录结构备忘"
 date: 2020-08-11
-tags: ["",""]
-categories: ["Linux",""]
+tags: ["Linux",""]
+categories: ["操作系统",""]
 description: ""
 summary: ""
 draft: false

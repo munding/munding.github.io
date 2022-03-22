@@ -1,8 +1,8 @@
 ---
 title: "Linux 命令行快捷键"
 date: 2020-08-21
-tags: ["",""]
-categories: ["Linux",""]
+tags: ["Linux",""]
+categories: ["操作系统",""]
 description: ""
 summary: ""
 draft: false

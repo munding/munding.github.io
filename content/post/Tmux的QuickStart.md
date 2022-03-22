@@ -2,7 +2,7 @@
 title: "Tmux 的 QuickStart"
 date: 2019-08-09
 tags: ["tmux",""]
-categories: ["",""]
+categories: ["最佳实践",""]
 description: ""
 summary: ""
 draft: false

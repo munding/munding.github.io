@@ -1,8 +1,8 @@
 ---
 title: "Go 语言跨平台编译"
 date: 2021-10-29
-tags: ["",""]
-categories: ["Go",""]
+tags: ["Go",""]
+categories: ["计算机语言",""]
 description: ""
 summary: "默认我们 go build 的可执行文件都是当前操作系统可执行的文件，如果我想在 macOS 下编译一个 linux 下可执行文件，那需要怎么做呢"
 draft: false

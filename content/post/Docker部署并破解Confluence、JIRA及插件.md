@@ -1,8 +1,8 @@
 ---
 title: "Docker 部署并破解 Confluence、JIRA 及插件"
 date: 2021-07-25
-tags: ["docker",""]
-categories: ["部署",""]
+tags: ["Confluence","Jira"]
+categories: ["最佳实践",""]
 description: ""
 summary: ""
 draft: false

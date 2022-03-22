@@ -2,7 +2,7 @@
 title: "SOCKS 协议交互流程记录"
 date: 2020-07-19
 tags: ["socks",""]
-categories: ["协议",""]
+categories: ["网络协议",""]
 description: ""
 summary: ""
 draft: false

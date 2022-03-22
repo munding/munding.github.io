@@ -1,8 +1,8 @@
 ---
 title: "MacOS 相关资源合集"
 date: 2021-03-20
-tags: ["",""]
-categories: ["macOS",""]
+tags: ["macOS",""]
+categories: ["操作系统","最佳实践"]
 description: ""
 summary: "macOS 相关资源整理"
 draft: false

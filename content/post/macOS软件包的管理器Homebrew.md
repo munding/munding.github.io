@@ -1,8 +1,8 @@
 ---
 title: "MacOS 软件包的管理器 Homebrew"
 date: 2020-01-05
-tags: ["",""]
-categories: ["macOS",""]
+tags: ["macOS",""]
+categories: ["操作系统",""]
 description: ""
 summary: ""
 draft: false

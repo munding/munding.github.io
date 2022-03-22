@@ -1,8 +1,8 @@
 ---
 title: "JetBrains 开发者工具相关资源（含破解）"
 date: 2021-12-23
-tags: ["IDE",""]
-categories: ["",""]
+tags: ["IDE","JetBrains"]
+categories: ["最佳实践",""]
 description: ""
 summary: "无论您使用何种平台或语言，JetBrains 都为您提供了一个开发工具。"
 draft: false
@@ -35,7 +35,7 @@ JetBrains 自家产品的帮助中心已经非常完善了
 
 其他产品的用户界面类似，具体的也可以去文档中心中查看
 
-# 白嫖
+# 破解&白嫖
 
 正常情况下 JetBrains 公司的每个 IDE 分为 Ultimate（企业版）、Professional（专业版）和 Community（社区免费）这几个版本，其中企业版和专业版是要收费的，相比于社区版功能更多。
 

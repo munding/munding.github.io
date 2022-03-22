@@ -1,8 +1,8 @@
 ---
 title: "黑苹果一键开启 HiDPI"
 date: 2020-07-11
-tags: ["",""]
-categories: ["Hackintosh",""]
+tags: ["Hackintosh",""]
+categories: ["操作系统",""]
 description: ""
 summary: ""
 draft: false
