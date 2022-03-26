@@ -203,7 +203,7 @@ java -jar atlassian-agent.jar -d -m test@test.com -n BAT -p 'jira' -o http://loc
 
 # 异常记录
 
-- Confluence 重启后一段时间内无响应
+### Confluence 重启后一段时间内无响应
 
 ```
 confluence_1 | WARNING: An illegal reflective access operation has occurred
@@ -222,8 +222,15 @@ https://community.atlassian.com/t5/Confluence-questions/Illegal-reflective-acces
 
 https://community.atlassian.com/t5/Confluence-questions/hibernate-adapter-1-0-3-jar/qaq-p/1281057
 
-结论：
+解决：
 
 - 等待一段时间会自动运行正常
-- 非法反射访问错误是 Java9 添加的，所以尝试在 Java8 上运行 Confluence，不过官方最新镜像都是 Java11 了！
+
+### 备份文件恢复失败
+
+Unable to complete import: An invalid XML character (Unicode: 0x8) was found in the CDATA section.
+
+解压备份文件，链接中的jar包处理一下 `entities.xml` 文件，重新打包
+
+解决：https://confluence.atlassian.com/jira/removing-invalid-characters-from-xml-backups-12079.html
 
