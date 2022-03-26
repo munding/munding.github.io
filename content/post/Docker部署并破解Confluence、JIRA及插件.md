@@ -169,7 +169,7 @@ java -jar atlassian-agent.jar -d -m mytest@mytest.com -n BAT -p 'com.valiantys.s
 
 Jira 搭建流程和 Confluence 类似，这里不再赘述，附上相关内容
 
-### 文档
+## 文档
 
 [Jira Software Data Center and Server documentation](https://confluence.atlassian.com/jirasoftwareserver)
 
@@ -177,13 +177,13 @@ Jira 搭建流程和 Confluence 类似，这里不再赘述，附上相关内容
 
 镜像：[atlassian/jira-software](https://hub.docker.com/r/atlassian/jira-software)
 
-### 破解命令
+## 破解命令
 
 ```
 java -jar atlassian-agent.jar -d -m test@test.com -n BAT -p 'jira' -o http://localhost:8080 -s BT5W-KP7Q-31DT-PTNG
 ```
 
-### 配置 Confluence 与 Jira 用户数据对接
+## 配置 Confluence 与 Jira 用户数据对接
 
 进入 Jira 选择用户管理 > Jira 用户服务器 > 添加应用程序
 
@@ -203,7 +203,7 @@ java -jar atlassian-agent.jar -d -m test@test.com -n BAT -p 'jira' -o http://loc
 
 # 异常记录
 
-### Confluence 重启后一段时间内无响应
+## Confluence 重启后一段时间内无响应
 
 ```
 confluence_1 | WARNING: An illegal reflective access operation has occurred
@@ -226,7 +226,7 @@ https://community.atlassian.com/t5/Confluence-questions/hibernate-adapter-1-0-3-
 
 - 等待一段时间会自动运行正常
 
-### 备份文件恢复失败
+## 备份文件恢复失败
 
 Unable to complete import: An invalid XML character (Unicode: 0x8) was found in the CDATA section.
 
