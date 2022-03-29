@@ -117,10 +117,6 @@ services:
 docker-compose up --force-recreate -d
 ```
 
-
-
-已上传 Github：[aladdinding/Confluence-and-Jira](https://github.com/aladdinding/Confluence-and-Jira)
-
 ### 运行
 
 ```
@@ -131,7 +127,7 @@ docker-compose up -d
 
 ## 初始化配置
 
-#### 破解
+### 破解
 
 ![](https://img.aladdinding.cn/confluence1.png)
 
@@ -141,13 +137,13 @@ docker-compose up -d
 java -jar atlassian-agent.jar -d -m test@test.com -n BAT -p 'conf' -o http://localhost:8090 -s BT5W-KP7Q-31DT-PTNG
 ```
 
-#### 设置数据库
+### 设置数据库
 
 这里使用的宿主机搭建的 Mysql 8.0，一路下一步即可
 
 ![](https://img.aladdinding.cn/confluence2.png)
 
-#### 查看授权细节
+### 查看授权细节
 
 ![](https://img.aladdinding.cn/confluence3.png)
 
@@ -222,15 +218,13 @@ https://community.atlassian.com/t5/Confluence-questions/Illegal-reflective-acces
 
 https://community.atlassian.com/t5/Confluence-questions/hibernate-adapter-1-0-3-jar/qaq-p/1281057
 
-解决：
-
-- 等待一段时间会自动运行正常
+不过等待一段时间会自动运行正常。。。
 
 ## 备份文件恢复失败
 
 Unable to complete import: An invalid XML character (Unicode: 0x8) was found in the CDATA section.
 
-解压备份文件，链接中的jar包处理一下 `entities.xml` 文件，重新打包
+解压备份文件，下方文档链接中的中的`Jar`包处理一下 `entities.xml` 文件，重新打包
 
-解决：https://confluence.atlassian.com/jira/removing-invalid-characters-from-xml-backups-12079.html
+https://confluence.atlassian.com/jira/removing-invalid-characters-from-xml-backups-12079.html
 
