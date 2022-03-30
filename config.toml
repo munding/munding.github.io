@@ -16,7 +16,7 @@ pygmentsUseClasses = true
 pygmentsCodefencesGuessSyntax = true
 
 hasCJKLanguage = true     # has chinese/japanese/korean ? # 自动检测是否包含 中文\日文\韩文
-paginate = 6                                              # 首页每页显示的文章数
+paginate = 8                                              # 首页每页显示的文章数
 googleAnalytics = ""      # UA-XXXXXXXX-X
 copyright = ""            # default: author.name ↓        # 默认为下面配置的author.name ↓
 
@@ -39,15 +39,16 @@ copyright = ""            # default: author.name ↓        # 默认为下面配
   identifier = "archives"
   url = "/post/"
 [[menu.main]]
-  name = "Tags"
-  weight = 30
-  identifier = "tags"
-  url = "/tags/"
-[[menu.main]]
   name = "Categories"
   weight = 40
   identifier = "categories"
   url = "/categories/"
+[[menu.main]]
+  name = "Tags"
+  weight = 30
+  identifier = "tags"
+  url = "/tags/"
+
 
 [params]
   version = "4.x"           # Used to give a friendly message when you have an incompatible update
