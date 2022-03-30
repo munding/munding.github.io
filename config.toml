@@ -35,12 +35,12 @@ copyright = ""            # default: author.name ↓        # 默认为下面配
   url = "/"
 [[menu.main]]
   name = "Archives"
-  weight = 20
+  weight = 40
   identifier = "archives"
   url = "/post/"
 [[menu.main]]
   name = "Categories"
-  weight = 40
+  weight = 20
   identifier = "categories"
   url = "/categories/"
 [[menu.main]]
