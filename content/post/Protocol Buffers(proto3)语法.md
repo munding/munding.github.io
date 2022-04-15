@@ -5,7 +5,7 @@ tags: ["proto",""]
 categories: ["网络协议",]
 description: ""
 summary: ""
-draft: false
+draft: true
 ---
 
 > protocol buffers 是一种灵活，高效，自动化机制的结构数据序列化方法－可类比 XML，但是比 XML 更小、更快、更为简单。你可以定义数据的结构，然后使用特殊生成的源代码轻松的在各种数据流中使用各种语言进行编写和读取结构数据。你甚至可以更新数据结构，而不破坏根据旧数据结构编译而成并且已部署的程序。
@@ -20,7 +20,7 @@ Protocol Buffer语法基本可以分为三点：
 
 # 定义消息(Message)
 
-essage基本格式
+Message基本格式
 
 ```protobuf
 message <message name> {
@@ -74,33 +74,23 @@ message SearchResponse {
 | string      | str/unicode                     | string  | 一个字符串必须是UTF-8编码或者7-bit ASCII编码的文本。         |
 | bytes       | str (Python 2) bytes (Python 3) | []byte  | 可能包含任意顺序的字节数据。                                 |
 
-- 可以将已经定义的消息作为另一个消息中的字段类型
-
-```
-...
-
-message Result {
-  string url = 1;
-  string title = 2;
-  repeated string snippets = 3;
-}
-
-message SearchResponse {
-  repeated Result results = 1;
-}
-```
-
 ## 默认值
 
 当某个消息被解析时，如果某个被解析的信息不包含字段的值话，会使用该字段类型的默认值
 
 - 对于string，默认是一个空string
+
 - 对于bytes，默认是一个空的bytes
+
 - 对于bool，默认是false
+
 - 对于数值类型，默认是0
+
 - 对于枚举，默认是第一个定义的枚举值，必须为0
+
 - 对于消息类型（message），默认值根据编程语言来确定（`Python`中为`None`）
-  - [generated code guide 生成代码指南](https://developers.google.com/protocol-buffers/docs/reference/overview)
+
+  [generated code guide 生成代码指南](https://developers.google.com/protocol-buffers/docs/reference/overview)
 
 ## 枚举
 
@@ -167,6 +157,14 @@ message MyMessage2 {
 - singular（单数）：字段在消息中可以有0个或者1个（但不能超过一个）。proto3默认的字段规则，通常被省略
 - repeated（重复）：表示该字段在在消息中可以重复任意个数（包括0个），且顺序会被保留
 
+```protobuf
+...
+
+message SearchResponse {
+  repeated Result results = 1; // 表示results由多个Result类型的值组成
+}
+```
+
 ## 添加注释
 
 要向`. proto `文件添加注释，使用c/c++的注释语法`//`和`/* ... */`
@@ -191,6 +189,32 @@ message Foo {
   reserved 2, 15, 9 to 11;
   reserved "foo", "bar";
 }
+```
+
+## 使用其他消息类型
+
+可以将其他消息类型用作字段类型
+
+```protobuf
+...
+
+message Result {
+  string url = 1;
+  string title = 2;
+  repeated string snippets = 3;
+}
+
+message SearchResponse {
+  repeated Result results = 1;
+}
+```
+
+### 倒入定义
+
+想要使用的消息类型在其他`.proto`文件中可以通过`import`声明导入
+
+```protobuf
+import "myproject/other_protos.proto";
 ```
 
 
