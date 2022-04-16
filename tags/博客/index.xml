@@ -1,1 +1,14 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>博客 on Aladdin's blog</title><link>https://aladdinding.cn/tags/%E5%8D%9A%E5%AE%A2/</link><description>Recent content in 博客 on Aladdin's blog</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Thu, 04 Nov 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://aladdinding.cn/tags/%E5%8D%9A%E5%AE%A2/index.xml" rel="self" type="application/rss+xml"/><item><title>静态博客部署的最佳实践（适用 Hugo、Hexo）</title><link>https://aladdinding.cn/post/%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2%E9%83%A8%E7%BD%B2%E7%9A%84%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5%E9%80%82%E7%94%A8hugohexo/</link><pubDate>Thu, 04 Nov 2021 00:00:00 +0000</pubDate><guid>https://aladdinding.cn/post/%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2%E9%83%A8%E7%BD%B2%E7%9A%84%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5%E9%80%82%E7%94%A8hugohexo/</guid><description>有关静态博客部署的文章、视频教程已经很多了。 大致总结可以分为三类： Github Pages + Github Action（网站托管，如：Vercel） 本地编译 + rsync 远程服务器 本</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>博客 on 阿拉丁的博客</title><link>https://aladdinding.cn/tags/%E5%8D%9A%E5%AE%A2/</link><description>Recent content in 博客 on 阿拉丁的博客</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Thu, 04 Nov 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://aladdinding.cn/tags/%E5%8D%9A%E5%AE%A2/index.xml" rel="self" type="application/rss+xml"/><item><title>静态博客部署的最佳实践（适用 Hugo、Hexo）</title><link>https://aladdinding.cn/post/%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2%E9%83%A8%E7%BD%B2%E7%9A%84%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5%E9%80%82%E7%94%A8-hugohexo/</link><pubDate>Thu, 04 Nov 2021 00:00:00 +0000</pubDate><guid>https://aladdinding.cn/post/%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2%E9%83%A8%E7%BD%B2%E7%9A%84%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5%E9%80%82%E7%94%A8-hugohexo/</guid><description>有关静态博客部署的文章、视频教程已经很多了。
+大致总结可以分为三类：
+Github Pages + Github Action（网站托管，如：Vercel） 本地编译 + rsync 远程服务器 本地编译 + 推送对象存储（七牛云） 最佳实践 本地更新完文章提交推送 触发 Github Action Action 的 workflow 中完成静态资源的编译、推送至云服务器 云服务器 Nginx 访问静态资源 之前博客一直部署在 Github+Vercel，奈何美国服务器延迟太高，
+国内的阿里云、腾讯云的网站托管、云开发体验太差，
+刚好双十一购入三年的 2 核 4G 8M 带宽的轻量服务器（腾讯云 YYDS）！！！
+趁着周末研究研究如何部署到云服务器上，
+总体体验不错，满足了我既要远程编译，Github 托管代码、访问速度要快的需求，
+这套流程中你只需要写好文章（不需要编博客译环境），推送至 Github 即可，
+没有跑完这整个流程之前还比较担心 Github rsync 到腾讯云服务器会不会要很久，毕竟 Github 服务器在美国
+实际测试 30s 内就可以完成整套 workflow，还是比较满意的
+PS：首次可能会慢点，后续的 rsync 应该都是增量更新
+顺带也开启了 HTTP/2.0，还是挺香的
+部分配置文件 使用 PEM 格式生成公钥私钥
+1 ssh-keygen -m PEM -t rsa -b 4096 生成的公钥追加到 authorized_keys 中</description></item></channel></rss>
