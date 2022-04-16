@@ -111,14 +111,24 @@ menu:
         - identifier: github
           name: GitHub
           url: "https://github.com/aladdinding"
+          weight: 1
           params:
               icon: brand-github
 
         - identifier: twitter
           name: Twitter
           url: "https://twitter.com/aladdinding"
+          weight: 2
           params:
               icon: brand-twitter
+
+        - identifier: mail
+          name: Mail
+          url: "mailto:aladdinding@qq.com"
+          weight: 3
+          params:
+              icon: messages
+        
 
 
 related:
