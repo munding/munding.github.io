@@ -2,9 +2,7 @@
 title: "Redis 源码之简单动态字符串"
 date: 2021-11-05
 tags: ["redis",""]
-categories: ["数据库",""]
-description: ""
-summary: "Redis 中字符串的实现并没有完全使用 C 字符串，而是重新定义了简单动态字符串 SDS（Simple Dynamic String）用来表示字符串。"
+description: "Redis 中字符串的实现并没有完全使用 C 字符串"
 draft: false
 ---
 

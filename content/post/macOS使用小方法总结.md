@@ -2,9 +2,7 @@
 title: "MacOS 使用小方法总结"
 date: 2021-07-30
 tags: ["macOS",""]
-categories: ["操作系统","最佳实践"]
-description: ""
-summary: "使用 macOS 过程中实用 Tips"
+description: "使用 macOS 过程中实用 Tips"
 draft: false
 ---
 

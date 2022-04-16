@@ -2,9 +2,7 @@
 title: "SSH 相关的快速配置"
 date: 2019-10-09
 tags: ["ssh",""]
-categories: ["最佳实践",""]
-description: ""
-summary: ""
+description: "免密登陆难道不香吗？"
 draft: false
 ---
 

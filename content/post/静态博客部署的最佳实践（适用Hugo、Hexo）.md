@@ -2,8 +2,7 @@
 title: "静态博客部署的最佳实践（适用 Hugo、Hexo）"
 date: 2021-11-04
 tags: ["博客"]
-categories: ["最佳实践"]
-description: ""
+description: "访问快、版本控制、云端编译我全都要！"
 summary: ""
 draft: false
 ---
@@ -16,7 +15,7 @@ draft: false
 2. 本地编译 + rsync 远程服务器
 3. 本地编译 + 推送对象存储（七牛云）
 
-### 最佳实践：
+# 最佳实践
 
 1. 本地更新完文章提交推送
 2. 触发 Github Action
@@ -51,7 +50,7 @@ PS：首次可能会慢点，后续的 rsync 应该都是增量更新
 
 ![image-20211104233528117](https://img.aladdinding.cn/image-20211104233528117.png)
 
-### 部分配置文件:
+# 部分配置文件
 
 使用 `PEM` 格式生成公钥私钥
 
@@ -65,7 +64,7 @@ ssh-keygen -m PEM -t rsa -b 4096
 cd .ssh/;cat id_rsa.pub >> authorized_keys
 ```
 
-#### .github/workflows/main.yml
+## .github/workflows/main.yml
 
 ```yaml
 # This is a basic workflow to help you get started with Actions
@@ -131,7 +130,7 @@ jobs:
 
 
 
-#### Nginx 配置文件
+## Nginx 配置文件
 
 - 开启了 HTTP/2.0
 - HTTP 访问 301 跳转到 HTTPS

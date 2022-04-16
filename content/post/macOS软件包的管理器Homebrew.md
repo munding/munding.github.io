@@ -2,9 +2,7 @@
 title: "MacOS 软件包的管理器 Homebrew"
 date: 2020-01-05
 tags: ["macOS",""]
-categories: ["操作系统",""]
-description: ""
-summary: ""
+description: "用之前记得翻墙，不然慢的怀疑人生"
 draft: false
 ---
 

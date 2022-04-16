@@ -2,9 +2,7 @@
 title: "ApacheBench HTTP 服务器基准测试工具使用总结"
 date: 2020-05-26
 tags: ["http"]
-categories: ["网络协议"]
-description: ""
-summary: ""
+description: "简单的压力测试工具，适合自用"
 draft: false
 ---
 

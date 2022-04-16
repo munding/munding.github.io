@@ -2,15 +2,13 @@
 title: "MacOS 相关资源合集"
 date: 2021-03-20
 tags: ["macOS",""]
-categories: ["操作系统","最佳实践"]
-description: ""
-summary: "macOS 相关资源整理"
+description: "macOS 相关资源整理"
 draft: false
 ---
 
 
 
-### 官方
+# 官方
 
 macOS 最新系统：*https://www.apple.com.cn/macos*
 
@@ -24,7 +22,7 @@ macOS 使用手册：*https://support.apple.com/zh-cn/guide/mac-help/welcome/mac
 
 
 
-### 软件下载
+# 软件下载
 
 MacWk：*https://macwk.com/*
 
@@ -42,7 +40,7 @@ Github：*https://github.com/search?q=macos*
 
 
 
-### 兼容检测
+# 兼容检测
 
 Arm 芯片兼容：*https://isapplesiliconready.com/zh*
 

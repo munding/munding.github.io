@@ -2,13 +2,11 @@
 title: "Go 语言跨平台编译"
 date: 2021-10-29
 tags: ["Go",""]
-categories: ["计算机语言",""]
-description: ""
-summary: "默认我们 go build 的可执行文件都是当前操作系统可执行的文件，如果我想在 macOS 下编译一个 linux 下可执行文件，那需要怎么做呢"
+description: "默认我们 go build 的可执行文件都是当前操作系统可执行的文件，如果我想在 macOS 下编译一个 linux 下可执行文件，那需要怎么做呢"
 draft: false
 ---
 
-### go build
+# go build
 
 使用：
 
@@ -26,7 +24,7 @@ SET GOOS=linux  // 目标平台是 linux
 SET GOARCH=amd64  // 目标处理器架构是 amd64
 ```
 
-### macOS
+# macOS
 
 编译 Linux 和 Windows 平台 64 位 可执行程序:
 
@@ -35,7 +33,7 @@ CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build
 CGO_ENABLED=0 GOOS=windows GOARCH=amd64 go build
 ```
 
-### Linux
+# Linux
 
 编译 Mac 和 Windows 平台 64 位可执行程序：
 
@@ -44,7 +42,7 @@ CGO_ENABLED=0 GOOS=darwin GOARCH=amd64 go build
 CGO_ENABLED=0 GOOS=windows GOARCH=amd64 go build
 ```
 
-### Windows
+# Windows
 
 编译 Mac 平台 64 位可执行程序
 

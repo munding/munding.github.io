@@ -2,8 +2,7 @@
 title: "SOCKS 协议交互流程记录"
 date: 2020-07-19
 tags: ["socks",""]
-categories: ["网络协议",""]
-description: ""
+description: "一个二进制协议，不记录一下容易忘，看wiki太慢"
 summary: ""
 draft: false
 ---

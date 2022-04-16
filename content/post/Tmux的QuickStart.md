@@ -2,16 +2,15 @@
 title: "Tmux 的 QuickStart"
 date: 2019-08-09
 tags: ["tmux",""]
-categories: ["最佳实践",""]
-description: ""
+description: "终端复用工具教程，终端大佬第一步"
 summary: ""
 draft: false
 ---
 
-### Tmux 简介
+# Tmux 简介
 > Tmux 的全称是 Terminal MUtipleXer，及终端复用软件。顾名思义，它的主要功能就是用于在一个终端窗口中运行多个终端会话并且在你关闭终端窗口之后保持进程的运行。
 
-### Tmux 安装
+# Tmux 安装
 ```bash
 # Ubuntu 或 Debian
 $ sudo apt-get install tmux
@@ -23,7 +22,7 @@ $ sudo yum install tmux
 $ brew install tmux
 ```
 
-### Tmux 概念
+# Tmux 概念
 Tmux 中有几个重要概念：
 - 会话（session）: 建立一个 tmux 工作区会话，会话可以长期驻留，重新连接服务器不会丢失，我们只需重新 tmux attach 到之前的工作区就可以恢复会话
 - 窗口（window）: 容纳多个窗格
@@ -31,8 +30,8 @@ Tmux 中有几个重要概念：
 ![Tmux 概念图](https://img.aladdinding.cn/tmux.png)
 
 
-### Tmux 基本操作
-#### 常用命令
+# Tmux 基本操作
+## 常用命令
 - tmux new　　创建默认名称的会话
 - tmux new -s mysession　　创建名为 mysession 的会话
 - tmux ls　　显示会话列表
@@ -47,7 +46,7 @@ Tmux 中有几个重要概念：
 **Tmux 默认的快捷键前缀是 ctrl+b，当然你也可以修改它（后文会提到）
 以下所有的操作都是激活控制台之后，即键入 Ctrl+b 前提下才可以使用的命令**
 
-#### 会话操作（session）
+## 会话操作（session）
 - ?　　列出所有快捷键；按 q 返回
 - d　　脱离当前会话, 可暂时返回 Shell 界面，输入 tmux attach 能够重新进入之前会话
 - s　　选择并切换会话；在同时开启了多个会话时使用
@@ -59,7 +58,7 @@ Tmux 中有几个重要概念：
 - t　　显示当前的时间
 - Ctrl+z　　挂起当前会话
 
-#### 窗口操作（window）
+## 窗口操作（window）
 - c　　创建新窗口
 - &　　关闭当前窗口
 - 数字键　　切换到指定窗口
@@ -71,7 +70,7 @@ Tmux 中有几个重要概念：
 - .　　修改当前窗口编号，相当于重新排序
 - f　　在所有窗口中查找关键词，便于窗口多了切换
 
-#### 面板操作（pane）
+## 面板操作（pane）
 - “　　将当前面板上下分屏
 - %　　将当前面板左右分屏
 - x　　关闭当前分屏
@@ -88,8 +87,9 @@ Tmux 中有几个重要概念：
 - Ctrl+o　　顺时针旋转当前窗口的面板
 - z　　tmux 1.8 新特性，最大化当前所在面板
 
-### Tmux 便捷配置
-#### 新增 Tmux 的配置文件
+# Tmux 便捷配置
+## 配置文件
+
 ```bash
 #新建 Tmux 配置文件
 vi $HOME/.tmux.conf
@@ -128,14 +128,14 @@ bind q killp
 setw -g mode-keys vi
 ```
 
-#### 设置 alias 快捷键
+## 设置 alias 快捷键
 ```bash
 alias ta='tmux a -t'
 alias tf='tail -f'
 alias tls='tmux ls'
 alias tnew='tmux new -s'
 ```
-### Oh my tmux
+# Oh my tmux
 
 🇫🇷 Oh my tmux! My self-contained, pretty & versatile tmux configuration made with ❤️
 
@@ -143,8 +143,8 @@ https://github.com/gpakosz/.tmux
 
 更好看、强悍的 tmux 配置，有时间可以研究
 
-### 使用 Tips
+# 使用 Tips
 
-#### 跳转 Tmux 窗口号为两位数的窗口
+## 跳转 Tmux 窗口号为两位数的窗口
 
 通常使用 `Prefix + 数字键 ` 可以跳转到指定窗口，但是窗口号如果是 `10`，当你按下 `1` 的时候就已经跳转到 `1` 号窗口了，可以先使用 `Prefix + '`，然后输入 index

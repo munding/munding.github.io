@@ -2,9 +2,7 @@
 title: "MacOS 终端配置记录"
 date: 2021-06-04
 tags: ["macOS",""]
-categories: ["操作系统","最佳实践"]
-description: ""
-summary: "macOS 下 iTerm2 + oh-my-zsh + powerlevel10k 环境快速配置"
+description: "macOS 下 iTerm2 + oh-my-zsh + powerlevel10k 环境快速配置"
 draft: false
 ---
 

@@ -2,8 +2,7 @@
 title: "Linux系统目录结构备忘"
 date: 2020-08-11
 tags: ["Linux",""]
-categories: ["操作系统",""]
-description: ""
+description: "之前一直以为usr就是user，太天真"
 summary: ""
 draft: false
 toc: false

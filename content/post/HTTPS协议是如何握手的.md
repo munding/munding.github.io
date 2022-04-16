@@ -2,15 +2,11 @@
 title: "HTTPS 协议是如何握手的"
 date: 2021-11-23
 tags: ["https",""]
-categories: ["网络协议",""]
-description: ""
-summary: "HTTPS (Hypertext Transfer Protocol Secure) 是基于 HTTP 的扩展，用于计算机网络的安全通信，已经在互联网得到广泛应用。在 HTTPS 中，原有的 HTTP 协议会得到 TLS （安全传输层协议） 或其前辈 SSL （安全套接层） 的加密。因此 HTTPS 也常指 HTTP over TLS 或 HTTP over SSL。"
+description: "HTTPS (Hypertext Transfer Protocol Secure) 是基于 HTTP 的扩展，用于计算机网络的安全通信，已经在互联网得到广泛应用。在 HTTPS 中，原有的 HTTP 协议会得到 TLS （安全传输层协议） 或其前辈 SSL （安全套接层） 的加密。因此 HTTPS 也常指 HTTP over TLS 或 HTTP over SSL。"
 draft: false
 ---
 
 > Hypertext Transfer Protocol Secure (HTTPS) is an extension of the Hypertext Transfer Protocol (HTTP). It is used for secure communication over a computer network, and is widely used on the Internet. In HTTPS, the communication protocol is encrypted using Transport Layer Security (TLS) or, formerly, its predecessor, Secure Sockets Layer (SSL). The protocol is therefore also often referred to as HTTP over TLS, or HTTP over SSL.
-
-HTTPS (Hypertext Transfer Protocol Secure) 是基于 HTTP 的扩展，用于计算机网络的安全通信，已经在互联网得到广泛应用。在 HTTPS 中，原有的 HTTP 协议会得到 TLS （安全传输层协议） 或其前辈 SSL （安全套接层） 的加密。因此 HTTPS 也常指 HTTP over TLS 或 HTTP over SSL。
 
 # TLS 报文格式
 
@@ -230,7 +226,7 @@ Server 将数字证书和到根 CA 整个链发给 Client，使得 Client 能用
 
 ![image-20211124161120679](https://img.aladdinding.cn/20211124161121.png)
 
-### APPLICATION_DATA(CLient <-> Server)
+## APPLICATION_DATA(CLient <-> Server)
 
 这个阶段就很简单了，数据开始加密传输，其中`Record Type Values `为 `Application Data（23）`
 

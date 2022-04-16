@@ -2,13 +2,12 @@
 title: Protocol Buffers(proto3)语法
 date: 2022-04-14
 tags: ["proto",""]
-categories: ["网络协议",]
-description: ""
+description: "protocol buffers 是一种灵活，高效，自动化机制的结构数据序列化方法－可类比 XML，但是比 XML 更小、更快、更为简单！谷歌出品，必是精品"
 summary: ""
 draft: true
 ---
 
-> protocol buffers 是一种灵活，高效，自动化机制的结构数据序列化方法－可类比 XML，但是比 XML 更小、更快、更为简单。你可以定义数据的结构，然后使用特殊生成的源代码轻松的在各种数据流中使用各种语言进行编写和读取结构数据。你甚至可以更新数据结构，而不破坏根据旧数据结构编译而成并且已部署的程序。
+>protocol buffers 是一种灵活，高效，自动化机制的结构数据序列化方法－可类比 XML，但是比 XML 更小、更快、更为简单。你可以定义数据的结构，然后使用特殊生成的源代码轻松的在各种数据流中使用各种语言进行编写和读取结构数据。你甚至可以更新数据结构，而不破坏根据旧数据结构编译而成并且已部署的程序。
 
 >[官方文档 Language Guide (proto3) ](https://developers.google.com/protocol-buffers/docs/proto3 )
 

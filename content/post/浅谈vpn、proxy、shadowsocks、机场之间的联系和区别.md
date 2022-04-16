@@ -2,17 +2,15 @@
 title: "浅谈 vpn、proxy、shadowsocks、机场之间的联系和区别"
 date: 2021-03-20
 tags: ["科学上网",""]
-categories: ["网络协议",""]
-description: ""
-summary: ""
+description: "不知道这篇文章会不会被查水表"
 draft: false
 ---
 
-## 墙的原理
+# 墙的原理
 
 在讨论 vpn、proxy 这些之前，有必要先提一下目前主流防火墙的实现原理。GFW 实现网络封锁的手段主要有两种：dns 劫持和 ip 封锁（除此之外，还有 dns 污染和关键词过滤，这里我们不讨论）。
 
-### Dns 劫持
+## Dns 劫持
 
 ip 是网络上各主机的 “地址”，要想访问 “别人家”，当然得要有地址。但 ip 是一串数字，是给电脑看的，人记起来太麻烦，所以就有了域名（也就是我们常说的网址）和 [dns](https://zh.wikipedia.org/zh-hans/%E5%9F%9F%E5%90%8D%E7%B3%BB%E7%BB%9F)（网域名称系统，Domain Name System）。
 
@@ -20,7 +18,7 @@ ip 是网络上各主机的 “地址”，要想访问 “别人家”，当然
 
 Dns 劫持是 GFW 早期唯一的技术手段，所以那个时候的用户通过修改 [Hosts](https://zh.wikipedia.org/wiki/Hosts%E6%96%87%E4%BB%B6) 文件的方式就可以零成本突破封锁了。
 
-### ip 封锁
+## IP 封锁
 
 dns 劫持之后，GFW 引入了 ip 封锁，直接锁住了访问目标网站的去路，用户发往被封锁 ip 的任何数据都会被墙截断。
 
@@ -28,7 +26,7 @@ dns 劫持之后，GFW 引入了 ip 封锁，直接锁住了访问目标网站�
 
 于是，一切就很明朗了，我们目前几乎所有的翻墙手段都是基于上述原理实现的。vpn 是，shadowsocks 是，还有一些比较冷门的（比如 v2ray）同样如此，只不过它们的技术细节不同（这个我们不会深入）。
 
-## VPN
+# VPN
 
 [VPN](https://zh.wikipedia.org/wiki/%E8%99%9B%E6%93%AC%E7%A7%81%E4%BA%BA%E7%B6%B2%E8%B7%AF)，全称 “虚拟私人网络（Virtual Private Network）” 或者是“虚拟专用网络”，是一种加密通讯技术。vpn 是一个统称，它有很多的具体实现，比如 PPTP、L2TP/IPSec 等。
 
@@ -38,11 +36,11 @@ vpn 出现远早于 GFW，所以它不是为了翻墙而生的。而既然不是
 
 所以，VPN 这种翻墙方式基本已经没落了。但即便如此，vpn 作为过去很长一段时间最主流最热门最常用最为人所知的翻墙手段，已然成为翻墙的代名词。即便是 vpn 已不再常用的今天，当人们谈及翻墙的时候，说得最多的仍是：“你有什么好用的 vpn 吗？”。
 
-## Proxy（代理）
+# Proxy（代理）
 
 Proxy（代理）又分为正向代理和反向代理。
 
-## 正向代理
+# 正向代理
 
 翻墙所用的代理都是正向代理。正向代理主要有 HTTP、HTTP over TLS(HTTPS)、Socks、Socks over TLS 几种。其中，HTTP 和 Socks 无法用于翻墙，HTTPS 和 Socks over TLS 可以用于翻墙。不过，Socks over TLS 几乎没人用，我们这里就不多说了。
 
@@ -55,7 +53,7 @@ Proxy 的历史同样早于 GFW，它最早被设计出来的目的当然也不�
 当然，HTTPS 代理也有它的缺点，其中最大的缺点就是配置复杂。即便能用默认参数就用默认参数，用户自己只作最低限度的配置，对新手而言，这也是一个无比痛苦的过程。更别说，想要正常使用 HTTPS 代理，你还要购买域名和证书这些，非常麻烦。所以，即便是在 shadowsocks 出现之前，HTTPS 代理也没在大陆流行起来。这也是造成 v2ray 的小众的主要原因之一（另一个是用户没有从 shadowsocks 迁移到 v2ray 的动力），它的配置同样相当复杂。除此之外，HTTPS 代理只能转发 tcp 流量，对 udp 无能为力。
 这里推荐刘亚晨先生的一篇文章「[各种加密代理协议的简单对比](https://medium.com/@Blankwonder/%E5%90%84%E7%A7%8D%E5%8A%A0%E5%AF%86%E4%BB%A3%E7%90%86%E5%8D%8F%E8%AE%AE%E7%9A%84%E7%AE%80%E5%8D%95%E5%AF%B9%E6%AF%94-1ed52bf7a803)」。
 
-## 反向代理
+# 反向代理
 
 反向代理的作用主要是为服务器做缓存和负载均衡。这里不做过多讨论，感兴趣的朋友可以看 [这里](https://zh.wikipedia.org/wiki/%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86)。顺带一提，shadowsocks 里也有负载均衡的概念，但 shadowsocks 的负载均衡和反向代理的负载均衡不是一个概念。
 
@@ -65,7 +63,7 @@ Proxy 的历史同样早于 GFW，它最早被设计出来的目的当然也不�
 
 
 
-## shadowsocks
+# shadowsocks
 
 最后，就是我们的 shadowsocks 闪亮登场了。介绍之前，我这里先附上 shadowsocks 的 [官网链接](http://www.shadowsocks.org/en/index.html)。英文比较好的同学建议看看官网上对 shadowsocks 的介绍。
 
@@ -79,7 +77,7 @@ Shdadowsocks 最初的版本是由 clowwindy 使用 Python（一种目前非常�
 
 shadowsocks 是 c/s 架构，shadowsocks 的客户端则就是百花齐放了，有我们现在用的小飞机（Shadowsocks），ClashX，移动端等等。
 
-## 机场
+# 机场
 
 随着 GFW 的不断升级，其实 shadowsocks 流量也会被检测出来，导致部署 shadowsocks 的服务器 IP 被封禁。其实 shadowsocks 还只是众多科学上网协议中的一种，其实还有 ssr（ShadowsocksR），v2ray（改善了 shadowsocks 的一些缺点，更难被 GFW 检测到，不过配置复杂），Trojan（上文提到过，模仿 https 流量，隐蔽性更强）。
 
@@ -87,14 +85,14 @@ shadowsocks 是 c/s 架构，shadowsocks 的客户端则就是百花齐放了，
 
 这时候，机场服务就应运而生，只需要少量的付费，通过一条订阅就可以拿到上百条支持各种协议的线路，即使是那个节点被封，那随便切换一条就行。如今对于普通用户来说，机场已经成为了最多的科学上网方式。
 
-## 总结
+# 总结
 
 - vpn 是是一种加密通讯技术，它的核心技术是在加密，防窃听上。由于 GFW 刚上的时候 vpn 这项技术成熟，vpn 被迫营业，充当起了第一代翻墙手段。
 - shadowsocks 闪亮登场，有着很强的隐蔽性，配置简单
 - GFW 不断升级，更多的隐蔽性强的协议 v2ray，Trojan
 - 机场服务，通过订阅拿到上百条线路，并且协议齐全，如果你不太想折腾并且不追求极致，机场服务是个不错的选择。
 
-## 参考
+# 参考
 
 - [https://github.com/sxcool1024/freedom](https://github.com/sxcool1024/freedom)
 - [https://github.com/shadowsocks](https://github.com/shadowsocks)

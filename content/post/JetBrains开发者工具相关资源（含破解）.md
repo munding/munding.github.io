@@ -2,15 +2,12 @@
 title: "JetBrains 开发者工具相关资源（含破解）"
 date: 2021-12-23
 tags: ["IDE","JetBrains"]
-categories: ["最佳实践",""]
-description: ""
-summary: "无论您使用何种平台或语言，JetBrains 都为您提供了一个开发工具。"
+description: "无论您使用何种平台或语言，JetBrains 都为您提供了一个开发工具。"
 draft: false
 ---
 
 > Whatever platform or language you work with, JetBrains has a development tool for you.
 >
-> 无论您使用何种平台或语言，JetBrains 都为您提供了一个开发工具。
 
 JetBrains 旗下的 IDE 不论是界面布局还是快捷键等都是通用的，所以掌握好 JetBrains 下产品的使用技巧还是非常值得的。
 

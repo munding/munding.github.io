@@ -2,9 +2,7 @@
 title: "Vim 操作速查"
 date: 2019-08-09
 tags: ["vim",""]
-categories: ["最佳实践",""]
-description: ""
-summary: ""
+description: "一直很佩服公司用vim写代码的大佬，这里简单记录一下咋用"
 draft: false
 ---
 
