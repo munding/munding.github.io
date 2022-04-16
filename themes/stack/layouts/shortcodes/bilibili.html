@@ -1,23 +1,26 @@
-{{ $vid := (.Get 0) }}
-{{ $videopage := default 1 (.Get 1) }}
-{{ $basicQuery := querify "page" $videopage "high_quality" 1 "as_wide" 1 }}
-{{ $videoQuery := "" }}
+{{ $videoID := index .Params 0 }}
+{{ $pageNum := index .Params 1 | default 1}}
 
-{{ if strings.HasPrefix (lower $vid) "av" }}
-    {{ $videoQuery = querify "aid" (strings.TrimPrefix "av" (lower $vid)) }}
-{{ else if strings.HasPrefix (lower $vid) "bv" }}
-    {{ $videoQuery = querify "bvid" $vid }}
+{{ if (findRE "^[bB][vV][0-9a-zA-Z]+$" $videoID) }}
+<div><iframe id="biliplayer" src="//player.bilibili.com/player.html?bvid={{ $videoID }}&page={{ $pageNum }}"
+        scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" loading="lazy"> </iframe>
+</div>
 {{ else }}
-    <p>Bilibili 视频av号或BV号错误！请检查视频av号或BV号是否正确</p>
-    <p>当前视频av或BV号：{{ $vid }}，视频分P：{{ $videopage }}</p>
+<div><iframe id="biliplayer" src="//player.bilibili.com/player.html?aid={{ $videoID }}&page={{ $pageNum }}"
+        scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" loading="lazy"> </iframe>
+</div>
 {{ end }}
 
-<div class="video-wrapper">
-    <iframe src="https://player.bilibili.com/player.html?{{ $basicQuery | safeURL }}&{{ $videoQuery | safeURL }}"
-            scrolling="no"
-            frameborder="no"
-            framespacing="0"
-            allowfullscreen="true"
-    >
-    </iframe>
-</div>
+<style>
+    #biliplayer {
+        width: 100%;
+        height: 550px;
+    }
+
+    @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+        #biliplayer {
+            width: 100%;
+            height: 250px;
+        }
+    }
+</style>
