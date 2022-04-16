@@ -13,7 +13,7 @@
 </span><span class=lnt>4
 </span><span class=lnt>5
 </span></code></pre></td><td class=lntd><pre class=chroma><code class=language-python data-lang=python><span class=k>def</span> <span class=nf>OlogN</span><span class=p>(</span><span class=n>num</span><span class=p>):</span>
-	<span class=n>i</span> <span class=o>=</span> <span class=mi>1</span>
+  <span class=n>i</span> <span class=o>=</span> <span class=mi>1</span>
   <span class=k>while</span> <span class=p>(</span><span class=n>i</span> <span class=o>&lt;</span> <span class=n>num</span><span class=p>):</span>
     <span class=n>i</span> <span class=o>=</span> <span class=n>i</span> <span class=o>*</span> <span class=mi>2</span>
   <span class=k>return</span> <span class=n>i</span>
@@ -36,12 +36,12 @@
 </span><span class=lnt>7
 </span><span class=lnt>8
 </span></code></pre></td><td class=lntd><pre class=chroma><code class=language-python data-lang=python><span class=k>def</span> <span class=nf>ONlogN</span><span class=p>(</span><span class=n>num</span><span class=p>):</span>
-	<span class=n>total</span> <span class=o>=</span> <span class=mi>0</span>
-	<span class=k>for</span> <span class=n>i</span> <span class=ow>in</span> <span class=nb>range</span><span class=p>(</span><span class=n>num</span><span class=p>):</span>
+  <span class=n>total</span> <span class=o>=</span> <span class=mi>0</span>
+  <span class=k>for</span> <span class=n>i</span> <span class=ow>in</span> <span class=nb>range</span><span class=p>(</span><span class=n>num</span><span class=p>):</span>
     <span class=n>j</span> <span class=o>=</span> <span class=mi>1</span>
-		<span class=k>while</span> <span class=p>(</span><span class=n>j</span> <span class=o>&lt;</span> <span class=n>num</span><span class=p>):</span>
-			<span class=n>total</span> <span class=o>+=</span> <span class=n>i</span><span class=o>+</span><span class=n>j</span>
-			<span class=n>j</span> <span class=o>=</span> <span class=n>j</span> <span class=o>*</span> <span class=mi>2</span>
+    <span class=k>while</span> <span class=p>(</span><span class=n>j</span> <span class=o>&lt;</span> <span class=n>num</span><span class=p>):</span>
+      <span class=n>total</span> <span class=o>+=</span> <span class=n>i</span><span class=o>+</span><span class=n>j</span>
+      <span class=n>j</span> <span class=o>=</span> <span class=n>j</span> <span class=o>*</span> <span class=mi>2</span>
 	<span class=k>return</span> <span class=n>total</span>
 </code></pre></td></tr></table></div></div><h3 id=on2-平方阶>O(n^2) 平方阶</h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
@@ -50,10 +50,10 @@
 </span><span class=lnt>5
 </span><span class=lnt>6
 </span></code></pre></td><td class=lntd><pre class=chroma><code class=language-python data-lang=python><span class=k>def</span> <span class=nf>ON2</span><span class=p>(</span><span class=n>num</span><span class=p>):</span>
-	<span class=n>total</span> <span class=o>=</span> <span class=mi>0</span>
+  <span class=n>total</span> <span class=o>=</span> <span class=mi>0</span>
   <span class=k>for</span> <span class=n>i</span> <span class=ow>in</span> <span class=nb>range</span><span class=p>(</span><span class=n>num</span><span class=p>):</span>
     <span class=k>for</span> <span class=n>j</span> <span class=ow>in</span> <span class=nb>range</span><span class=p>(</span><span class=n>num</span><span class=p>):</span>
-			<span class=n>total</span> <span class=o>+=</span> <span class=n>i</span><span class=o>+</span><span class=n>j</span>
+      <span class=n>total</span> <span class=o>+=</span> <span class=n>i</span><span class=o>+</span><span class=n>j</span>
 	<span class=k>return</span> <span class=n>total</span>
 </code></pre></td></tr></table></div></div><h2 id=对比>对比</h2><p><img src=https://img.aladdinding.cn/bigOcomplexity.png loading=lazy></p><p>常用时间复杂度所耗费的时间从小到大依次是：</p><p><strong>O(1) &lt; O(logn) &lt; O(n) &lt; O(nlogn) &lt; O(n^2) &lt; O(n^3) &lt; O(n!) &lt; O(n^n)</strong></p><p>相关文档：<a class=link href=https://www.bigocheatsheet.com/ target=_blank rel=noopener>Big-O Cheat Sheet</a></p><h1 id=空间复杂度>空间复杂度</h1><p>算法的存储空间与输入值之间的关系，表示方法同样也为大 O 表示法</p><h2 id=常见时间复杂度-1>常见时间复杂度</h2><h3 id=o1-常数阶-1>O(1) 常数阶</h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
