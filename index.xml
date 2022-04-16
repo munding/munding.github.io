@@ -50,6 +50,16 @@ PS：首次可能会慢点，后续的 rsync 应该都是增量更新
 首次阅读确实不是很懂，可以暂时放一放
 当有了实际编码经验、抽象思维逻辑再阅读，你会有所收获的！
 教材 1 2 3 我用阿里云盘分享了「深入理解计算机系统（第三版）.pdf」，你可以不限速下载🚀 复制这段内容打开「阿里云盘」App 即可获取 链接：https://www.aliyundrive.com/s/bTBiCehPPJv 视频
+#biliplayer {
+width: 100%;
+height: 550px;
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+#biliplayer {
+width: 100%;
+height: 250px;
+}
+}
 其他 https://github.com/EugeneLiu/translationCSAPP
 https://www.zhihu.com/question/20354069</description></item><item><title>MacOS 使用小方法总结</title><link>https://aladdinding.cn/post/macos-%E4%BD%BF%E7%94%A8%E5%B0%8F%E6%96%B9%E6%B3%95%E6%80%BB%E7%BB%93/</link><pubDate>Fri, 30 Jul 2021 00:00:00 +0000</pubDate><guid>https://aladdinding.cn/post/macos-%E4%BD%BF%E7%94%A8%E5%B0%8F%E6%96%B9%E6%B3%95%E6%80%BB%E7%BB%93/</guid><description>忽略 macOS Catalina 10.15 更新通知 隐藏 / 关闭更新通知依次打开 启动台 - 其他 - 终端，输入以下神秘代码，Enter 后输入用户密码即可。
 1 sudo softwareupdate --ignore &amp;#34;macOS Catalina&amp;#34; 将来要是想开了，又想更新了，再次输入以下神秘代码即可。
