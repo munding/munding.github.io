@@ -11,10 +11,10 @@ draft: true
 
 >[官方文档 Language Guide (proto3) ](https://developers.google.com/protocol-buffers/docs/proto3 )
 
-Protocol Buffer语法基本可以分为三点：
+Protocol Buffer语法基本可以分为三部分：
 
-1. Options：文件级、消息级、字段级选项（通常是文件级，写在文件最上方，生成代码的参数）
-2. Message：定义消息
+1. Options：一些声明选项（使用的`proto`版本、导出语言对应的包名、类名等等）
+2. Message：定义或者导入消息
 3. Services：定义服务
 
 # 定义消息(Message)
@@ -28,7 +28,7 @@ message <message name> {
 ```
 
 - message name：在同一个`.proto`文件内必须唯一
-- filed rule：可以没有，常用的有`repeated`
+- filed rule：可以没有，常用的有`repeated`、`oneof`
 - filed type：数据类型，protobuf定义的数据类型, 生产代码的会映射成对应语言的数据类型
 - filed name：字段名称，同一个message 内必须唯一
 - filed number：字段的编号， 序列化成二进制数据时的字段编号
@@ -44,8 +44,22 @@ message SearchRequest {
   int32 result_per_page = 3;
 }
 
+/* SearchRequest represents a search query, with pagination options to
+ * indicate which results to include in the response. */
 message SearchResponse {
-  ...
+  string query = 1;
+  int32 page_number = 2;  // Which page number do we want?
+  int32 result_per_page = 3;  // Number of results to return per page.
+  enum Corpus {
+    UNIVERSAL = 0;
+    WEB = 1;
+    IMAGES = 2;
+    LOCAL = 3;
+    NEWS = 4;
+    PRODUCTS = 5;
+    VIDEO = 6;
+  }
+  Corpus corpus = 4;
 }
 ```
 
@@ -208,7 +222,7 @@ message SearchResponse {
 }
 ```
 
-### 倒入定义
+## 导入定义
 
 想要使用的消息类型在其他`.proto`文件中可以通过`import`声明导入
 
@@ -220,4 +234,8 @@ import "myproject/other_protos.proto";
 
 # 定义服务(Service)
 
-还在写....
+定义服务就比较简单了
+
+```protobuf
+```
+
