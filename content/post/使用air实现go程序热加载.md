@@ -1,0 +1,56 @@
+---
+title: "使用air实现go程序热加载"
+date: 2022-04-21
+tags: ["Go",""]
+description: ""
+draft: true
+---
+
+
+
+```toml
+# [Air](https://github.com/cosmtrek/air) TOML 格式的配置文件
+
+# 工作目录
+# 使用 . 或绝对路径，请注意 `tmp_dir` 目录必须在 `root` 目录下
+root = "."
+tmp_dir = "tmp"
+
+[build]
+# 只需要写你平常编译使用的shell命令。你也可以使用 `make`
+cmd = "go build -o ./tmp/main ."
+# 由`cmd`命令得到的二进制文件名
+bin = "tmp/main"
+# 自定义的二进制，可以在前方添加环境变量或者是后方添加命令行参数启动 eg：APP_ENV=dev
+full_bin = "./tmp/main"
+# 监听以下文件扩展名的文件.
+include_ext = ["go", "tpl", "tmpl", "html"]
+# 忽略这些文件扩展名或目录
+exclude_dir = ["assets", "tmp", "vendor", "frontend/node_modules"]
+# 监听以下指定目录的文件
+include_dir = []
+# 排除以下文件
+exclude_file = []
+# 如果文件更改过于频繁，则没有必要在每次更改时都触发构建。可以设置触发构建的延迟时间
+delay = 1000 # ms
+# 发生构建错误时，停止运行旧的二进制文件。
+stop_on_error = true
+# air的日志文件名，该日志文件放置在你的`tmp_dir`中
+log = "air_errors.log"
+
+[log]
+# 显示日志时间
+time = true
+
+[color]
+# 自定义每个部分显示的颜色。如果找不到颜色，使用原始的应用程序日志。
+main = "magenta"
+watcher = "cyan"
+build = "yellow"
+runner = "green"
+
+[misc]
+# 退出时删除tmp目录
+clean_on_exit = true
+```
+

@@ -1,7 +1,7 @@
 ---
 title: "Tmux 的 QuickStart"
 date: 2019-08-09
-tags: ["tmux",""]
+tags: ["terminal",""]
 description: "终端复用工具教程，终端大佬第一步"
 summary: ""
 draft: false

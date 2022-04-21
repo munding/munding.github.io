@@ -1,7 +1,7 @@
 ---
 title: "JetBrains 开发者工具相关资源（含破解）"
 date: 2021-12-23
-tags: ["IDE","JetBrains"]
+tags: ["破解",]
 description: "无论您使用何种平台或语言，JetBrains 都为您提供了一个开发工具。"
 draft: false
 ---

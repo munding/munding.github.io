@@ -2,7 +2,7 @@
 title: "Python 中的线程安全和原子操作"
 date: 2022-04-19
 tags: ["Python",""]
-description: "Python 第三方库线程安全的一些原理初探"
+description: "Python 中内置数据结构操作是否线程安全初探"
 draft: false
 
 ---

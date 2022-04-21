@@ -1,7 +1,7 @@
 ---
 title: "武汉海昌极地海洋世界游玩tips"
 date: 2022-04-04
-tags: ["海洋公园",""]
+tags: ["游记",""]
 description: "最美的风景也许在黄昏"
 summary: ""
 draft: false

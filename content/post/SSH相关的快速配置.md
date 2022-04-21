@@ -1,7 +1,7 @@
 ---
 title: "SSH 相关的快速配置"
 date: 2019-10-09
-tags: ["ssh",""]
+tags: ["terminal",""]
 description: "免密登陆难道不香吗？"
 draft: false
 ---
