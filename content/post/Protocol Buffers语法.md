@@ -1,5 +1,5 @@
 ---
-title: Protocol Buffers(proto3)语法
+title: Protocol Buffers语法
 date: 2022-04-14
 tags: ["proto","网络协议"]
 description: "protocol buffers 是一种灵活，高效，自动化机制的结构数据序列化方法－可类比 XML，但是比 XML 更小、更快、更为简单！谷歌出品，必是精品"
@@ -11,7 +11,7 @@ draft: true
 
 >[官方文档 Language Guide (proto3) ](https://developers.google.com/protocol-buffers/docs/proto3 )
 
-Protocol Buffer语法基本可以分为三部分：
+Protocol Buffer（proto3）语法基本可以分为三部分：
 
 1. Options：一些声明选项（使用的`proto`版本、导出语言对应的包名、类名等等）
 2. Message：定义或者导入消息
