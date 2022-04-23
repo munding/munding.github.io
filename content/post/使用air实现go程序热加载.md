@@ -43,7 +43,7 @@ tmp_dir = "tmp"
 [build]
 # 只需要写你平常编译使用的 shell 命令。你也可以使用 `make`
 cmd = "go build -o ./tmp/main ."
-# 由`cmd`命令得到的二进制文件名
+# 由 `cmd` 命令得到的二进制文件名
 bin = "tmp/main"
 # 自定义的二进制，可以在前方添加环境变量或者是后方添加命令行参数启动 eg：APP_ENV=dev
 full_bin = "./tmp/main"
@@ -59,7 +59,7 @@ exclude_file = []
 delay = 1000 # ms
 # 发生构建错误时，停止运行旧的二进制文件。
 stop_on_error = true
-# air 的日志文件名，该日志文件放置在你的`tmp_dir`中
+# air 的日志文件名，该日志文件放置在你的 `tmp_dir` 中
 log = "air_errors.log"
 
 [log]
