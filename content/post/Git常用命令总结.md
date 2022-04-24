@@ -57,6 +57,8 @@ draft: false
 
 适用于新功能正在开发还不想提交的情况
 
+因为工作区和暂存区的内容是公共的，不属于任何一个分支，所以就需要`git stash`临时保存修改
+
 1. `git add .` 将当前代码添加暂存
 2. `git stash` 保存修改
 3. `git checkout -b <bugfix>` 新建 bugfix 分支
