@@ -6,7 +6,9 @@ description: "macOS 相关资源整理"
 draft: false
 ---
 
-
+>  Now we have become very big, Different from the original idea. Collect premium software in various categories.
+>
+> [awesome-mac](https://github.com/jaywcjlove/awesome-mac)
 
 # 官方
 
