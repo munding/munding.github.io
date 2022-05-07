@@ -117,7 +117,7 @@ menu:
 
         - identifier: twitter
           name: Twitter
-          url: "https://twitter.com/aladdinding"
+          url: "https://twitter.com/arcustin"
           weight: 2
           params:
               icon: brand-twitter
