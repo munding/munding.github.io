@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>http on 大猫的博客</title><link>https://aladdinding.cn/tags/http/</link><description>Recent content in http on 大猫的博客</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Tue, 26 May 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://aladdinding.cn/tags/http/index.xml" rel="self" type="application/rss+xml"/><item><title>ApacheBench HTTP 服务器基准测试工具使用总结</title><link>https://aladdinding.cn/post/apachebench-http-%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%9F%BA%E5%87%86%E6%B5%8B%E8%AF%95%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8%E6%80%BB%E7%BB%93/</link><pubDate>Tue, 26 May 2020 00:00:00 +0000</pubDate><guid>https://aladdinding.cn/post/apachebench-http-%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%9F%BA%E5%87%86%E6%B5%8B%E8%AF%95%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8%E6%80%BB%E7%BB%93/</guid><description>ApacheBench（ab）是用于对 Apache 超文本传输协议（HTTP）服务器进行基准测试的工具。ab 命令会创建很多的并发访问线程，模拟多个访问者同时对某一 URL 地址进行访问。它的测试目标是基于 URL 的，因此，既可以用来测试 Apache 的负载压力，也可以测试 nginx、lighthttp、tomcat、IIS 等其它 Web 服务器的压力。ab 命令对发出负载的计算机要求很低，既不会占用很高 CPU，也不会占用很多内存，但却会给目标服务器造成巨大的负载，其原理类似 CC 攻击。自己测试使用也须注意，否则一次上太多的负载，可能造成目标服务器因资源耗完，严重时甚至导致死机。
 ApacheBench 安装 macOS Mac 下自带 apache，查看版本：
-1 apachectl -v 查看 ab 版本:
-1 ab -V Window Windows 系统 Apache：下载链接
+1apachectl -v 查看 ab 版本:
+1ab -V Window Windows 系统 Apache：下载链接
 Linux Ubuntu
-1 apt-get install apache2-utils CentOS
-1 yum -y install httpd-tools ApacheBench 使用 Options ab 压力测试工具的用法，查看：
-1 2 3 ab -h # 或者 man ab 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 Usage: ab [options] [http[s]://]hostname[:port]/path Options are: -n requests Number of requests to perform # 在测试会话中所执行的请求个数（本次测试总共要访问页面的次数）。默认时，仅执行一个请求。 -c concurrency Number of multiple requests to make at a time # 一次产生的请求个数（并发数）。默认是一次一个。 -t timelimit Seconds to max.</description></item></channel></rss>
+1apt-get install apache2-utils CentOS
+1yum -y install httpd-tools ApacheBench 使用 Options ab 压力测试工具的用法，查看：
+1ab -h 2# 或者 3man ab 1Usage: ab [options] [http[s]://]hostname[:port]/path 2Options are: 3 -n requests Number of requests to perform 4 # 在测试会话中所执行的请求个数（本次测试总共要访问页面的次数）。默认时，仅执行一个请求。 5 -c concurrency Number of multiple requests to make at a time 6 # 一次产生的请求个数（并发数）。默认是一次一个。 7 -t timelimit Seconds to max.</description></item></channel></rss>

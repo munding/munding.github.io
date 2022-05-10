@@ -2,4 +2,4 @@
 适配器 桥接 组合 组合模式是一种结构型设计模式，你可以使用它将对象组合成树状结构，并且能像使用独立对象一样使用它们。
 在组合模式中，无论是复杂的还是简单的对象共用一个接口。在这个统一接口的帮助下，客户端不必在意其对象的具体类
 装饰 装饰模式是一种结构型设计模式，允许你通过将对象放入包含行为的特殊封装对象中来为原对象绑定新的行为。
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 package main import &amp;#34;fmt&amp;#34; type drink interface { getPrice() int } type coffee struct { } func (c *coffee) getPrice() int { return 20 } type addMilk struct { drink drink } func (add *addMilk) getPrice() int { drinkPrice := add.</description></item></channel></rss>
+1package main 2 3import &amp;#34;fmt&amp;#34; 4 5type drink interface { 6 getPrice() int 7} 8 9type coffee struct { 10} 11 12func (c *coffee) getPrice() int { 13 return 20 14} 15 16type addMilk struct { 17 drink drink 18} 19 20func (add *addMilk) getPrice() int { 21 drinkPrice := add.drink.getPrice() 22 return drinkPrice + 5 23} 24 25type addSugar struct { 26 drink drink 27} 28 29func (add *addSugar) getPrice() int { 30 drinkPrice := add.</description></item></channel></rss>

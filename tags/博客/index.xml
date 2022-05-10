@@ -11,7 +11,7 @@ Github Pages + Github Action（网站托管，如：Vercel） 本地编译 + rsy
 PS：首次可能会慢点，后续的 rsync 应该都是增量更新
 顺带也开启了 HTTP/2.0，还是挺香的
 部分配置文件 使用 PEM 格式生成公钥私钥
-1 ssh-keygen -m PEM -t rsa -b 4096 生成的公钥追加到 authorized_keys 中</description></item><item><title>作为技术人员为什么要写博客</title><link>https://aladdinding.cn/post/%E4%BD%9C%E4%B8%BA%E6%8A%80%E6%9C%AF%E4%BA%BA%E5%91%98%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E5%86%99%E5%8D%9A%E5%AE%A2/</link><pubDate>Sun, 09 Aug 2020 00:00:00 +0000</pubDate><guid>https://aladdinding.cn/post/%E4%BD%9C%E4%B8%BA%E6%8A%80%E6%9C%AF%E4%BA%BA%E5%91%98%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E5%86%99%E5%8D%9A%E5%AE%A2/</guid><description>本文只代表个人见解，不代表任立场，如果您认为我的想法是错的那很正常，因为这是我的想法，如果您觉得您的想法和我一样，那我们就是传说中的 &amp;ldquo;激友&amp;rdquo;（对生活冲满激情的朋友）。进入正题。
+1ssh-keygen -m PEM -t rsa -b 4096 生成的公钥追加到 authorized_keys 中</description></item><item><title>作为技术人员为什么要写博客</title><link>https://aladdinding.cn/post/%E4%BD%9C%E4%B8%BA%E6%8A%80%E6%9C%AF%E4%BA%BA%E5%91%98%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E5%86%99%E5%8D%9A%E5%AE%A2/</link><pubDate>Sun, 09 Aug 2020 00:00:00 +0000</pubDate><guid>https://aladdinding.cn/post/%E4%BD%9C%E4%B8%BA%E6%8A%80%E6%9C%AF%E4%BA%BA%E5%91%98%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E5%86%99%E5%8D%9A%E5%AE%A2/</guid><description>本文只代表个人见解，不代表任立场，如果您认为我的想法是错的那很正常，因为这是我的想法，如果您觉得您的想法和我一样，那我们就是传说中的 &amp;ldquo;激友&amp;rdquo;（对生活冲满激情的朋友）。进入正题。
 一、我心中的博客 我所以指的写博客，不单只是写一篇文章出来这一结果。而应该是写的这一过程，写过技术文章的朋友应该跟我一样有这么一个过程。
 自己了解学习，文章所涉及到的知识点，及知识点衍生出来的知识点。
 对学习的知识点进行验证，以确保理论值与实践值保持一致。
