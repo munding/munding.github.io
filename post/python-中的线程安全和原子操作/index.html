@@ -71,7 +71,7 @@ D.keys()
 L.append(L[-1])
 L [i] = L[j]
 D [x] = D[x] + 1
-</code></pre></td></tr></table></div></div><p>两个线程同时读取到了同一个 number 值完成自增操作后然后赋值，本来已经加两次的操作却只增加了一次。</p><h1 id=dis-模块>dis 模块</h1><p>当我们还是无法确定我们的代码是否具有原子性的时候，可以尝试通过 <code>dis（Python 字节码反汇编器）</code> 模块里的 dis 函数来查看</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt> 1
+</code></pre></td></tr></table></div></div><p>两个线程同时读取到了同一个 number 值完成自增操作后然后赋值，本来已经加两次的操作却只增加了一次。</p><h1 id=dis-模块>dis 模块</h1><p>当我们还是无法确定我们的代码是否具有原子性的时候，可以尝试通过 <code>dis</code>（Python 字节码反汇编器） 模块里的 dis 函数来查看</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt> 1
 </span><span class=lnt> 2
 </span><span class=lnt> 3
 </span><span class=lnt> 4
