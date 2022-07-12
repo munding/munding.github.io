@@ -2,15 +2,13 @@
 title: 关于
 layout: "about"
 slug: "about"
-description: "也许有一天我能站在某开发者大会的讲台上分享"
+description: "你担心什么，什么就控制你"
 menu:
     main: 
         weight: -1
         params:
             icon: user
 ---
-
-网络用名：大猫、Aladdin、aladdinding
 
 出生于湖北宜昌，毕业于湖北武汉 WUT
 
