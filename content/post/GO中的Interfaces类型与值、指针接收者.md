@@ -127,4 +127,4 @@ Dog 实现的 `SetName` 为 pointer receiver，当调用者为 value 时，由�
 | value receiver 方法   | 编译✅                     | 编译✅（dereferenced） |
 | pointer receiver 方法 | 编译❌ （not addressable） | 编译✅                 |
 
-最后关于「变量自动取地址」和「指针自动解引用」也算是 golang 提供的为数不多的语法糖吧，不下来研究一下确定不明白～
+最后关于「变量自动取地址」和「指针自动解引用」也算是 golang 提供的为数不多的语法糖吧，不研究一下确实不明白～
