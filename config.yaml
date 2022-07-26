@@ -129,6 +129,13 @@ menu:
           params:
               icon: messages
         
+        - identifier: rss
+          name: RSS
+          url: "/index.xml"
+          weight: 4
+          params:
+              icon: rss
+        
 
 
 related:
