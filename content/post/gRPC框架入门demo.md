@@ -1,5 +1,5 @@
 ---
-title: "GRPC框架入门demo"
+title: "gRPC框架入门demo"
 date: 2022-07-28
 tags: ["gRPC","go","python"]
 description: "记录一下go、python实现gRPC"
