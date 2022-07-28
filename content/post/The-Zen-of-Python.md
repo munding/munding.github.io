@@ -1,7 +1,7 @@
 ---
 title: "The Zen of Python"
 date: 2020-01-16
-tags: ["Python"]
+tags: ["python"]
 description: "The Zen of Python 是 Python 语言的指导原则，遵循这些基本原则，你就可以像个 Pythonista 一样编程。"
 draft: false
 ---

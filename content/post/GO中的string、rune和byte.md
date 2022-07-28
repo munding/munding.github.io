@@ -1,7 +1,7 @@
 ---
 title: "GO 中的 string、rune 和 byte"
 date: 2022-07-19
-tags: ["","GO"]
+tags: ["go",""]
 description: "在 Go 语言中，一个string类型的值既可以被拆分为一个包含多个字符的序列，也可以被拆分为一个包含多个字节的序列"
 draft: false
 ---

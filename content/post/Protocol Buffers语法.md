@@ -14,8 +14,16 @@ draft: true
 Protocol Buffer（proto3）语法基本可以分为三部分：
 
 1. Options：一些声明选项（使用的`proto`版本、导出语言对应的包名、类名等等）
-2. Message：定义或者导入消息
+2. Message：定义或者导入消息，消息包含若干字段
 3. Services：定义服务
+
+# 选项（Options）
+
+写在`.proto`文件上方，不影响消息、服务的定义。不同的语言生成对应代码会使用到这部分参数，比如声明生成go文件的包名，
+
+```
+option go_package = "proto";
+```
 
 # 定义消息(Message)
 
@@ -105,9 +113,33 @@ message SearchResponse {
 
   [generated code guide 生成代码指南](https://developers.google.com/protocol-buffers/docs/reference/overview)
 
+## 分配字段编号
+
+消息定义中每个字段都有一个唯一的编号（1、2、3、4...）。这些编号用来标识二进制格式的字段。
+
+1-15只需要一个字节进行编码，而16-2047则需要两个字节（经常使用的字段应当对应1-15编号）
+
+- 编号范围是1到2^29-1(536,870,911)
+- 编号19000到19999不可用（`protocol buffer`协议实现中保留）
+
+## 指定字段规则
+
+规则可以是以下之一
+
+- singular（单数）：字段在消息中可以有0个或者1个（但不能超过一个）。proto3默认的字段规则，通常被省略
+- repeated（重复）：表示该字段在在消息中可以重复任意个数（包括0个），且顺序会被保留
+
+```protobuf
+...
+
+message SearchResponse {
+  repeated Result results = 1; // 表示results由多个Result类型的值组成
+}
+```
+
 ## 枚举
 
-当某个字段的值需要是某些特定值中的一个时，可以在消息定义中添加一个枚举`enum`并且为每个特定值定义一个常量
+当某个字段的值需要是某些特定值中的一个时，可以在消息定义中添加一个枚举`enum`并且为每个特定值定义一个常量。例如，假设要为每一个SearchRequest消息添加一个 corpus字段，而corpus的值可能是UNIVERSAL，WEB，IMAGES，LOCAL，NEWS，PRODUCTS或VIDEO中的一个。 其实可以很容易地实现这一点：通过向消息定义中添加一个枚举（enum）并且为每个可能的值定义一个常量就可以了。
 
 ```protobuf
 message SearchRequest {
@@ -154,30 +186,6 @@ message MyMessage2 {
 
 枚举中设置的常量必须在32位整形范围内，因为枚举值是使用可变编码方式的，对负数不够高效，因此不推荐在枚举中使用负数
 
-## 分配字段编号
-
-消息定义中每个字段都有一个唯一的编号（1、2、3、4...）。这些编号用来标识二进制格式的字段。
-
-1-15只需要一个字节进行编码，而16-2047则需要两个字节（经常使用的字段应当对应1-15编号）
-
-- 编号范围是1到2^29-1(536,870,911)
-- 编号19000到19999不可用（`protocol buffer`协议实现中保留）
-
-## 指定字段规则
-
-规则可以是以下之一
-
-- singular（单数）：字段在消息中可以有0个或者1个（但不能超过一个）。proto3默认的字段规则，通常被省略
-- repeated（重复）：表示该字段在在消息中可以重复任意个数（包括0个），且顺序会被保留
-
-```protobuf
-...
-
-message SearchResponse {
-  repeated Result results = 1; // 表示results由多个Result类型的值组成
-}
-```
-
 ## 添加注释
 
 要向`. proto `文件添加注释，使用c/c++的注释语法`//`和`/* ... */`
@@ -195,7 +203,7 @@ message SearchRequest {
 
 ## 保留字段编号
 
-如果想保留字段编号或者是字段名称，可以使用`reserved`来声明
+对消息的字段有更新或者删除操作时最好使用`reserved`来声明保留字段编号，避免由于消息的更新或者删除操作无法正常解析
 
 ```protobuf
 message Foo {
@@ -222,7 +230,7 @@ message SearchResponse {
 }
 ```
 
-## 导入定义
+### 导入定义
 
 想要使用的消息类型在其他`.proto`文件中可以通过`import`声明导入
 
@@ -234,7 +242,7 @@ import "myproject/other_protos.proto";
 
 # 定义服务(Service)
 
-定义服务就比较简单了
+如果想在RPC（远程方法调用系统中）
 
 ```protobuf
 ```

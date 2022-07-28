@@ -23,7 +23,7 @@ draft: false
 
 # 其他规范
 
-- 文件开头通常是 `syntax = "proto3";`，这个必须写在开头，表示使用的是 `protov3` 的语法，不写的话默认为 `protov2`
+- 文件开头通常是 `syntax = "proto3";`，这个必须写在开头，表示使用的是 `proto3` 的语法，不写的话默认为 `proto2`
 
 - 其次是类似 `option go_package = "example.com/proto";` 这样的选项，用于不同语言生成代码的参数
 

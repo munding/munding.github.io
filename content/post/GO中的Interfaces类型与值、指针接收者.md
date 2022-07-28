@@ -1,7 +1,7 @@
 ---
 title: "GO中的Interfaces类型与值、指针接收者"
 date: 2022-07-25
-tags: ["GO",""]
+tags: ["go",""]
 description: "文章涉及到「变量自动取地址」和「指针自动解引用」遇到 Interfaces 会出现的状况"
 draft: false
 ---
