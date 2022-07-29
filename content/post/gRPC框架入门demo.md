@@ -188,12 +188,11 @@ $ python -m grpc_tools.protoc -I. --python_out=. --grpc_python_out=. route_guide
 
 - `oute_guide_pb2.py`
 
-包含了之前在proto文件中定义的消息
+  包含了之前在proto文件中定义的消息
 
--  `route_guide_pb2_grpc.py`
+- `route_guide_pb2_grpc.py` 
 
-
-包含了客户端会使用到的`RouteGuideStub`,和服务端使用到的`RouteGuideServicer`，`add_RouteGuideServicer_to_server`
+  包含了客户端会使用到的`RouteGuideStub`,和服务端使用到的`RouteGuideServicer`，`add_RouteGuideServicer_to_server`
 
 ## server
 
