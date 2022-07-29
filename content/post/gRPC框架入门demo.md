@@ -192,7 +192,7 @@ $ python -m grpc_tools.protoc -I. --python_out=. --grpc_python_out=. route_guide
 
 - `route_guide_pb2_grpc.py` 
 
-  包含了客户端会使用到的`RouteGuideStub`,和服务端使用到的`RouteGuideServicer`，`add_RouteGuideServicer_to_server`
+  包含了客户端会使用到的`RouteGuideStub`和服务端使用到的`RouteGuideServicer`，`add_RouteGuideServicer_to_server`
 
 ## server
 
