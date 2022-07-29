@@ -1,48 +1,31 @@
 ---
-title: "gRPC框架入门demo"
+title: "gRPC 框架入门"
 date: 2022-07-28
 tags: ["gRPC","go","python"]
-description: "记录一下go、python实现gRPC"
+description: "记录一下 go、python 实现 gRPC"
 draft: false
 ---
 
-近期上线项目优化，需要将节点与master交互方式从之前的短轮训改进到长连接，同时也需要改进序列化传输方式（之前使用的是序列化pythoon对象的`ujosn`），很自然就想到了grpc
+近期上线项目优化，需要将节点与 master 交互方式从之前的短轮训改进到长连接，同时也需要改进序列化传输方式（之前使用的是序列化 pythoon 对象的 `ujosn`），很自然就想到了 grpc。
 
-# gRPC是什么
+# gRPC 是什么
 
-`gRPC`是一种现代化开源的高性能RPC框架，能够运行于任意环境之中。最初由谷歌进行开发。它使用HTTP/2作为传输协议。
+`gRPC` 是一种现代化开源的高性能 RPC 框架，能够运行于任意环境之中。最初由谷歌进行开发。它使用 HTTP/2 作为传输协议。
 
 ![Concept Diagram](https://img.aladdinding.cn/202207281114706.svg)
 
-使用gRPC， 我们可以一次性的在一个`.proto`文件中定义服务并使用任何支持它的语言去实现客户端和服务端，反过来，它们可以应用在各种场景中，从Google的服务器到你自己的平板电脑—— gRPC帮你解决了不同语言及环境间通信的复杂性。使用`protocol buffers`还能获得其他好处，包括高效的序列化，简单的IDL以及容易进行接口更新。总之一句话，使用gRPC能让我们更容易编写跨语言的分布式代码。
+使用 gRPC， 我们可以一次性的在一个 `.proto` 文件中定义服务并使用任何支持它的语言去实现客户端和服务端，反过来，它们可以应用在各种场景中，从 Google 的服务器到你自己的平板电脑—— gRPC 帮你解决了不同语言及环境间通信的复杂性。使用 `protocol buffers` 还能获得其他好处，包括高效的序列化，简单的 IDL 以及容易进行接口更新。总之一句话，使用 gRPC 能让我们更容易编写跨语言的分布式代码。
 
-> IDL（Interface description language）是指接口描述语言，是用来描述软件组件接口的一种计算机语言，是跨平台开发的基础。IDL通过一种中立的方式来描述接口，使得在不同平台上运行的对象和用不同语言编写的程序可以相互通信交流；比如，一个组件用C++写成，另一个组件用Go写成。
+> IDL（Interface description language）是指接口描述语言，是用来描述软件组件接口的一种计算机语言，是跨平台开发的基础。IDL 通过一种中立的方式来描述接口，使得在不同平台上运行的对象和用不同语言编写的程序可以相互通信交流；比如，一个组件用 C++ 写成，另一个组件用 Go 写成。
 
-# 编写`.proto`文件
+# 编写 `.proto` 文件
 
-官方提供的教学场景（导航服务）很适合入门，覆盖了RPC的四种模式，创建`route_guide.proto`文件，定义以下消息和服务
+官方提供的教学场景（导航服务）很适合入门，覆盖了 RPC 的四种模式，创建 `route_guide.proto` 文件，定义以下消息和服务
 
 ```protobuf
-// Copyright 2015 gRPC authors.
-//
-// Licensed under the Apache License, Version 2.0 (the "License");
-// you may not use this file except in compliance with the License.
-// You may obtain a copy of the License at
-//
-//     http://www.apache.org/licenses/LICENSE-2.0
-//
-// Unless required by applicable law or agreed to in writing, software
-// distributed under the License is distributed on an "AS IS" BASIS,
-// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-// See the License for the specific language governing permissions and
-// limitations under the License.
-
 syntax = "proto3";
 
-option java_multiple_files = true;
-option java_package = "io.grpc.examples.routeguide";
-option java_outer_classname = "RouteGuideProto";
-option objc_class_prefix = "RTG";
+option go_package = "./protos";
 
 package routeguide;
 
@@ -136,63 +119,63 @@ message RouteSummary {
 }
 ```
 
-## 普通、一元RPC
+## 普通、一元 RPC
 
 普通 rpc，客户端向服务器发送一个请求，然后得到一个响应，就像普通的函数调用一样。
 
-`.proto`文件中的`GetFeature`，发送一个坐标，返回坐标的地理名称。
+`.proto` 文件中的 `GetFeature`，发送一个坐标，返回坐标的地理名称。
 
-## 服务端流式RPC
+## 服务端流式 RPC
 
 其中客户端向服务器发送请求，并获得一个流来读取一系列消息。客户端从返回的流中读取，直到没有更多的消息。gRPC 保证在单个 RPC 调用中的消息是有序的。
 
-`.proto`文件中的`ListFeatures`，发送一个高低坐标构成一片区域，流式返回区域内的地理名称。
+`.proto` 文件中的 `ListFeatures`，发送一个高低坐标构成一片区域，流式返回区域内的地理名称。
 
-## 客户端流式RPC
+## 客户端流式 RPC
 
 其中客户端写入一系列消息并将其发送到服务器，同样使用提供的流。一旦客户端完成了消息的写入，它就等待服务器读取消息并返回响应。同样，gRPC 保证在单个 RPC 调用中对消息进行排序。
 
-`.proto`文件中的`RecordRoute`，客户端流式发送坐标点，服务端返回坐标点的总数信息。
+`.proto` 文件中的 `RecordRoute`，客户端流式发送坐标点，服务端返回坐标点的总数信息。
 
-## 双向流式RPC
+## 双向流式 RPC
 
 其中双方使用读写流发送一系列消息。这两个流独立运行，因此客户端和服务器可以按照自己喜欢的顺序读写: 例如，服务器可以等待接收所有客户端消息后再写响应，或者可以交替读取消息然后写入消息，或者其他读写组合。每个流中的消息是有序的。
 
-`.proto`文件中的`RouteChat`，客户端流式发送坐标点，服务端流式返回之前经历过的坐标点。
+`.proto` 文件中的 `RouteChat`，客户端流式发送坐标点，服务端流式返回之前经历过的坐标点。
 
 # Python
 
-## 安装gRPC
+## 安装 gRPC
 
 ```
 $ python -m pip install grpcio
 ```
 
-## 安装gRPC tools
+## 安装 gRPC tools
 
-gRPC tools 包含了protocol buffer的编译器，生成python文件可以直接使用gRPC tools。不用运行`protoc`，指定python-out参数等，方便了很多
+gRPC tools 包含了 protocol buffer 的编译器，生成 python 文件可以直接使用 gRPC tools。不用运行 `protoc`，指定 python-out 参数等，方便了很多
 
 ```
 $ python -m pip install grpcio-tools
 ```
 
-## 生成gRPC代码
+## 生成 gRPC 代码
 
-cd到存放`.ptoto`文件的目录，运行以下命令
+cd 到存放 `.ptoto` 文件的目录，运行以下命令
 
 ```bash
 $ python -m grpc_tools.protoc -I. --python_out=. --grpc_python_out=. route_guide.proto
 ```
 
-会发现生成了两个py文件
+会发现生成了两个 py 文件
 
 - `oute_guide_pb2.py`
 
-  包含了之前在proto文件中定义的消息
+  包含了之前在 proto 文件中定义的消息
 
-- `route_guide_pb2_grpc.py` 
+- `route_guide_pb2_grpc.py`
 
-  包含了客户端会使用到的`RouteGuideStub`和服务端使用到的`RouteGuideServicer`，`add_RouteGuideServicer_to_server`
+  包含了客户端会使用到的 `RouteGuideStub` 和服务端使用到的 `RouteGuideServicer`，`add_RouteGuideServicer_to_server`
 
 ## server
 
@@ -259,7 +242,7 @@ class RouteGuideServicer(route_guide_pb2_grpc.RouteGuideServicer):
         top = max(request.lo.latitude, request.hi.latitude)
         bottom = min(request.lo.latitude, request.hi.latitude)
         for feature in self.db:
-            if (feature.location.longitude >= left and
+            if (feature.location.longitude>= left and
                     feature.location.longitude <= right and
                     feature.location.latitude >= bottom and
                     feature.location.latitude <= top):
@@ -311,7 +294,7 @@ if __name__ == '__main__':
 
 ## client
 
-客户端方式多种多样，使用`grpcurl`、`postman图形化客户端`等等，导入`.proto`文件即可
+客户端方式多种多样，使用 `grpcurl`、`postman 图形化客户端 ` 等等，导入 `.proto` 文件即可
 
 ![image-20220728162336806](https://img.aladdinding.cn/202207281623691.png)
 
@@ -377,10 +360,10 @@ def guide_record_route(stub):
 
     route_iterator = generate_route(feature_list)
     route_summary = stub.RecordRoute(route_iterator)
-    print("Finished trip with %s points " % route_summary.point_count)
-    print("Passed %s features " % route_summary.feature_count)
-    print("Travelled %s meters " % route_summary.distance)
-    print("It took %s seconds " % route_summary.elapsed_time)
+    print("Finished trip with %s points" % route_summary.point_count)
+    print("Passed %s features" % route_summary.feature_count)
+    print("Travelled %s meters" % route_summary.distance)
+    print("It took %s seconds" % route_summary.elapsed_time)
 
 
 def generate_messages():
@@ -424,32 +407,32 @@ if __name__ == '__main__':
     run()
 ```
 
-可以发现对于流式处理gRPC是通过迭代器实现，对于要返回的信息用的是`yield`关键字而不是`return`
+可以发现对于流式处理 gRPC 是通过迭代器实现，对于要返回的信息用的是 `yield` 关键字而不是 `return`
 
 # Go
 
-## 安装protoc编译器及go插件
+## 安装 protoc 编译器及 go 插件
 
-1. [Protocol buffer compiler](https://github.com/protocolbuffers/protobuf/releases)	下载后最好放到自己的PATH下
-2. plugins
+1. [Protocol buffer compiler](https://github.com/protocolbuffers/protobuf/releases)	下载后最好放到自己的 PATH 下
+2. 安装 plugins，有两个
 
 ```go
 $ go install google.golang.org/protobuf/cmd/protoc-gen-go@v1.28
 $ go install google.golang.org/grpc/cmd/protoc-gen-go-grpc@v1.2
 ```
 
-## 生成gRPC代码
+## 生成 gRPC 代码
 
 ```bash
 $ protoc --go_out=. --go_opt=paths=source_relative --go-grpc_out=. --go-grpc_opt=paths=source_relative route_guide.proto
 ```
 
-和生成python代码类似，生成两个`.go`代码
+和生成 python 代码类似，生成了两个 `.go` 代码文件
 
 - route_guide.pb.go
 - route_guide_grpc.pb.go
 
-内容根上方python代码类似，一个包含消息，一个是和gRPC服务有关
+内容根上方生成的 python 代码类似。一个包含消息，一个是和 gRPC 服务客户端、服务端有关。
 
 ## server
 
@@ -485,9 +468,9 @@ import (
 
 var (
 	tls        = flag.Bool("tls", false, "Connection uses TLS if true, else plain TCP")
-	certFile   = flag.String("cert_file", "", "The TLS cert file")
-	keyFile    = flag.String("key_file", "", "The TLS key file")
-	jsonDBFile = flag.String("json_db_file", "", "A json file containing a list of features")
+	certFile   = flag.String("cert_file", "","The TLS cert file")
+	keyFile    = flag.String("key_file", "","The TLS key file")
+	jsonDBFile = flag.String("json_db_file", "","A json file containing a list of features")
 	port       = flag.Int("port", 50051, "The server port")
 )
 
@@ -718,7 +701,7 @@ import (
 
 var (
 	tls                = flag.Bool("tls", false, "Connection uses TLS if true, else plain TCP")
-	caFile             = flag.String("ca_file", "", "The file containing the CA root cert file")
+	caFile             = flag.String("ca_file", "","The file containing the CA root cert file")
 	serverAddr         = flag.String("addr", "localhost:50051", "The server address in the format of host:port")
 	serverHostOverride = flag.String("server_host_override", "x.test.example.com", "The server name used to verify the hostname returned by the TLS handshake")
 )
@@ -874,4 +857,4 @@ func main() {
 }
 ```
 
-当然后续补充[metadata](https://pkg.go.dev/google.golang.org/grpc/internal/metadata)、gRPC的配置加密或认证等
+当然后续补充 [metadata](https://pkg.go.dev/google.golang.org/grpc/internal/metadata)、gRPC 的配置加密或认证等
