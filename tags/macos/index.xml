@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>macOS on 大猫的博客</title><link>https://aladdinding.cn/tags/macos/</link><description>Recent content in macOS on 大猫的博客</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Fri, 30 Jul 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://aladdinding.cn/tags/macos/index.xml" rel="self" type="application/rss+xml"/><item><title>MacOS 使用小方法总结</title><link>https://aladdinding.cn/post/macos-%E4%BD%BF%E7%94%A8%E5%B0%8F%E6%96%B9%E6%B3%95%E6%80%BB%E7%BB%93/</link><pubDate>Fri, 30 Jul 2021 00:00:00 +0000</pubDate><guid>https://aladdinding.cn/post/macos-%E4%BD%BF%E7%94%A8%E5%B0%8F%E6%96%B9%E6%B3%95%E6%80%BB%E7%BB%93/</guid><description>忽略 macOS Catalina 10.15 更新通知 隐藏 / 关闭更新通知依次打开 启动台 - 其他 - 终端，输入以下神秘代码，Enter 后输入用户密码即可。
-1sudo softwareupdate --ignore &amp;#34;macOS Catalina&amp;#34; 将来要是想开了，又想更新了，再次输入以下神秘代码即可。
-1sudo softwareupdate --reset-ignored Tip：此方法在 macOS 10.16 Big Sur 已经不适用，暂时没有找到合适的方法
+sudo softwareupdate --ignore &amp;#34;macOS Catalina&amp;#34; 将来要是想开了，又想更新了，再次输入以下神秘代码即可。
+sudo softwareupdate --reset-ignored Tip：此方法在 macOS 10.16 Big Sur 已经不适用，暂时没有找到合适的方法
 屏蔽升级 Catalina 软件更新小红点 如果在此之前已经点击了软件更新出现了小红点，对于强迫症用户十分不友好。
 打开 启动台 - 其他 - 终端 - 输入
-1defaults write com.apple.systempreferences AttentionPrefBundleIDs 0 然后继续输入
-1killall Dock 烦人的小红点就消失了！！！
+defaults write com.apple.systempreferences AttentionPrefBundleIDs 0 然后继续输入
+killall Dock 烦人的小红点就消失了！！！
 外接显示器 Dock 栏会乱跑 鼠标在上方屏幕红框处，也就是鼠标移不下去的地方放置一两秒，Dock 栏就会跑到上方屏幕
 同理，鼠标放下下方屏幕，鼠标移不下去的地方放置，Dock 栏就会跑到下方屏幕
 个人感觉这个设计很烂，而且也没有开关能永久固定 Dock 栏，希望 Appple 设计师能改改！！！
@@ -17,8 +17,8 @@ Example:
 Dracula iterm2-material-design 安装 oh-my-zsh Oh My Zsh is a delightful, open source, community-driven framework for managing your Zsh configuration.
 Home：https://ohmyz.sh/
 Github：https://github.com/ohmyzsh/ohmyzsh
-1# Install oh-my-zsh 2$ sh -c &amp;#34;$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)&amp;#34; 安装 zplug 插件管理器 Github：https://github.com/zplug/zplug
-1$ curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh 安装命令行工具 fzf 命令行模糊搜索</description></item><item><title>MacOS 相关资源合集</title><link>https://aladdinding.cn/post/macos-%E7%9B%B8%E5%85%B3%E8%B5%84%E6%BA%90%E5%90%88%E9%9B%86/</link><pubDate>Sat, 20 Mar 2021 00:00:00 +0000</pubDate><guid>https://aladdinding.cn/post/macos-%E7%9B%B8%E5%85%B3%E8%B5%84%E6%BA%90%E5%90%88%E9%9B%86/</guid><description> Now we have become very big, Different from the original idea. Collect premium software in various categories.
+# Install oh-my-zsh $ sh -c &amp;#34;$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)&amp;#34; 安装 zplug 插件管理器 Github：https://github.com/zplug/zplug
+$ curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh 安装命令行工具 fzf 命令行模糊搜索</description></item><item><title>MacOS 相关资源合集</title><link>https://aladdinding.cn/post/macos-%E7%9B%B8%E5%85%B3%E8%B5%84%E6%BA%90%E5%90%88%E9%9B%86/</link><pubDate>Sat, 20 Mar 2021 00:00:00 +0000</pubDate><guid>https://aladdinding.cn/post/macos-%E7%9B%B8%E5%85%B3%E8%B5%84%E6%BA%90%E5%90%88%E9%9B%86/</guid><description> Now we have become very big, Different from the original idea. Collect premium software in various categories.
 awesome-mac
 官方 macOS 最新系统：https://www.apple.com.cn/macos
 macOS 支持：https://support.apple.com/zh-cn/macos
