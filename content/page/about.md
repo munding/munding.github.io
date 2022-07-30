@@ -2,7 +2,6 @@
 title: 关于
 layout: "about"
 slug: "about"
-description: "你担心什么，什么就控制你"
 license: false
 menu:
     main: 
