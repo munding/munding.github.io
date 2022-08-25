@@ -6,7 +6,7 @@ paginate: 6
 languages:
     zh-cn:
         languageName: 中文
-        title: 大猫的博客
+        title: 个人文章分享
         weight: 1
 
 
