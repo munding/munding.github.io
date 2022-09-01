@@ -12,7 +12,7 @@
 编程是一个复杂的技能，我无法给你完整的指南来教会你如何编程，不过我可以告诉你，书本和课程也无法教会你如何编程——很多黑客，或者也许几乎所有的黑客，都是靠自学的。你从书本上学到语言的特点——只是一些皮毛，但要使书面知识成为自身技能，你只能通过实践和虚心向他人学习。因此你要做的就是 (a) 读代码，(b) 写代码。
 学习编程就象学习自然语言写作一样。最好的做法是读一些大师的名著，试着自己写点东西，再读些，再写点，再读些，再写点…… 如此往复，直到你的文章具备范文的力量和感觉为止。
 学会使用开源的 Unix 系统 Unix 还是 Internet 的操作系统。你可以学会上网却不知道 Unix，但你不了解 Unix 就无法成为一名 Internet 黑客。因此，今天的黑客文化在很大程度上是以 Unix 为核心的。（这点并不总是真的，一些很早的黑客对此一直很不满，但 Unix 和 Internet 之间的联系已是如此之强，就连 Microsoft 这样强力的公司也对此也无可奈何。）</description></item><item><title>gRPC发送已经序列化好的数据</title><link>https://aladdinding.cn/post/grpc%E5%8F%91%E9%80%81%E5%B7%B2%E7%BB%8F%E5%BA%8F%E5%88%97%E5%8C%96%E5%A5%BD%E7%9A%84%E6%95%B0%E6%8D%AE/</link><pubDate>Thu, 01 Sep 2022 00:00:00 +0000</pubDate><guid>https://aladdinding.cn/post/grpc%E5%8F%91%E9%80%81%E5%B7%B2%E7%BB%8F%E5%BA%8F%E5%88%97%E5%8C%96%E5%A5%BD%E7%9A%84%E6%95%B0%E6%8D%AE/</guid><description>场景 在之前的 gRPC 系统中加了个 redis 缓存临时缓冲要上报的数据，对于数据反复序列化肯定是有性能损耗的
-而已 gRPC 提供的接口似乎没有可以直接发送已经序列化好的数据，似乎只能从生成的 gRPC 代码下手
+而且 gRPC 提供的接口似乎没有可以直接发送已经序列化好的数据，似乎只能从生成的 gRPC 代码下手
 实现 以 Python 代码举例：
 发现在 xxx_pb2_grpc.py 文件中无论是 Stub 还是 Master 的消息参数中有下面两项，使用默认值 None 的话就可以直接传递序列化好的字节了
 request_deserializer：An optional :term:deserializer for request deserialization

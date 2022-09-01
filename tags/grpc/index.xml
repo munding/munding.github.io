@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>gRPC on 大猫的本地回环地址</title><link>https://aladdinding.cn/tags/grpc/</link><description>Recent content in gRPC on 大猫的本地回环地址</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Thu, 01 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://aladdinding.cn/tags/grpc/index.xml" rel="self" type="application/rss+xml"/><item><title>gRPC发送已经序列化好的数据</title><link>https://aladdinding.cn/post/grpc%E5%8F%91%E9%80%81%E5%B7%B2%E7%BB%8F%E5%BA%8F%E5%88%97%E5%8C%96%E5%A5%BD%E7%9A%84%E6%95%B0%E6%8D%AE/</link><pubDate>Thu, 01 Sep 2022 00:00:00 +0000</pubDate><guid>https://aladdinding.cn/post/grpc%E5%8F%91%E9%80%81%E5%B7%B2%E7%BB%8F%E5%BA%8F%E5%88%97%E5%8C%96%E5%A5%BD%E7%9A%84%E6%95%B0%E6%8D%AE/</guid><description>场景 在之前的 gRPC 系统中加了个 redis 缓存临时缓冲要上报的数据，对于数据反复序列化肯定是有性能损耗的
-而已 gRPC 提供的接口似乎没有可以直接发送已经序列化好的数据，似乎只能从生成的 gRPC 代码下手
+而且 gRPC 提供的接口似乎没有可以直接发送已经序列化好的数据，似乎只能从生成的 gRPC 代码下手
 实现 以 Python 代码举例：
 发现在 xxx_pb2_grpc.py 文件中无论是 Stub 还是 Master 的消息参数中有下面两项，使用默认值 None 的话就可以直接传递序列化好的字节了
 request_deserializer：An optional :term:deserializer for request deserialization
