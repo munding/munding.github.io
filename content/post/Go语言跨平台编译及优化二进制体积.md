@@ -8,10 +8,6 @@ draft: false
 
 # 编译
 
-`go build`
-
-使用：
-
 ```
 go build [-o 输出名] [-i] [编译标记] [包名]
 ```
