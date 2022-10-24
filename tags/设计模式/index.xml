@@ -1,4 +1,17 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>设计模式 on 大猫的本地回环地址</title><link>https://aladdinding.cn/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</link><description>Recent content in 设计模式 on 大猫的本地回环地址</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Fri, 07 Oct 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://aladdinding.cn/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/index.xml" rel="self" type="application/rss+xml"/><item><title>面向对象设计原则</title><link>https://aladdinding.cn/post/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99/</link><pubDate>Fri, 07 Oct 2022 00:00:00 +0000</pubDate><guid>https://aladdinding.cn/post/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99/</guid><description> 单一职责原则
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>设计模式 on 大猫的本地回环地址</title><link>https://aladdinding.cn/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</link><description>Recent content in 设计模式 on 大猫的本地回环地址</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Mon, 24 Oct 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://aladdinding.cn/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/index.xml" rel="self" type="application/rss+xml"/><item><title>设计模式之创建型模式</title><link>https://aladdinding.cn/post/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E5%88%9B%E5%BB%BA%E5%9E%8B%E6%A8%A1%E5%BC%8F/</link><pubDate>Mon, 24 Oct 2022 00:00:00 +0000</pubDate><guid>https://aladdinding.cn/post/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E5%88%9B%E5%BB%BA%E5%9E%8B%E6%A8%A1%E5%BC%8F/</guid><description> 单例模式
+是保证一个类仅有一个实例，并提供一个访问它的全局访问点。
+简单工厂模式
+通过专门定义一个类来负责创建其他类的实例，被创建的实例通常都具有共同的父类。
+工厂方法模式
+定义一个创建产品对象的工厂接口，将实际创建工作推迟到子类中。
+抽象工厂模式
+提供一个创建一系列相关或者相互依赖的接口，而无需指定它们具体的类。
+原型模式
+用原型实例指定创建对象的种类，并且通过拷贝这些原型创建新的对象。
+建造者模式
+将一个复杂的构建与其表示相分离，使得同样的构建过程可以创建不同的表示。
+简单工厂模式：一个工厂负责创建所有产品（多个类共用一个Create函数） 违反“开闭原则”，添加新产品需要修改工厂逻辑，工厂越来越复杂 工厂方法模式：一个工厂创建一个产品（每个类都有一个Create函数） 系统的可扩展性也就变得非常好，无需修改接口和原类 增加系统中类的个数，复杂度和理解度增加（一个具体产品就需要对应一个具体工厂） 抽象方法模式：一个工厂创建一系列（一个产品族）的产品（一个产品族一个Create） 增加新的产品族很方便，无须修改已有系统，符合“开闭原则” 增加新的产品等级结构麻烦，需要对原有系统进行较大的修改，违背了“开闭原则” 相当于在工厂方法模式的基础下进行了折中 对于产品族来说遵循了开闭原则 对于产品等级结构来说没有遵循开闭原则 如果产品结构等级稳定，那么就相当于完全遵循开闭原则</description></item><item><title>面向对象设计原则</title><link>https://aladdinding.cn/post/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99/</link><pubDate>Fri, 07 Oct 2022 00:00:00 +0000</pubDate><guid>https://aladdinding.cn/post/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99/</guid><description> 面向对象设计原则为支持可维护性复用而诞生，这些原则蕴含在很多设计模式中，它们是从许多设计方案中总结出的指导性原则。
+单一职责原则
 类的职责单一，对外只提供一种功能，而引起类变化的原因都应该只有一个。
 一个类对外只提供一种功能。
 开闭原则
@@ -10,7 +23,7 @@
 依赖于抽象(接口)，不要依赖具体的实现(类)，也就是针对接口编程。
 模块与模块依赖抽象而不是具体实现。
 接口隔离原则
-不应该强迫用户的程序依赖他们不需要的接口方法。一个接口应该只提供一种对外功能，不应该把所有操作都封装到一个接口中去
+不应该强迫用户的程序依赖他们不需要的接口方法。一个接口应该只提供一种对外功能，不应该把所有操作都封装到一个接口中去。
 合成复用原则
 如果使用继承，会导致父类的任何变换都可能影响到子类的行为。如果使用对象组合，就降低了这种依赖关系。对于继承和组合，优先使用组合。
 通过组合来实现父类方法。
