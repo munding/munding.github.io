@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>proto on 大猫的本地回环地址</title><link>https://aladdinding.cn/tags/proto/</link><description>Recent content in proto on 大猫的本地回环地址</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Tue, 26 Jul 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://aladdinding.cn/tags/proto/index.xml" rel="self" type="application/rss+xml"/><item><title>Protocol Buffers协议使用小结</title><link>https://aladdinding.cn/post/protocol-buffers%E5%8D%8F%E8%AE%AE%E4%BD%BF%E7%94%A8%E5%B0%8F%E7%BB%93/</link><pubDate>Tue, 26 Jul 2022 00:00:00 +0000</pubDate><guid>https://aladdinding.cn/post/protocol-buffers%E5%8D%8F%E8%AE%AE%E4%BD%BF%E7%94%A8%E5%B0%8F%E7%BB%93/</guid><description>官方文档 Language Guide (proto3)
-protocol-buffers 代码生成指南
-网络上关于 Protocol Buffers 的翻译已经很多了，这里就不再重新写一遍了，主要记录一下常用语法。其实就是定义一个 .proto 文件，然后根据不同语言的插件生成不同的代码，通常代码会分为两个文件，以 go 语言为例子
-xxx.pb.go 主要包含消息定义的 go 语言代码 xxx_grpc.pb.go 主要包含 grpc，也就是服务端，客户端之间交互的代码 至于为什么要分成两个文件（记得之前版本 go 语言只生成一个文件），应该是不同语言 grpc 的通信实现有很多吧，像 python 就有 gevent 和 asyncio 两种，拆分也是让文件分工更加清晰
-至于 .proto 文件也是主要以：定义消息、定义服务、其他规范：注释、选项等等 组成
-其他规范 文件开头通常是 syntax = &amp;quot;proto3&amp;quot;;，这个必须写在开头，表示使用的是 proto3 的语法，不写的话默认为 proto2
-其次是类似 option go_package = &amp;quot;example.com/proto&amp;quot;; 这样的选项，用于不同语言生成代码的参数
-注释与 c/c++ 语法相同，使用：//（单行注释）和 /* ... */（多行注释）
-Message 命名采用驼峰命名方式，字段命名采用小写字母加下划线分隔方式</description></item></channel></rss>
