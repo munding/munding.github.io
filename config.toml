@@ -5,7 +5,7 @@ baseURL = "https://aladdinding.cn/"
 theme = "LoveIt"
 
 # 网站标题
-title = "/dev/null"
+title = "大猫的比特垃圾桶"
 
 # 网站语言, 仅在这里 CN 大写 ["en", "zh-CN", "fr", "pl", ...]
 languageCode = "zh-CN"
@@ -91,7 +91,7 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
   #  日期格式
   dateFormat = "2006-01-02"
   # 网站标题, 用于 Open Graph 和 Twitter Cards
-  title = "/dev/null"
+  title = "大猫's Bitbucket"
   # 网站描述, 用于 RSS, SEO, Open Graph 和 Twitter Cards
   description = ""
   # 网站图片, 用于 Open Graph 和 Twitter Cards
@@ -214,7 +214,7 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
     [params.home.posts]
       enable = true
       # 主页每页显示文章数量
-      paginate = 6
+      paginate = 10
       #  被 params.page 中的 hiddenFromHomePage 替代
       # 当你没有在文章前置参数中设置 "hiddenFromHomePage" 时的默认行为
       defaultHiddenFromHomePage = false
@@ -312,7 +312,7 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
     #  是否使用 fraction 扩展语法
     fraction = false
     #  是否使用 fontawesome 扩展语法
-    fontawesome = false
+    fontawesome = true
     # 是否在文章页面显示原始 Markdown 文档链接
     linkToMarkdown = false
     #  是否在 RSS 中显示全文内容

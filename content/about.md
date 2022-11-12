@@ -3,7 +3,9 @@ title: "About"
 draft: false
 ---
 
-九六年出生于「湖北宜昌」，本科毕业于「湖北武汉」 WUT
+
+{{< admonition type=tip title="" open=true >}}
+今年大约二十六了，居住在武汉
 
 现就职于一家武汉PaaS服务公司，担任服务端开发工程师，主要面向B端
 
@@ -13,3 +15,5 @@ draft: false
 - 反感一件事重复多次
 - 对于迷信无感，崇尚科学
 - 别戳电脑屏幕
+{{< /admonition >}}
+
