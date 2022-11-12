@@ -448,7 +448,7 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
         enable = false
       #  utterances 评论系统设置
       [params.page.comment.utterances]
-        enable = false
+        enable = true
         # owner/repo
         repo = "munding/aladdinding.github.io"
         issueTerm = "og:title"
