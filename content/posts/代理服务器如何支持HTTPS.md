@@ -2,8 +2,8 @@
 title: "代理服务器如何支持 HTTPS"
 date: 2021-05-10T14:22:40+08:00
 draft: false
-tags: ["https","proxy"]
-categories: ["网络协议"]
+tags: ["https"]
+categories: ["协议"]
 ---
 
 说到支持 HTTPS 协议，第一时间想到的是配置各种复杂的证书。实际上大多数代理服务器能够支持 HTTPS 都是通过 HTTP 协议中的 Web 隧道（也有叫做 HTTP 隧道）功能来实现的。

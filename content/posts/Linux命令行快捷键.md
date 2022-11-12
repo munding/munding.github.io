@@ -2,8 +2,8 @@
 title: "Linux命令行快捷键"
 date: 2020-08-21T17:14:43+08:00
 draft: false
-tags: ["效率"]
-categories: ["Linux"]
+tags: ["linux"]
+categories: ["操作系统"]
 ---
 
 ## 终端快捷键

@@ -2,8 +2,8 @@
 title: "使用air实现go程序热加载"
 date: 2022-04-21T16:21:53+08:00
 draft: false
-tags: ["效率"]
-categories: ["Golang"]
+tags: ["Golang"]
+categories: ["编程语言"]
 ---
 
 在使用 Python Web 框架 Django 本地 `runserver` 启动后修改了代码，程序够自动重新加载并执行（live-reload），在开发调试阶段非常实用，可以提高开发效率。

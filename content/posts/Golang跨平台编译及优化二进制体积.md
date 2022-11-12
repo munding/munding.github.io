@@ -2,8 +2,8 @@
 title: "Golang跨平台编译及优化二进制体积"
 date: 2021-10-29T17:11:02+08:00
 draft: false
-tags: [""]
-categories: ["Golang"]
+tags: ["Golang"]
+categories: ["编程语言"]
 ---
 
 ## 编译

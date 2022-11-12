@@ -2,7 +2,8 @@
 title: "武汉海昌极地海洋世界游玩tips"
 date: 2022-04-04T16:30:01+08:00
 draft: false
-categories: ["游玩笔记"]
+tags: ["武汉"]
+categories: ["随笔"]
 ---
 
 ## 必看表演 

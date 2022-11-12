@@ -2,7 +2,8 @@
 title: "Python之禅"
 date: 2020-01-16T17:00:13+08:00
 draft: false
-categories: ["Python"]
+tags: ["Python"]
+categories: ["编程语言"]
 ---
 
 ## 原文
