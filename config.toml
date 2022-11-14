@@ -1,4 +1,4 @@
-baseURL = "https://aladdinding.cn/"
+baseURL = "https://aladdinding.cn"
 
 # 更改使用 Hugo 构建网站时使用的默认主题
 # 文档 https://hugoloveit.com/zh-cn/categories/documentation/
@@ -22,9 +22,9 @@ googleAnalytics = ""
 copyright = ""
 
 # 是否使用 robots.txt
-enableRobotsTXT = true
+enableRobotsTXT = false
 # 是否使用 git 信息
-enableGitInfo = true
+enableGitInfo = false
 # 是否使用 emoji 代码
 enableEmoji = true
 
@@ -57,19 +57,19 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
     title = ""
   [[menu.main]]
     weight = 2
-    identifier = "tags"
-    pre = ""
-    post = ""
-    name = "标签"
-    url = "/tags/"
-    title = ""
-  [[menu.main]]
-    weight = 3
     identifier = "categories"
     pre = ""
     post = ""
     name = "分类"
     url = "/categories/"
+    title = ""
+  [[menu.main]]
+    weight = 3
+    identifier = "tags"
+    pre = ""
+    post = ""
+    name = "标签"
+    url = "/tags/"
     title = ""
    [[menu.main]]
     weight = 4
@@ -155,7 +155,7 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
   #  应用图标配置
   [params.app]
     # 当添加到 iOS 主屏幕或者 Android 启动器时的标题, 覆盖默认标题
-    title = "/dev/null"
+    title = "大猫's Bitbucket"
     # 是否隐藏网站图标资源链接
     noFavicon = false
     # 更现代的 SVG 网站图标, 可替代旧的 .png 和 .ico 文件
@@ -333,7 +333,7 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
       maxShownLines = 100
     #  KaTeX 数学公式
     [params.page.math]
-      enable = true
+      enable = false
       #  默认行内定界符是 $ ... $ 和 \( ... \)
       inlineLeftDelimiter = ""
       inlineRightDelimiter = ""
@@ -590,7 +590,7 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
       unsafe = true
   # 目录设置
   [markup.tableOfContents]
-    startLevel = 2
+    startLevel = 1
     endLevel = 6
 
 # 网站地图配置

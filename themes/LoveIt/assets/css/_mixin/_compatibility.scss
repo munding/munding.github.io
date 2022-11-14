@@ -18,6 +18,7 @@
 
 @mixin transform($value) {
   -webkit-transform: $value;
+  -moz-transform: $value;
   -ms-transform: $value;
   -o-transform: $value;
   transform: $value;
@@ -25,6 +26,8 @@
 
 @mixin filter($value) {
   -webkit-filter: $value;
+  -moz-filter: $value;
+  -ms-filter: $value;
   filter: $value;
 }
 
@@ -79,8 +82,8 @@
 }
 
 @mixin appearance($value) {
-  -webkit-appearance: $value;
   -moz-appearance: $value;
+  -webkit-appearance: $value;
 }
 
 @mixin overflow-wrap($value) {
@@ -94,8 +97,14 @@
   line-break: $value;
 }
 
+@mixin ms {
+  input::-ms-clear {
+    display: none;
+  }
+}
+
 @mixin object-fit($value) {
   -o-object-fit: $value;
   object-fit: $value;
-  font-family: "object-fit: #{$value};";
+  font-family: 'object-fit: #{$value};';
 }

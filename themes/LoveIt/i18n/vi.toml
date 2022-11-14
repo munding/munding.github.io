@@ -1,5 +1,4 @@
 # Translations for Vietnamese
-# Bản dịch sang tiếng Việt
 # https://gohugo.io/content-management/multilingual/#translation-of-strings
 
 # === baseof ==
@@ -58,9 +57,6 @@ other = "en"
 other = "Bình luận của bạn ..."
 
 [facebookLanguageCode]
-other = "vi"
-
-[giscusLang]
 other = "vi"
 # === partials/comment.html ===
 

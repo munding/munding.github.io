@@ -52,16 +52,13 @@ other = "Покреће {{ .Hugo }} | Тема - {{ .Theme }}"
 
 # === partials/comment.html ===
 [valineLang]
-other = "en"
+other = "sr"
 
 [valinePlaceholder]
 other = "Ваш коментар ..."
 
 [facebookLanguageCode]
 other = "sr_RS"
-
-[giscusLang]
-other = "en"
 # === partials/comment.html ===
 
 # === partials/assets.html ===

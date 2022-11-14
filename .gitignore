@@ -6,6 +6,10 @@ public/
 node_modules/
 build/
 
+
+resources/
+.hugo_build.lock
+
 ## OS Files
 # Windows
 Thumbs.db
@@ -18,7 +22,3 @@ $RECYCLE.BIN/
 
 # Linux
 .directory
-
-resources/
-
-.hugo_build.lock

@@ -2,8 +2,8 @@
 title: "HTTPS 协议是如何握手的"
 date: 2021-11-23T18:38:50+08:00
 draft: false
-tags: [""]
-categories: [""]
+tags: ["https"]
+categories: ["协议"]
 ---
 
 > Hypertext Transfer Protocol Secure (HTTPS) is an extension of the Hypertext Transfer Protocol (HTTP). It is used for secure communication over a computer network, and is widely used on the Internet. In HTTPS, the communication protocol is encrypted using Transport Layer Security (TLS) or, formerly, its predecessor, Secure Sockets Layer (SSL). The protocol is therefore also often referred to as HTTP over TLS, or HTTP over SSL.
@@ -130,7 +130,7 @@ TLS 握手协议还能细分为 5 个子协议：
 
 主要作用是告诉 Server，Client 所支持的 TLS 协议版本、支持的加密算法等等。
 
-![image-20211123173729470](https://img.aladdinding.cn/20211123173731.png)
+{{< image src="https://img.aladdinding.cn/20211123173731.png" caption="Client Hello">}}
 
 **Client 随机数（Random）**：Client 生成的随机数，暂时称作 ClientHello random，用于后续的主密钥生成。
 
@@ -146,7 +146,7 @@ TLS 握手协议还能细分为 5 个子协议：
 
 收到 Client Hello 之后服务器必须发送 Server Hello 信息，Server 会检查 TLS 版本和算法的 Client Hello 的条件，如果服务器接受并支持所有条件，它将发送其证书以及其他详细信息。否则，服务器将发送握手失败消息。
 
-![image-20211123175420329](https://img.aladdinding.cn/20211123175422.png)
+{{< image src="https://img.aladdinding.cn/20211123175422.png" caption="Server Hello">}}
 
 **Server 随机数（Random）**：Server 生成的随机数，暂时称作 ServerHello random。注意，至此 Client 和 Server 都拥有了两个随机数。
 
@@ -162,7 +162,7 @@ TLS 握手协议还能细分为 5 个子协议：
 
 Server 将数字证书和到根 CA 整个链发给 Client，使得 Client 能用证书中公钥进行认证。
 
-![image-20211123175544807](https://img.aladdinding.cn/20211123175545.png)
+{{< image src="https://img.aladdinding.cn/20211123175545.png" caption="Certificate">}}
 
 ### Server Key Exchange(Server -> Client)
 
@@ -172,7 +172,7 @@ Server 将数字证书和到根 CA 整个链发给 Client，使得 Client 能用
 
 如果密钥协商算法为 RSA ，Client 不需要额外参数就可以计算出**预备主密钥**，然后使用 Server Certificate 中的公钥加密发送给 Server，所以不需要此阶段。
 
-![image-20211123175624007](https://img.aladdinding.cn/20211123175625.png)
+{{< image src="https://img.aladdinding.cn/20211123175625.png" caption="Server Key Exchange">}}
 
 ### Certificate Request(Server -> Client, 可选）
 
@@ -184,7 +184,7 @@ Server 将数字证书和到根 CA 整个链发给 Client，使得 Client 能用
 
 从 Server Hello 到 Server Hello Done，有些 Server 的实现是每条单独发送，有 Server 实现是合并到一起发送。Sever Hello 和 Server Hello Done 都是只有头没有内容的数据。
 
-![image-20211123175638530](https://img.aladdinding.cn/20211123175639.png)
+{{< image src="https://img.aladdinding.cn/20211123175639.png" caption="Server Hello Done">}}
 
 ### Certificate(Client -> Server, 可选）
 
@@ -200,7 +200,7 @@ Server 将数字证书和到根 CA 整个链发给 Client，使得 Client 能用
 
 当 Server 获得了可以计算**预备主密钥**的所有条件后，结合之前的 ClientHello random 和 ServerHello random，通过伪随机函数 PRF 生成并截取 48 字节为**主密钥**，用于后续对称加密传输数据的密钥，Client 同理。
 
-![image-20211124152914343](https://img.aladdinding.cn/20211124152917.png)
+{{< image src="https://img.aladdinding.cn/20211124152917.png" caption="Client Key Exchange">}}
 
 ### Change Cipher Spec(Client -> Server)
 
@@ -208,31 +208,31 @@ Server 将数字证书和到根 CA 整个链发给 Client，使得 Client 能用
 
 密码切换协议，表示随后的信息都将用双方商定的加密方法和密钥发送（Change Cipher Spec 是一个独立的协议，体现在数据包中就是一个字节的数据，用于告知 Server，Client 已经切换到之前协商好的加密套件（Cipher Suite）的状态，准备使用之前协商好的加密套件加密数据并传输了。其中第一条加密的消息就是接下来的 Encrypted Handshake Message
 
-![image-20211124153940334](https://img.aladdinding.cn/20211124153942.png)
+{{< image src="https://img.aladdinding.cn/20211124153942.png" caption="Change Cipher Spec">}}
 
 ### Encrypted Handshake Message(Client -> Server, 也称 Finshed)
 
 生成对称加密密钥之后，发送一条加密的数据，让 Server 解密验证，确认密钥的正确性。
 
-![image-20211124154000101](https://img.aladdinding.cn/20211124154002.png)
+{{< image src="https://img.aladdinding.cn/20211124154002.png" caption="Encrypted Handshake Message">}}
 
 ### Change Cipher Spec(Server -> Client)
 
 密码切换协议，服务端和客户端一样，告诉客户端可以开始加密通信。
 
-![image-20211124161056299](https://img.aladdinding.cn/20211124161057.png)
+{{< image src="https://img.aladdinding.cn/20211124161057.png" caption="Change Cipher Spec">}}
 
 ### Encrypted Handshake Message(Server -> Client, 也称 Finshed)
 
 生成对称加密密钥之后，发送一条加密的数据，让客户端解密验证；如果对方可以解密，则双方认证无误开始通信。
 
-![image-20211124161120679](https://img.aladdinding.cn/20211124161121.png)
+{{< image src="https://img.aladdinding.cn/20211124161121.png" caption="Encrypted Handshake Message">}}
 
 ### APPLICATION_DATA(CLient <-> Server)
 
 这个阶段就很简单了，数据开始加密传输，其中`Record Type Values `为 `Application Data（23）`
 
-![image-20211124182026481](https://img.aladdinding.cn/20211124182033.png)
+{{< image src="https://img.aladdinding.cn/20211124182033.png" caption="APPLICATION_DATA">}}
 
 ## 参考
 

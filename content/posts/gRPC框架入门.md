@@ -2,8 +2,8 @@
 title: "GRPC框架入门"
 date: 2022-07-28T18:41:06+08:00
 draft: false
-tags: [""]
-categories: [""]
+tags: ["gRPC"]
+categories: ["协议"]
 ---
 
 近期上线项目优化，需要将节点与 master 交互方式从之前的短轮训改进到长连接，同时也需要改进序列化传输方式（之前使用的是序列化 pythoon 对象的 `ujosn`），很自然就想到了 grpc。
