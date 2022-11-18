@@ -2,7 +2,7 @@
 title: "为什么 Proxy 认证要发两次请求"
 date: 2022-11-18T10:53:13+08:00
 draft: false
-tags: ["http", "Proxy"]
+tags: ["http",]
 categories: ["协议"]
 ---
 
