@@ -66,7 +66,7 @@ func BasicAuth(username, password string) string {
 
 不过在实际项目使用中，考虑到性能因素，在知道认证方式的情况下：
 
-1. 把 `Proxy-Authorization` 写死
+1. 直接把 `Proxy-Authorization` 添加到 Header 中
 2. 直接白名单 IP 认证
 
 ### HTTP 客户端优化
