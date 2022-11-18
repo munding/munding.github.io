@@ -58,14 +58,14 @@ func BasicAuth(username, password string) string {
 1. 第一次要拿到 `Proxy-Authenticate`，Proxy 是通过什么方式认证的，如 Basic
 2. 通过返回的认证方式使用对应的算法对认证信息进行编码
 
-## 优化
+## 改进
 
 发送两次的 HTTP 客户端更多的考虑到通用性，用户可以在不知道 Proxy 使用什么认证方式的情况下正常使用
 
-不过在实际项目使用中，考虑到性能因素，在知道认证方式的情况下：
+开发者在实际项目使用中，考虑到性能因素，在知道认证方式的情况下：
 
-1. 直接把 `Proxy-Authorization` 添加到 Header 中
-2. 直接白名单 IP 认证
+1. 不使用 HTTP 框架提供的认证写法，直接把 `Proxy-Authorization` 添加到 Header 中
+2. 使用白名单 IP 认证
 
 对于那些每次发送两次的 HTTP 框架也有优化方向
 
