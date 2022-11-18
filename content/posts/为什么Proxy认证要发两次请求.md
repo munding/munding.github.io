@@ -29,9 +29,11 @@ Go 的 net 包和 Python 的 Request 就没有这个问题，虽然在用户侧�
 
 - [HttpClient 4.2.2 and Proxy with username/password](https://stackoverflow.com/questions/13288038/httpclient-4-2-2-and-Proxy-with-username-password)
 
-直接破案了，因为 HTTP 协议中的 `Proxy-Authenticate` header，它需要伴随着 `407 (Proxy Authentication Required)` 一并返回给客户端，告诉客户端使用那种认证方式
+直接破案了，因为 HTTP 协议中的 `Proxy-Authenticate` header，
 
-最常见的就是 Basic 认证（用户名: 密码计算 base64）
+当请求中没有`Proxy-Authorization`时，它需要伴随着 `407 (Proxy Authentication Required)` 一并返回给客户端，告诉客户端使用那种认证方式
+
+最常见的就是 Basic 认证（用户名: 密码计算 base64）：
 
 ```go
 func BasicAuth(username, password string) string {
