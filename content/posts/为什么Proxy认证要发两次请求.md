@@ -62,14 +62,12 @@ func BasicAuth(username, password string) string {
 
 发送两次的 HTTP 客户端更多的考虑到通用性，用户可以在不知道 Proxy 使用什么认证方式的情况下正常使用
 
-### 客户端
-
 不过在实际项目使用中，考虑到性能因素，在知道认证方式的情况下：
 
 1. 直接把 `Proxy-Authorization` 添加到 Header 中
 2. 直接白名单 IP 认证
 
-### HTTP 客户端优化
+对于那些每次发送两次的 HTTP 框架也有优化方向
 
 1. 能自主选择认证方式，像 Go、Python 这类的认证方式默认就是 Basic
 2. 对于地址相同的 Proxy，第一次拿到认证方式后进行缓存，后续就不必在每次请求发送两次
