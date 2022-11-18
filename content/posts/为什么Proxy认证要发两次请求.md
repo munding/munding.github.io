@@ -11,7 +11,7 @@ categories: ["协议"]
 这段时间通过上服务器观察日志，发现部分语言的 HTTP 客户端在进行代理认证的时候会发送两次 HTTP 请求
 
 1. 第一次请求不会携带任何认证信息
-2. 第二次请求才会携带上 `Proxy-Authorization` 的 header
+2. 第二次请求才会携带上 `Proxy-Authorization` 的 Header
 
 涉及到的 HTTP 客户端还是很多的，例如：
 
@@ -29,9 +29,7 @@ Go 的 net 包和 Python 的 Request 就没有这个问题，虽然在用户侧�
 
 - [HttpClient 4.2.2 and Proxy with username/password](https://stackoverflow.com/questions/13288038/httpclient-4-2-2-and-Proxy-with-username-password)
 
-直接破案了，因为 HTTP 协议中的 `Proxy-Authenticate` header，
-
-当请求中没有`Proxy-Authorization`时，它需要伴随着 `407 (Proxy Authentication Required)` 一并返回给客户端，告诉客户端使用那种认证方式
+直接破案了，因为 HTTP 协议中的 `Proxy-Authenticate` Header，当请求中没有 `Proxy-Authorization` 时，它需要伴随着 `407 (Proxy Authentication Required)` 一并返回给客户端，告诉客户端使用那种认证方式
 
 最常见的就是 Basic 认证（用户名: 密码计算 base64）：
 
@@ -53,7 +51,7 @@ func BasicAuth(username, password string) string {
 - **Mutual** (查看 [draft-ietf-httpauth-mutual](https://tools.ietf.org/html/draft-ietf-httpauth-mutual-11)),
 - **AWS4-HMAC-SHA256** (查看 [AWS docs](https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-auth-using-authorization-header.html))
 
-后来进行测试，当 Proxy 返回 407 不带 `Proxy-Authenticate: Basic`，这种发送两次的 HTTP 客户端就不会在发送第二次请求了...
+后来进行测试，当 Proxy 返回 407 不带 `Proxy-Authenticate: Basic`，这种发送两次的 HTTP 客户端就不会在发送第二次请求了（当然用户收到的请求状态码也是 407）...
 
 回到最初的问题，发送两次的原因就是
 
