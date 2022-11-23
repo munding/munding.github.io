@@ -54,6 +54,7 @@ jobs:
         env:
           # 注意: cd .ssh/;cat id_rsa.pub >> authorized_keys
           SSH_PRIVATE_KEY: ${{ secrets.SERVER_SSH_KEY }}
+          ARGS: "-rltgoDzvO --delete"
           SOURCE: "public/"
           REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
           REMOTE_USER: ${{ secrets.REMOTE_USER }}
