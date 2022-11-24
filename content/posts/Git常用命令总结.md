@@ -10,7 +10,7 @@ categories: ["终端工具"]
 >
 > [Git 教程 - 廖雪峰](https://www.liaoxuefeng.com/wiki/896043488029600)
 
-# Git 常用命令
+## Git 常用命令
 
 - `git init` 初始化本地 git 环境
 - `git clone <repository>` 克隆一份代码到本地仓库
@@ -21,6 +21,10 @@ categories: ["终端工具"]
 - `git commit -m '<commit message>'` 把暂存区中的修改提交到本地库
 - `git push` 把本地库的修改提交到远程库中
 - `git push origin <branch name>` 提交一个分支到远程库中
+- `git tag -a v0.1.0 -m '<tag message>'` 创建一个 v0.1.0 标签
+- `git tag -d v0.1.0` 删除标签
+- `git push origin v0.1.0` v0.1.0 标签推送到远程仓库
+- `git push --delete origin v0.1.0` 删除远程仓库标签
 - `git branch -r/-a` 查看远程分支 / 全部分支
 - `git checkout master/bugfix` 切换到某个分支
 - `git checkout -b bugfix` 新建 bugfix 分支
@@ -38,9 +42,9 @@ categories: ["终端工具"]
 - `git diff HEAD` 上面两个命令显示内容的合并
 - `git reset --hard HEAD` 撤销本地修改
 
-# 团队协作 Git 流程
+## 团队协作 Git 流程
 
-## 克隆新项目，完成功能并提交
+### 克隆新项目，完成功能并提交
 
 1. `git clone <repository>` 克隆代码仓库
 2. `git checkout -b <branch name>` 新建分支
@@ -53,7 +57,7 @@ categories: ["终端工具"]
 10. `git merge <branch name>` 将新建分支合并到 master
 11. `git push origin <branch name>` 把新建分支的代码 push 到远程仓库
 
-## 正在新功能分支开发，需要紧急修复 bug
+### 正在新功能分支开发，需要紧急修复 bug
 
 适用于新功能正在开发还不想提交的情况
 
