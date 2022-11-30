@@ -6,4 +6,4 @@
 
 ## 鸣谢
 
-感谢 [JetBrains](https://www.jetbrains.com/from=aladdinding.github.io) 提供的开发者工具 License 支持。
+感谢 [JetBrains](https://www.jetbrains.com/?from=aladdinding.github.io) 提供的开发者工具 License 支持。
