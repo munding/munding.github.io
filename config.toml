@@ -510,7 +510,7 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
     bing = ""
     yandex = ""
     pinterest = ""
-    baidu = ""
+    baidu = "code-VFHnKVUTmV"
 
   #  网站 SEO 配置
   [params.seo]
