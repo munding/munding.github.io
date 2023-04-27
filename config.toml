@@ -5,7 +5,7 @@ baseURL = "https://aladdinding.cn"
 theme = "LoveIt"
 
 # 网站标题
-title = "大猫的比特垃圾桶"
+title = "munding's bitbucket"
 
 # 网站语言, 仅在这里 CN 大写 ["en", "zh-CN", "fr", "pl", ...]
 languageCode = "zh-CN"
@@ -38,7 +38,7 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
 
 # 作者配置
 [author]
-  name = "大猫"
+  name = "munding"
   email = "aladdinding@qq.com"
   link = ""
 
@@ -91,9 +91,9 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
   #  日期格式
   dateFormat = "2006-01-02"
   # 网站标题, 用于 Open Graph 和 Twitter Cards
-  title = "大猫's Bitbucket"
+  title = "munding's bitbucket"
   # 网站描述, 用于 RSS, SEO, Open Graph 和 Twitter Cards
-  description = "基于Hugo框架, LoveIt主题搭建的个人博客, 博客包括但不限于编程语言的学习、记录生活、个人分享等等"
+  description = "基于 hugo 搭建的个人博客，这里我们将深入探讨后端技术、云计算、人工智能等领域的实战经验与技巧分享，同时涵盖个人成长、生活感悟、职场经验等独到见解。"
   # 网站图片, 用于 Open Graph 和 Twitter Cards
   images = [""]
 
@@ -155,7 +155,7 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
   #  应用图标配置
   [params.app]
     # 当添加到 iOS 主屏幕或者 Android 启动器时的标题, 覆盖默认标题
-    title = "大猫's Bitbucket"
+    title = "munding's bitbucket"
     # 是否隐藏网站图标资源链接
     noFavicon = false
     # 更现代的 SVG 网站图标, 可替代旧的 .png 和 .ico 文件
@@ -201,7 +201,7 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
       # 主页显示头像的 URL
       avatarURL = "/images/avatar.jpeg"
       #  主页显示的网站标题 (支持 HTML 格式)
-      title = "大猫's Bitbucket"
+      title = "munding's bitbucket"
       # 主页显示的网站副标题 (允许 HTML 格式)
       subtitle = ""
       # 是否为副标题显示打字机动画
