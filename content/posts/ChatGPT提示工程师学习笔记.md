@@ -1,5 +1,5 @@
 ---
-title: "ChatGPT提示工程师学习笔记"
+title: "ChatGPT 提示工程师学习笔记"
 date: 2023-05-08T09:30:57+08:00
 draft: false
 tags: [""]
