@@ -1,5 +1,5 @@
 ---
-title: "Linux命令行快捷键"
+title: "Linux 命令行快捷键"
 date: 2020-08-21T17:14:43+08:00
 draft: false
 tags: ["linux"]

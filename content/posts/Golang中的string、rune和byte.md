@@ -1,5 +1,5 @@
 ---
-title: "Golang中的string、rune和byte"
+title: "Golang 中的 string、rune 和 byte"
 date: 2021-11-12T18:10:50+08:00
 draft: false
 tags: ["Golang"]

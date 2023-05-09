@@ -1,5 +1,5 @@
 ---
-title: "Python之禅"
+title: "Python 之禅"
 date: 2020-01-16T17:00:13+08:00
 draft: false
 tags: ["Python"]

@@ -1,5 +1,5 @@
 ---
-title: "GRPC框架入门"
+title: "gRPC 框架入门"
 date: 2022-07-28T18:41:06+08:00
 draft: false
 tags: ["gRPC"]

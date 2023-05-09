@@ -1,5 +1,5 @@
 ---
-title: "Vim操作速查"
+title: "Vim 操作速查"
 date: 2019-08-09T16:52:33+08:00
 draft: false
 categories: ["终端工具"]

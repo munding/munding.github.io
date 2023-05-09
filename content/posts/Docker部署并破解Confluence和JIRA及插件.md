@@ -1,5 +1,5 @@
 ---
-title: "Docker部署并破解Confluence和JIRA及插件"
+title: "Docker 部署并破解 Confluence 和 JIRA 及插件"
 date: 2021-07-25T16:35:18+08:00
 draft: false
 tags: ["开源软件"]

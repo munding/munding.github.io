@@ -1,5 +1,5 @@
 ---
-title: "Go中的Interfaces类型与值、指针接收者"
+title: "Go 中的 Interfaces 类型与值、指针接收者"
 date: 2021-07-25T11:01:34+08:00
 draft: false
 tags: ["Golang"]

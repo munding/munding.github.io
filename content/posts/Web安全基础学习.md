@@ -1,5 +1,5 @@
 ---
-title: "Web安全基础学习"
+title: "Web 安全基础学习"
 date: 2022-05-11T16:46:47+08:00
 draft: false
 tags: ["网络安全"]

@@ -1,5 +1,5 @@
 ---
-title: "MacOS软件包的管理器Homebrew"
+title: "MacOS 软件包的管理器 Homebrew"
 date: 2020-01-05T10:52:04+08:00
 draft: false
 tags: [""]

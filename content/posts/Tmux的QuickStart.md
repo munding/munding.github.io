@@ -1,5 +1,5 @@
 ---
-title: "Tmux的QuickStart"
+title: "Tmux 的 QuickStart"
 date: 2019-08-04T16:58:03+08:00
 draft: false
 tags: [""]

@@ -1,5 +1,5 @@
 ---
-title: "Python中的线程安全和原子操作"
+title: "Python 中的线程安全和原子操作"
 date: 2020-04-19T10:45:32+08:00
 draft: false
 tags: ["Python"]

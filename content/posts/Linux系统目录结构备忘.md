@@ -1,5 +1,5 @@
 ---
-title: "Linux系统目录结构备忘"
+title: "Linux 系统目录结构备忘"
 date: 2020-08-11T10:52:51+08:00
 draft: false
 tags: [""]

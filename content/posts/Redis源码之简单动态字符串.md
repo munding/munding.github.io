@@ -1,5 +1,5 @@
 ---
-title: "Redis源码之简单动态字符串"
+title: "Redis 源码之简单动态字符串"
 date: 2021-11-05T18:18:11+08:00
 draft: false
 tags: ["Redis"]

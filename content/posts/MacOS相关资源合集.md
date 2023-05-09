@@ -1,5 +1,5 @@
 ---
-title: "MacOS相关资源合集"
+title: "MacOS 相关资源合集"
 date: 2021-03-20T10:49:45+08:00
 draft: false
 tags: ["macOS"]

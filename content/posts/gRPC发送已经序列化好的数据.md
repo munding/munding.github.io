@@ -1,5 +1,5 @@
 ---
-title: "GRPC发送已经序列化好的数据"
+title: "gRPC 发送已经序列化好的数据"
 date: 2022-09-01T10:59:39+08:00
 draft: false
 tags: ["Python"]
