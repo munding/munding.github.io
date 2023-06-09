@@ -2,7 +2,7 @@
 title: "ChatGPT 提示工程师学习笔记"
 date: 2023-05-08T09:30:57+08:00
 draft: false
-tags: [""]
+tags: ["gpt"]
 categories: ["学习记录"]
 ---
 
@@ -176,9 +176,3 @@ GPT-4 已采用部分指令调整模型优化技术，因此在理解和响应�
 原视频地址：
 
 https://learn.deeplearning.ai/chatgpt-prompt-eng/lesson/1/introduction
-
-哔哩哔哩中英：
-
-https://www.bilibili.com/video/BV1No4y1t7Zn
-
-{{<bilibili BV1No4y1t7Zn>}}

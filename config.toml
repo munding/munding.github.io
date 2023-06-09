@@ -39,7 +39,7 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
 # 作者配置
 [author]
   name = "大猫"
-  email = "aladdinding@qq.com"
+  email = ""
   link = ""
 
 # 菜单配置
