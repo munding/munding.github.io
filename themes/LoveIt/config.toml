@@ -133,10 +133,10 @@
   # Search config
   # 搜索配置
   [params.search]
-    enable = false
+    enable = true
     # type of search engine ["lunr", "algolia"]
     # 搜索引擎的类型 ["lunr", "algolia"]
-    type = "lunr"
+    type = "algolia"
     # max index length of the chunked content
     # 文章内容最长索引长度
     contentLength = 4000
@@ -156,9 +156,9 @@
     # 是否在搜索索引中使用基于 baseURL 的绝对路径
     absoluteURL = false
     [params.search.algolia]
-      index = ""
-      appID = ""
-      searchKey = ""
+      index = "aladdinding"
+      appID = "8X683FLT7W"
+      searchKey = "2f355171a5a5015687f75fa67becee4c"
 
   # Home page config
   # 主页信息设置
