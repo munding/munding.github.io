@@ -169,9 +169,9 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
 
   #  搜索配置
   [params.search]
-    enable = false
+    enable = true
     # 搜索引擎的类型 ["lunr", "algolia"]
-    type = "algolia"
+    type = "lunr"
     # 文章内容最长索引长度
     contentLength = 4000
     # 搜索框的占位提示语
@@ -185,9 +185,9 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
     #  是否在搜索索引中使用基于 baseURL 的绝对路径
     absoluteURL = false
     [params.search.algolia]
-      index = "aladdinding"
-      appID = "8X683FLT7W"
-      searchKey = "2f355171a5a5015687f75fa67becee4c"
+      index = ""
+      appID = ""
+      searchKey = ""
 
   # 主页配置
   [params.home]
